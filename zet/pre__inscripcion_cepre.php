@@ -1,6 +1,11 @@
 <?php
 
-    $pase = isset($_GET['externo2021'])? true : false;
+    /**
+     * the code let to controller the access post-inscription for INSCRIPCION CEPRE
+     * then put true for all when the inscription is availabel (true:true)
+     * else put true : false;
+     */
+    $pase = isset($_GET['externo2021'])? true : true;
 
     if($pase){
 ?>
@@ -58,7 +63,7 @@
 <br>
    
 <form action="pregrabar_cepre.php" method="post" id="grado" name="frmFotoGrado" enctype="multipart/form-data" onsubmit="return true;" >
-   <center><h3>INSCRIPCIÓN EXAMEN <u><strong>CEPRE</strong></u> ADMISIÓN UNAJMA</h3><h4 style="font-size:22px;">2021 - I</h4> </center> 
+   <center><h3>INSCRIPCIÓN EXAMEN <u><strong>CEPRE</strong></u> ADMISIÓN UNAJMA</h3><h4 style="font-size:22px;">2021 - II</h4> </center> 
 <table width="760" border="0" align="center" cellpadding="3" cellspacing="0" class="table-borderless">
 
 	<tr>
@@ -322,7 +327,9 @@
             </strong>        
         </td>
         <td>     
-        	<input type='file' id="imgEst" name="imgEst" class="form-control validar" autocomplete="off" autocapitalize="words"  value=""  placeholder="Seleccione foto estudiante" aria-describedby="imgInp-message" style=" border-radius: 0;
+        	<input type='file' id="imgEst" name="imgEst" 
+            accept="image/*"
+            class="form-control validar" autocomplete="off" autocapitalize="words"  value=""  placeholder="Seleccione foto estudiante" aria-describedby="imgInp-message" style=" border-radius: 0;
     -webkit-box-shadow: none!important;
     box-shadow: none!important;
     color: #ffffff;
@@ -339,7 +346,9 @@
             </strong>        
         </td>
         <td>     
-        	<input type='file' id="imgDni" name="imgDni" class="form-control validar" autocomplete="off" autocapitalize="words"  value=""  placeholder="Seleccione foto dni" aria-describedby="imgDni-message" style=" border-radius: 0;
+        	<input type='file' id="imgDni" name="imgDni" 
+            accept="image/*"
+            class="form-control validar" autocomplete="off" autocapitalize="words"  value=""  placeholder="Seleccione foto dni" aria-describedby="imgDni-message" style=" border-radius: 0;
     -webkit-box-shadow: none!important;
     box-shadow: none!important;
     color: #ffffff;

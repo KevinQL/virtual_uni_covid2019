@@ -58,7 +58,8 @@
 	//Division de postulantes en grupos en funcion de las carreras. MODALIDAD CEPRE
 	//PROCESO ORDINARIO GRUPO 1 // admi(01), ambiental(05) y agro(04)
 	//PROCESO ORDINARIO GRUPO 2 // sistemas(06), contabilidad(02) y educacion(03)
-	$proc="0020"; //grupo 2
+
+	$proc="0023"; // its one group in the new proccess 2021-2
 
 	// $status_voucher = ""; 
 	// $destino_voucher = '../foto_voucher/'.$proc.$dni.'.jpg';
@@ -191,7 +192,7 @@
 				echo '</td>';
 				echo '<td align="center">';
 					echo '<span style="font-size:22px;">';
-					echo 'Estimado postulante, en el transcurso de 24 horas le llegar&aacute;n las instrucciones para completar su inscripci&oacute;n al correo electr&oacute;nico: ';
+					echo 'Estimado postulante, en el transcurso de 72 horas le llegar&aacute;n las instrucciones para completar su inscripci&oacute;n al correo electr&oacute;nico: ';
 					echo '</span>';
 					echo '<strong><h2><?php echo $email; ?></h2></strong> ';
 					echo '<br> ';
@@ -200,7 +201,7 @@
 					echo 'En caso de no recibir las instrucciones, <br>';
 					echo 'comuníquese con los siguientes números: ';
 					echo '<br>';
-					echo '<strong>991828881, 928145892, 916331094, 985951660</strong>';
+					echo '<strong>991828881, 916331094, 985951660</strong>';
 					echo '<p></br>';
 					echo '<p><a href="https://youtu.be/K0iNbXUjynI?t=274" target="_blank">VER QUE PROCEDE<i class="fa fa-forward"></i></a> </p>';
 					echo '<p><a href="https://examen.admisionunajma.pe/pagina_temario.php" target="_blank">VER TEMARIO EXAMEN<i class="fa fa-forward"></i></a> </p>';

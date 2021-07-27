@@ -1,9 +1,4 @@
 <?php
-    if(false){
-
-?>
-
-<?php
 	include('../funciones/admi_con.php');
 	include('../funciones/admi_fun.php');
 	$departamento = '03';
@@ -29,7 +24,7 @@
 	$pasa = 'Si';
 	$estructura = '01';
 	$tipocolegio = '01';
-	$modalidad = '11';
+	$modalidad = '01';
 	$sexo = 'M';
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -62,8 +57,8 @@
 <br>
 <br>
    
-<form action="pregrabar_traslado.php" method="post" id="grado" name="frmFotoGrado" enctype="multipart/form-data" onsubmit="return true;" >
-   <center><h3>INSCRIPCIÓN EXAMEN <u><strong>EXTRAORDINARIO - TRASLADOS</strong></u> ADMISIÓN UNAJMA</h3><h4 style="font-size:22px;">2021 - I</h4> </center> 
+<form action="pregrabar.php" method="post" id="grado" name="frmFotoGrado" enctype="multipart/form-data" onsubmit="return true;" >
+   <center><h3>INSCRIPCIÓN EXAMEN <u><strong>EXTRAORDINARIO</strong></u> ADMISIÓN UNAJMA</h3><h4 style="font-size:22px;">2021 - I</h4> </center> 
 <table width="760" border="0" align="center" cellpadding="3" cellspacing="0" class="table-borderless">
 
 	<tr>
@@ -117,10 +112,10 @@
             </strong>        
         </td>
         <td>
-        	<?php //MostrarComboZet("cboModalidad",$vsqlmodalidadadmision,$modalidad,$pasa); ?>
-            <select name="cboModalidad" id="cboModalidad">
-                <option value="09">EXTRAORDINARIO-TRASLADO INTERNO Y EXTERNO</option>
-            </select>
+        	<?php MostrarComboZet("cboModalidad",$vsqlmodalidadadmision,$modalidad,$pasa); ?>
+            <!-- <select name="cboModalidad" id="cboModalidad">
+                <option value="02">1. EXTRAORDINARIO- PRIMERA SELECCION</option>
+            </select> -->
         </td>    
     </tr>  
     <tr>
@@ -215,8 +210,8 @@
             </strong>        
         </td>
         <td>
-        	<!-- data-type="texto" -->
-        	<input type="text" name="txtApoderado" id="txtApoderado" class="form-control validar" autocomplete="off" autocapitalize="words"  value="" maxlength="30"  placeholder="Puedes ser tú mismo, solo en el caso de que seas mayor de edad" aria-describedby="txtnombre-message">
+        	<! data-type="texto" -->
+        	<input type="text" name="txtApoderado" id="txtApoderado" class="form-control validar" autocomplete="off" autocapitalize="words"  value="" maxlength="30"  placeholder="Ingresar apoderado" aria-describedby="txtnombre-message">
         </td>    
     </tr>  
     <tr>
@@ -260,7 +255,7 @@
             </strong>        
         </td>
         <td>
-        	<input type="text" name="txtColegio" id="txtColegio" class="form-control validar" autocomplete="off" autocapitalize="words"  value="" maxlength="30"  placeholder="Ingresar nombre colegio" aria-describedby="txtnombre-message">
+        	<input type="text" name="txtColegio" id="txtColegio" class="form-control validar" autocomplete="off" autocapitalize="words"  value="" maxlength="30"  placeholder="Ingresar colegio" aria-describedby="txtnombre-message">
         </td>    
     </tr>  
     <tr>
@@ -270,7 +265,7 @@
             </strong>        
         </td>
         <td>
-        	<input type="text" name="txtAnioEgreso" id="txtAnioEgreso" data-type="number" class="form-control validar" autocomplete="off" autocapitalize="words"  value="" maxlength="4"  placeholder="2018" aria-describedby="txtnombre-message">
+        	<input type="text" name="txtAnioEgreso" id="txtAnioEgreso" data-type="number" class="form-control validar" autocomplete="off" autocapitalize="words"  value="" maxlength="4"  placeholder="Ingresar colegio" aria-describedby="txtnombre-message">
         </td>    
     </tr>     
 	<tr>
@@ -301,10 +296,8 @@
     <tr>
     	<td>
         	<strong>
-            Foto Voucher: 
+            Foto Voucher:
             </strong>        
-            <br>
-            <small>(Pago de inscripcion en el banco de la nación)</small>
         </td>
         <td>     
         	<input type='file' id="imgInp" name="imgInp" class="form-control validar" autocomplete="off" autocapitalize="words"  value=""  placeholder="Seleccione foto voucher" aria-describedby="imgInp-message" style=" border-radius: 0;
@@ -314,7 +307,7 @@
     background-color: #337ab7;
     border: 1px solid #ffffff;
 ">
-			<img id="blah" src="https://i.ibb.co/Br8tf3Y/Whats-App-Image-2020-09-26-at-12-50-00-PM.jpg" alt="Tu imagen" width="150" height="150px" />
+			<img id="blah" src="https://via.placeholder.com/150" alt="Tu imagen" width="150" height="150px" />
         </td>    
     </tr>
 
@@ -666,100 +659,3 @@ function readImage (input) {
   });
 
 </script>
-
-
-
-
-
-<?php
-        
-    }else {
-        # code...
-
-?>
-
-
-
-
-
-
-
-
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-    <link rel="icon" href="public/img/logo_u.ico">
-    <title>ADMISIÓN UNAJMA</title>
-
-    <style>
-
-        .seccion-contenedor{
-            height: 100vh;
-
-            display:flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap:wrap;
-
-        }
-
-        .seccion-contenedor div{
-          display: block;
-          width: 100%;          
-          text-align: center;
-        }
-    </style>
-
-  </head>
-  <body>
-    
-
-    <div class="seccion-contenedor">        
-        <div class="card text-center" style="width: 18rem;">
-            <div class="card-body">
-                <!-- <h5 class="card-title text-danger">EN ESTOS MOMENTOS NO PODEMOS ATENDERLE</h5> -->
-                <h5 class="card-title text-danger">INSCRIPCIONES UNAJMA </br> 2021 </h5>
-                <p class="card-text">Las inscripciones para la modalidad TRASLADO - 2021-1 </br> <b>FINALIZARÓN</b> A LAS 13:00 PM</p>
-                <a href="https://examen.admisionunajma.pe/index.php" class="btn btn-warning">Ir a la página principal</a>
-            </div>
-        </div>
-        <div>
-          <img src="logo_u.png" alt="">
-        </div>
-    </div>
-
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  </body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<?php
-        
-    }
-
-?>

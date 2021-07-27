@@ -1,4 +1,3 @@
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <?php 
 	require_once("zet_seg.php");
 	$cn = conectar();	
@@ -103,11 +102,6 @@
             <th width="5%" style="text-align: center">
                 <strong>DNI</strong>
             </th>
-
-			<th width="5%" style="text-align: center">
-                <strong>Tel.</strong>
-            </th>
-
             <th style="text-align: center">
                 <strong>Apellidos y Nombres</strong>
             </th>
@@ -193,11 +187,6 @@
 						echo $rsjk[5];
 						#echo '</a>';					
                 echo '</td>';
-
-				echo '<td align="left">';
-                    echo "<a href='#' onclick=\"verTelefono('{$rsjk[5]}', '{$rsjk[9]}');\">ver</a>";
-                echo '</td>';
-
 				echo '<td align="left">';
                     echo $rsjk[2];
                 echo '</td>';
@@ -247,81 +236,3 @@
     </tbody>								
 </table>
 <script>$('#cboProceso').css('width','100%')</script>
-
-<script>
-
-	const URL_AJAX = "../ajax_tel.php"
-
-	function verTelefono(user, clave){
-		event.preventDefault();
-		console.log("user: ",user, ". Clavel: ", clave);
-		// alert($id)
-
-
-		fetchKev('post',
-				{proceso:'0020',user ,clave},
-				function(x){
-					console.log(x)
-					postulante = x.data
-					
-					msj_texto = `
-						celular: <strong>${postulante.celular} </strong> <br>
-						... <br>
-						Nombre: <strong>${postulante.nombrecompleto} </strong> <br>
-						... <br>
-						Documentos:	${x.pdf} <br>
-						... <br>
-						firma: ${x.firma} <br>
-						... <br>
-						postulante: ${x.postulante} <br>
-						... <br>
-						dni: ${x.dni} <br>
-						... <br>
-						voucher: ${x.voucher} <br>
-						... <br>
-					`;
-					mensaje_alerta(msj_texto);
-				}, 
-				URL_AJAX
-		);
-
-	}
-
-
-
-
-//ALERT SWEETT
-function mensaje_alerta(texto){
-	Swal.fire({
-		title: 'Datos Postulante!',
-		html: `${texto}`,
-		icon: 'info',
-		confirmButtonText: 'ACEPTAR'
-	})
-}	
-
-
-
-//FETCH MODIFICADOS
-//-----------------------------
-/**
-* 
-* @param {String} meth Que puede ser 'POST' o 'GET'
-* @param {Object} jsonData Datos que se enviarán al servidor para que sena procesados
-* @param {Function} fnRquest Aquí se tratarán los datos devueltos del servidor
-*/
-function fetchKev(meth, jsonData, fnRquest, urlProcess){
-	let formData = new FormData();
-
-	formData.append("data", JSON.stringify(jsonData));
-
-	fetch(urlProcess,{
-		method: meth,
-		body: formData
-	}).then( data => data.json())
-	.then(data => {
-		fnRquest(data);
-	})
-}
-
-</script>

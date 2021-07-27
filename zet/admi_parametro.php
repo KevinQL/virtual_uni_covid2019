@@ -16,7 +16,7 @@
 	$activo = $rsjk[5];
 	$modoexamen = $rsjk[6];
 	
-	$vsqlproceso = "call zyz_MantenedorProceso ('', '','','','','','','1900-01-01',0,0,0,1,'','','','','D')";		
+	$vsqlproceso = "call zyz_MantenedorProceso ('', '','','','','','','1900-01-01',0,0,0,1,'','','','','W')";		
 ?>
 <form  name="form" method="post" id="frmcronmod" action="admi_parametro_grabar.php?d=<?php echo $_GET['d']?>&nav=<?php echo $_GET['nav']?>" onsubmit="grabar(this.id);return false;">							
 <table class="table">

@@ -189,7 +189,7 @@
 
 	//0015: Proceso CEPRE
 	//0014: Proceso Primera selección
-	if($proceso == '0016'){
+	if($proceso == '0014'){
 		// pdf 5 - DECLARACIÓN DE 5TO AÑO DE SECUNDARIA PARA REGULARIZAR DOCUMENTOS
 		$mpdf->AddPage();
 		$mpdf->WriteHTML('

@@ -54,7 +54,11 @@
 	#define('GL_DIR_FS_APPS', 'd:/xampp/htdocs');
 	#################################################
 	#################################################
-	$proc="0020"; //grupo completo
+
+	//Division de postulantes en grupos en funcion de las carreras. MODALIDAD CEPRE
+	//PROCESO ORDINARIO GRUPO 1 // admi(01), ambiental(05) y agro(04)
+	//PROCESO ORDINARIO GRUPO 2 // sistemas(06), contabilidad(02) y educacion(03)
+	$proc="0020"; //grupo 2
 
 	// $status_voucher = ""; 
 	// $destino_voucher = '../foto_voucher/'.$proc.$dni.'.jpg';

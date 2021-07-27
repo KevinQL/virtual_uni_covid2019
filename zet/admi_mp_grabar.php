@@ -25,7 +25,7 @@
 		}
 	else
 		{
-			$oiga = 'E';	
+			$oiga = '';	
 		}
 
 	$tipo = 'U';

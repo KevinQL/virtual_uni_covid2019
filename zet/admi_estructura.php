@@ -14,18 +14,22 @@
 		}
 	else
 		{
-			$proceso = '0012';
+			#echo 'hola';
+			$proceso = procesodefecto();
 			#$canal = '01';
 			$vsqltipoexamen="select canal, descripcion from admi_canal where activo=1 order by descripcion limit 1";
 			#echo $vsqltipoexamen;
-			$rs_zet  = mysqli_query($cn_zet,	$vsqltipoexamen);	
+			$rs_zet  = mysqli_query($cn_zet, $vsqltipoexamen);	
 			$rsjk_zet = mysqli_fetch_row($rs_zet);	
 			$canal = $rsjk_zet[0];	
 		}
-		
+	
+	#echo 'hola';
+	#echo procesodefecto();	
 	#echo $proceso;
+	#echo 'hola';
 	#echo $canal;
-	$vsqlproceso = "call zyz_MantenedorProceso ('', '','','','','','','1900-01-01',0,0,0,1,'','','','','D')";	
+	$vsqlproceso = "call zyz_MantenedorProceso ('', '','','','','','','1900-01-01',0,0,0,1,'','','','','W')";	
 	$vsqlcanal = "select canal, descripcion from admi_canal where activo=1;";		
 	$vsql = "call zyz_Admi_Estructura ('". $proceso . "','". $canal . "','','',0,0,'C')";
 	#echo $vsql;		

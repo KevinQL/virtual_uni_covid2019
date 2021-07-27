@@ -18,8 +18,8 @@
 	$vsql = $vsql . " '". $fechafin ."',";
 	$vsql = $vsql . " '". $mensaje ."',";
 	$vsql = $vsql . " '". $tipo ."')";
-	#echo $vsql;
-	#exit;
+	echo $vsql;
+	exit;
 	$rs=mysqli_query($cnzet, $vsql);
 	$nroerror=mysqli_errno($cnzet);
 	$msg=messageError(mysqli_errno($cnzet));

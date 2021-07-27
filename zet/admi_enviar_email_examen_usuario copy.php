@@ -218,9 +218,20 @@
 							<br>
 							<strong>******************************************************************************************</strong>
 							</li>
-							
+							<li>
+							<strong>7).</strong> Debe descargar e instalar obligatoriamente este programa en el ordenador donde va a rendir su evaluación virtual <br>
+							-> LINK OPCION 1: <a href="https://drive.google.com/file/d/1Klr3MDKGTloh5-2o-JkG00V96XniGaul/view?usp=sharing">
+							DESCARGAR PROGRAMA UNAJMA CONTROL V5
+							</a> <br>
+							-> LINK OPCION 2: https://drive.google.com/file/d/1Klr3MDKGTloh5-2o-JkG00V96XniGaul/view?usp=sharing
+							</li>
+							<li>
+							<strong>8).</strong> Revisar los siguientes videos instructivos para la instalación del programa de control. <br>
+							* Instalación programa Unajma Control (<a href="https://www.youtube.com/watch?v=9EulNdm-xYs">Link video</a>) <br>
+							* Desactivar antivirus Windows Defender (<a href="https://www.youtube.com/watch?v=ykURvs0ZQrs">Link video</a>)
+							</li>
 							<li>							
-							<strong>7).</strong> Después de culminar todas las indicaciones hasta terminar de realizar su inscripción, debe contar a la mano con su <strong>CONSTANCIA DE INSCRIPCIÓN</strong> impreso a colores. Está constancia de inscripción es prueba de que usted terminó de realizar su inscripción satisfactoriamente. Por lo que deberá esperar pendiente a su correo electrónico, las indicaciones para el día del examen de la UNIVERSIDAD NACIONAL JOSÉ MARÍA ARGUEDAS. <br>
+							<strong>9).</strong> Después de culminar todas las indicaciones hasta terminar de realizar su inscripción, debe contar a la mano con su <strong>CONSTANCIA DE INSCRIPCIÓN</strong> impreso a colores. Está constancia de inscripción es prueba de que usted terminó de realizar su inscripción satisfactoriamente. Por lo que deberá esperar pendiente a su correo electrónico, las indicaciones para el día del examen de la UNIVERSIDAD NACIONAL JOSÉ MARÍA ARGUEDAS. <br>
 							Así mismo, también puede unirse al grupo de Whatsapp para conocer a sus futuros compañeros, resolver dudas, o para estar al tanto de las indicaciones que la oficina de admisión de la universidad puede estar ofreciendoles. <br>
 							<a href="https://chat.whatsapp.com/DS6oL399iXV3hkh9PkfX9I">CLICK AQUÍ Grupo 1 Whatsapp Examen unjam - admision</a> 
 							<br> 

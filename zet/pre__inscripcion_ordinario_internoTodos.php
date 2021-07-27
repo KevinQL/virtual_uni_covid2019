@@ -1,22 +1,10 @@
 <?php
-    if(false){
-
-?>
-
-<?php
 	include('../funciones/admi_con.php');
 	include('../funciones/admi_fun.php');
 	$departamento = '03';
 	$provincia = '02';
 	$distrito = '01';
-	// $vsqlescuela = "select estructura, descripcion from mae_estructura order by descripcion";
-	// $vsqlmodalidadadmision = "select modalidadadmision, descripcion from adm_modalidadadmision where activo=1 order by descripcion";
-	// $vsqlsexo = "select sexo, descripcion from adm_sexo order by descripcion";
-	// $vsqltipocolegio = "select tipocolegio, descripcion from adm_tipocolegio order by descripcion";
-	// $vsqldepartamento="SELECT departamento,descripcion FROM mae_ubigeo WHERE provincia='00' AND distrito='00' order by 2";
-	// $vsqlprovincia="SELECT provincia,descripcion FROM mae_ubigeo WHERE departamento='$departamento' AND provincia<>'00' AND distrito='00' order by 2";
-    // $vsqldistrito="SELECT distrito,descripcion FROM mae_ubigeo WHERE departamento='$departamento' AND provincia='$provincia' AND distrito<>'00' order by 2";
-    
+
     $vsqlescuela = "select estructura, descripcion from mae_estructura where activo=1 order by descripcion";
 	$vsqlmodalidadadmision = "select modalidadadmision, descripcion from adm_modalidadadmision where activo=1 order by descripcion";
 	$vsqlsexo = "select sexo, descripcion from adm_sexo order by descripcion";
@@ -29,7 +17,7 @@
 	$pasa = 'Si';
 	$estructura = '01';
 	$tipocolegio = '01';
-	$modalidad = '11';
+	$modalidad = '01';
 	$sexo = 'M';
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -62,8 +50,8 @@
 <br>
 <br>
    
-<form action="pregrabar_traslado.php" method="post" id="grado" name="frmFotoGrado" enctype="multipart/form-data" onsubmit="return true;" >
-   <center><h3>INSCRIPCIÓN EXAMEN <u><strong>EXTRAORDINARIO - TRASLADOS</strong></u> ADMISIÓN UNAJMA</h3><h4 style="font-size:22px;">2021 - I</h4> </center> 
+<form action="pregrabar_ordinario.php" method="post" id="grado" name="frmFotoGrado" enctype="multipart/form-data" onsubmit="return true;" >
+   <center><h3>INSCRIPCIÓN EXAMEN <u><strong>ORDINARIO</strong></u> ADMISIÓN UNAJMA</h3><h4 style="font-size:22px;">2021 - I</h4> </center> 
 <table width="760" border="0" align="center" cellpadding="3" cellspacing="0" class="table-borderless">
 
 	<tr>
@@ -119,7 +107,7 @@
         <td>
         	<?php //MostrarComboZet("cboModalidad",$vsqlmodalidadadmision,$modalidad,$pasa); ?>
             <select name="cboModalidad" id="cboModalidad">
-                <option value="09">EXTRAORDINARIO-TRASLADO INTERNO Y EXTERNO</option>
+                <option value="01" selected="">ORDINARIO</option>
             </select>
         </td>    
     </tr>  
@@ -127,10 +115,18 @@
     	<td>
         	<strong>
             Escuela Profesional:
-            </strong>        
+            </strong> 
         </td>
         <td>
         	<?php MostrarComboZet("cboEstructura",$vsqlescuela,$estructura,$pasa); ?>
+            <!-- <select name="cboEstructura" id="cboEstructura">
+                <option value="01" selected="">ADMINISTRACION DE EMPRESAS</option>
+                <option value="02">CONTABILIDAD</option>
+                <option value="03">EDUCACION PRIMARIA INTERCULTURAL</option>
+                <option value="04">INGENIERIA AGROINDUSTRIAL</option>
+                <option value="05">INGENIERIA AMBIENTAL</option>
+                <option value="06">INGENIERIA DE SISTEMAS</option>
+            </select> -->
         </td>    
     </tr> 
     <tr>
@@ -307,7 +303,7 @@
             <small>(Pago de inscripcion en el banco de la nación)</small>
         </td>
         <td>     
-        	<input type='file' id="imgInp" name="imgInp" class="form-control validar" autocomplete="off" autocapitalize="words"  value=""  placeholder="Seleccione foto voucher" aria-describedby="imgInp-message" style=" border-radius: 0;
+        	<input type='file' accept='image/*' id="imgInp" name="imgInp" class="form-control validar" autocomplete="off" autocapitalize="words"  value=""  placeholder="Seleccione foto voucher" aria-describedby="imgInp-message" style=" border-radius: 0;
     -webkit-box-shadow: none!important;
     box-shadow: none!important;
     color: #ffffff;
@@ -325,7 +321,7 @@
             </strong>        
         </td>
         <td>     
-        	<input type='file' id="imgEst" name="imgEst" class="form-control validar" autocomplete="off" autocapitalize="words"  value=""  placeholder="Seleccione foto estudiante" aria-describedby="imgInp-message" style=" border-radius: 0;
+        	<input type='file' accept='image/*' id="imgEst" name="imgEst" class="form-control validar" autocomplete="off" autocapitalize="words"  value=""  placeholder="Seleccione foto estudiante" aria-describedby="imgInp-message" style=" border-radius: 0;
     -webkit-box-shadow: none!important;
     box-shadow: none!important;
     color: #ffffff;
@@ -342,7 +338,7 @@
             </strong>        
         </td>
         <td>     
-        	<input type='file' id="imgDni" name="imgDni" class="form-control validar" autocomplete="off" autocapitalize="words"  value=""  placeholder="Seleccione foto dni" aria-describedby="imgDni-message" style=" border-radius: 0;
+        	<input type='file' accept='image/*' id="imgDni" name="imgDni" class="form-control validar" autocomplete="off" autocapitalize="words"  value=""  placeholder="Seleccione foto dni" aria-describedby="imgDni-message" style=" border-radius: 0;
     -webkit-box-shadow: none!important;
     box-shadow: none!important;
     color: #ffffff;
@@ -666,100 +662,3 @@ function readImage (input) {
   });
 
 </script>
-
-
-
-
-
-<?php
-        
-    }else {
-        # code...
-
-?>
-
-
-
-
-
-
-
-
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-    <link rel="icon" href="public/img/logo_u.ico">
-    <title>ADMISIÓN UNAJMA</title>
-
-    <style>
-
-        .seccion-contenedor{
-            height: 100vh;
-
-            display:flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap:wrap;
-
-        }
-
-        .seccion-contenedor div{
-          display: block;
-          width: 100%;          
-          text-align: center;
-        }
-    </style>
-
-  </head>
-  <body>
-    
-
-    <div class="seccion-contenedor">        
-        <div class="card text-center" style="width: 18rem;">
-            <div class="card-body">
-                <!-- <h5 class="card-title text-danger">EN ESTOS MOMENTOS NO PODEMOS ATENDERLE</h5> -->
-                <h5 class="card-title text-danger">INSCRIPCIONES UNAJMA </br> 2021 </h5>
-                <p class="card-text">Las inscripciones para la modalidad TRASLADO - 2021-1 </br> <b>FINALIZARÓN</b> A LAS 13:00 PM</p>
-                <a href="https://examen.admisionunajma.pe/index.php" class="btn btn-warning">Ir a la página principal</a>
-            </div>
-        </div>
-        <div>
-          <img src="logo_u.png" alt="">
-        </div>
-    </div>
-
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  </body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<?php
-        
-    }
-
-?>

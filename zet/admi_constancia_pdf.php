@@ -27,7 +27,7 @@
 	$mpdf = new \Mpdf\Mpdf();
 	#####################################
 	require('admi_solicitud_pdf.php');	// FICHA DE INSCRIPCION
-	require('admi_declaracion06_pdf.php'); // CONSTANCIA DE INSCRIPCION
+	require('admi_declaracion06_pdf.php'); // CONSTANCIA DE INGRESO
 	
 	#exit;
 

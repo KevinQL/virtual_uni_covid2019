@@ -6,7 +6,7 @@
 
     $obj = new ExamenVirtual();
     
-    $res = $obj->traer_estudiantes($dni_supervisor, '0019');
+    $res = $obj->traer_estudiantes($dni_supervisor, '0020');
 
     //var_dump($res['data']);
     //var_dump($obj->Devuelve_procesoActual());
@@ -34,8 +34,8 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
         <!-- <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@500&display=swap" rel="stylesheet">
 
     <title>SUPERVISIÓN - UNAJMA</title>
 
@@ -66,7 +66,7 @@
             <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">CONTROL PROGRAMAS</a>
         </li>
         <li class="nav-item" role="presentation">
-            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">CONTROL EXAMEN</a>
+            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false" onclick="Obtener_postulantes_reg1();">CONTROL EXAMEN</a>
         </li>
         <li class="nav-item" role="presentation">
             <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">APOYO</a>
@@ -115,15 +115,16 @@
 
         <div class="col-md-5">
             <div class="text-right">
+                REVIZAR: <small id="verPostulante" class="badge badge-danger">...</small>
                 <small class="badge badge-light"> PROGRAMAS INSTALADOS</small> 
             </div>
             <div class="row">
-                <div class="col-4">
+                <div class="col-4 text-sm">
                     <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                    <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">PROGRAMAS ABIERTOS EN LA PC</a>
-                    <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">PROGRAMAS INADECUADOS ABIERTOS</a>
-                    <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">PROCESOS INADECUADOS EN SEGUNDO PLANO</a>
-                    <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">TODOS LOS PROCESOS</a>
+                    <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true"><small><span class="badge badge-pill badge-warning font-weight-bold">1.</span> PROG. ABIERTOS EN LA PC</small></a>
+                    <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false"><small><span class="badge badge-pill badge-warning font-weight-bold">2.</span> PROG. INADECUADOS ABIERTOS</small></a>
+                    <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false"><small><span class="badge badge-pill badge-warning font-weight-bold">3.</span> PROCES. INADECUADOS EN SEGUNDO PLANO</small></a>
+                    <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false"><small><span class="badge badge-pill badge-warning font-weight-bold">4.</span> DISPOSITIVOS</small></a>
                     </div>
                 </div>
                 <div class="col-8">
@@ -296,7 +297,7 @@
                 let txt_nomPost = document.querySelector("#nombre_post2");
                 let dnix = `${dni_pd}-K`;
                 txt_nomPost.innerHTML = data_postulante[dnix].nombrecompleto;
-                sweetModalMin("Cargando . . .",'center',1200,'question');
+                sweetModalMin("Cargando . . .",'top',1200,'question');
 
                 // console.log(dni_pd);
                 let peticion = 'LPD';
@@ -357,10 +358,10 @@
                         
                     });
                     if(num_es != 0){
-                        sweetModalMin("Postulantes cargados!",'center',2000,'success');
+                        sweetModalMin("Postulantes cargados!",'top',2000,'success');
                         reg1_html.innerHTML = pl_html;
                     }else{
-                        sweetModalMin("Ningun postulante salió del examen",'center',2000,'info');
+                        sweetModalMin("Ningun postulante salió del examen",'top',2000,'info');
                     }
 
                 }, URL_AJAX)
@@ -390,37 +391,73 @@
                 let btn2 = document.querySelector("#programas_btn2");
                 let btn3 = document.querySelector("#programas_btn3");
                 let btn4 = document.querySelector("#programas_btn4");
+                let verPostulante = document.querySelector("#verPostulante");
                 let txt_nomPost = document.querySelector("#nombre_post1");
                 let msj_sweet = "";
                 let peticion = 'CP';
 
                 let dnix = `${dni}-K`;
                 txt_nomPost.innerHTML = data_postulante[dnix].nombrecompleto;
-                sweetModalMin("Cargando . . .",'center',800,'question');
+                sweetModalMin("Cargando . . .",'top',800,'question');
 
                 fetchKev('POST',{peticion, dni}, function(rs){
                     let x = rs[0];
                     //console.log(x);
                     //console.log(x.length);
                     //console.log(listProgramToArray(x.v_abiertas))
-
+                    let numOBS = "..."; 
+                    let prog_i_aviertos = ["RECORTES", "FACEBOOK", "WHATSAPP", "PÁGINAS MÁS", "CALCULATOR", "WINWORD", "SUPERVISIONUNAJMA4", "BLOC DE NOTAS", "PDF", "ANYDESK", "TEAMVIEWER"];
+                    let listaVentanas = "";
                     if(rs.length != 0){
                         setTimeout(() => {
                             msj_sweet = "Listo " + dni;
-                            sweetModalMin(msj_sweet,'center',1500,'success')
+                            sweetModalMin(msj_sweet,'top',1500,'success')
                             btn1.innerHTML = x.tp_enproceso; // Todas las ventanas abiertas
                             btn2.innerHTML = x.v_abiertas; // ventanas de programas remotos invalidas abiertas
                             btn3.innerHTML = x.pin_enproceso; // procesos ejecutandose en segundo plano de Programas invalidos
-                            btn4.innerHTML = x.tp_instalados; // Lista Todos los procesos 
+                            btn4.innerHTML = x.tp_instalados; // Lista Todos los Dsipositivos.
+
+                            //FUNCIONES DE APOYO.
+                            numOBS= "..."; //Reiniciando contador apoyo cada vez que se selecciona un postuilante.
+                            listaVentanas = "";
+                            prog_i_aviertos.forEach(elem => {
+                                if(x.tp_enproceso.toUpperCase().indexOf(elem) >= 0){
+                                    numOBS = "... 1";
+                                    listaVentanas += elem +"<br>";
+                                }
+                            })
+                            if(x.v_abiertas.length >= 7){
+                                numOBS += " 2";
+                            }
+                            if(x.pin_enproceso.length >= 7){
+                                numOBS += " 3";
+                            }
+                            if(x.tp_instalados.indexOf("VERIFICAR") >= 0){
+                                numOBS += " 4";
+                            }
+                            verPostulante.innerHTML = numOBS;
+
+                            //En el caso de que no detecte ventanas sospechas, se imprime mensaje por defecto.
+                            if(listaVentanas.length == 0){
+                                listaVentanas = "No encontré ventanas sospechosas!";
+                            }
+                            //ventanas sospechasas, mensaje modal
+                            Swal.fire({
+                                icon: 'info',
+                                title: 'REVISANDO EN (1)',
+                                html: 'POSTULANTE: '+  data_postulante[dnix].nombrecompleto + '<br><br>' + listaVentanas
+                            })
+
                         }, 700);
                     }else{
                         setTimeout(() => {
                             msj_sweet = "Sin registros " + dni;
-                            sweetModalMin(msj_sweet,'center',1500,'info')
+                            sweetModalMin(msj_sweet,'top',1500,'info')
                             btn1.innerHTML = "...";
                             btn2.innerHTML = "...";
                             btn3.innerHTML = "...";
                             btn4.innerHTML = "...";
+                            verPostulante.innerHTML = "...";
                         }, 700);
                     }
                 }, URL_AJAX);

@@ -376,7 +376,7 @@ function handleVisibilityChange() {
 			nombre = document.querySelector(".nombre_unajma").innerHTML.trim();
 			//nombre = document.querySelector(".nombre_unajma").innerHTML.trim();
 			tipo=1;
-			fetchKev('post',{proceso:'0017',dni,nombre,tipo},function(x){
+			fetchKev('post',{proceso:'0020',dni,nombre,tipo},function(x){
 				console.log(x)
 
 				msj_plagio.innerHTML = "NO SALGA DE SU EXAMEN!! TP1";
@@ -390,22 +390,28 @@ function handleVisibilityChange() {
 	contador_p++;
 
 }
-document.addEventListener("visibilitychange", handleVisibilityChange, false);
 
 
+setTimeout(() => {
+	console.log("Iniciando control 1 de 100");
+	//EJECUNTANDO EL VISIBILITY	
+	document.addEventListener("visibilitychange", handleVisibilityChange, false);
 
-//SI MINIMIZA O CAMBIA EL NAVEGADOR -----------------------------------------------------------------------------------
-setInterval( checkPostulanteNav, 1000);
+	//SI MINIMIZA O CAMBIA EL NAVEGADOR -----------------------------------------------------------------------------------
+	setInterval( checkPostulanteNav, 1000);	
+}, 6000);
+
+
 function checkPostulanteNav() {
 	if ( document.hasFocus() ) {
 		// 3 SEGUNDOS FUERA DEL EXAMEN
-		if(contador>=2){
+		if(contador>=4){
 			msj_plagio = document.querySelector(".msj-plagio");
 			dni = document.querySelector(".dni_unajma_n2").innerHTML.trim();
 			nombre = document.querySelector(".nombre_unajma").innerHTML.trim();
 			//nombre = document.querySelector(".nombre_unajma").innerHTML.trim();
 			tipo = 2;
-			fetchKev('post',{proceso:'0017',dni,nombre,tipo},function(x){
+			fetchKev('post',{proceso:'0020',dni,nombre,tipo},function(x){
 				console.log(x)
 
 				msj_plagio.innerHTML = "NO SALGA DE SU EXAMEN!! TP2";

@@ -59,6 +59,7 @@
                     tipo=1;
                     fetchKev('post',{proceso:'0015',dni,nombre,tipo},function(x){
                         console.log(x)
+                        console.log("enviado tipo 1");
 
                         msj_plagio.innerHTML = "NO SALGA DE SU EXAMEN!! TP1";
                         mensaje_al_postulante();
@@ -71,16 +72,19 @@
             contador_p++;
 
         }
-        document.addEventListener("visibilitychange", handleVisibilityChange, false);
 
+        setTimeout(() => {
+            console.log("iniciando...");
+            //parte arriba 
+            document.addEventListener("visibilitychange", handleVisibilityChange, false);
+            //SI MINIMIZA O CAMBIA EL NAVEGADOR -----------------------------------------------------------------------------------
+            setInterval( checkPostulanteNav, 1000);
+        }, 5000);
 
-
-        //SI MINIMIZA O CAMBIA EL NAVEGADOR -----------------------------------------------------------------------------------
-        setInterval( checkPostulanteNav, 1000);
         function checkPostulanteNav() {
             if ( document.hasFocus() ) {
                 // 3 SEGUNDOS FUERA DEL EXAMEN
-                if(contador>=2){
+                if(contador>=4){
                     msj_plagio = document.querySelector(".msj-plagio");
                     dni = document.querySelector(".dni_unajma").value;
                     nombre = document.querySelector(".nombre_unajma").value;
@@ -88,6 +92,7 @@
                     tipo = 2;
                     fetchKev('post',{proceso:'0015',dni,nombre,tipo},function(x){
                         console.log(x)
+                        console.log("Enviado tipo 2 ", contador)
 
                         msj_plagio.innerHTML = "NO SALGA DE SU EXAMEN!! TP2";
                         mensaje_al_postulante();

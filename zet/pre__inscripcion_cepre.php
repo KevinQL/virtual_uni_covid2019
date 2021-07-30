@@ -46,6 +46,10 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <!-- font awesome -->
     <script src="https://kit.fontawesome.com/1c90e8b317.js" crossorigin="anonymous"></script>
+
+    <!-- hcatpcha API -->
+    <script src="https://hcaptcha.com/1/api.js" async defer></script>
+
 </head>
 
 <body background="../images/fondo.jpg">
@@ -357,6 +361,18 @@
 ">
 			<img id="blah2" src="https://i.ibb.co/ZKVB8xZ/image.png" alt="Tu imagen" width="150px" height="150px" style=""/>
         </td>    
+    </tr>
+
+    <tr>
+        <br>
+        <td align="center" colspan="2">
+            <!-- Elemento hCaptcha -->
+            <div class="pt-2 text-center">
+                <div class="h-captcha" data-sitekey="90541f3b-4b55-40ad-a480-1e07bf94bfdb">
+                </div>
+            </div>
+            <!--  -->
+        </td>
     </tr>
 
     <tr>

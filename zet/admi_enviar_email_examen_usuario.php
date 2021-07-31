@@ -185,10 +185,10 @@
 							<strong>2).</strong> Asegurese de contar con su <strong>Certificado de estudios o ficha de logros de aprendizaje</strong> Así mismo sus documentos solicitados según su modalidad de postulación.
 							</li>
 							<li>
-							<strong>3).</strong> Antes de proceder con esta indicación, debe tener impreso y llenado los documentos solicitados ( Declaración Jurada COVID y otros si existieran).<br>
-							<strong>Escanee</strong> los documentos como un solo <strong>archivo en formato PDF</strong>.
+							<strong>3).</strong> Antes de proceder con esta indicación, debe tener impreso y llenado los documentos solicitados (*Declaración Jurada COVID).<br>
+							<strong>Escanee</strong> los documentos como UN SOLO <strong>archivo en formato PDF (*Su declaración jurada COVID, y su certificado de estudios)</strong>.
 							<br>
-							Debe obtener <strong>un solo</strong> archivo PDF(*el documento pdf*).
+							Debe obtener <strong>UN SOLO</strong> archivo PDF(documento en formato pdf).
 							<br>
 							<a href="https://www.youtube.com/watch?v=myzSi6vEHr0&ab_channel=TooSmart">Click Aquí video para escanear con el CELULAR</a> 
 							<br>
@@ -210,6 +210,7 @@
 							<br>
 							INGRESE AL <strong>SISTEMA VIRTUAL DE ADMISIÓN</strong> PARA TERMINAR SU INSCRIPCIÓN, Y ASÍ PODER SUBIR LAS FIRMAS (POSTULANTE Y APODERADO EN CASO SEA MENOR DE EDAD),Y SU DOCUMENTO PDF (declaración jurada COVID y certificado de estudios o constancia de logro de aprendizaje).
 							<br>
+							<strong>Utilice estos credenciales para ingresar al sistema y COMPLETAR su inscripción.</strong> <br>
 							USUARIO:<strong>'.$numerodocumento.'</strong><br>
 							CONTRASEÑA:<strong>'.$clave.'</strong>
 							<br> --> <a href="https://examen.admisionunajma.pe/zetadmision/zet/index.php">
@@ -220,11 +221,11 @@
 							</li>
 							
 							<li>							
-							<strong>7).</strong> Después de culminar todas las indicaciones hasta terminar de realizar su inscripción, debe contar a la mano con su <strong>CONSTANCIA DE INSCRIPCIÓN</strong> impreso a colores. Está constancia de inscripción es prueba de que usted terminó de realizar su inscripción satisfactoriamente. Por lo que deberá esperar pendiente a su correo electrónico, las indicaciones para el día del examen de la UNIVERSIDAD NACIONAL JOSÉ MARÍA ARGUEDAS. <br>
-							Así mismo, también puede unirse al grupo de Whatsapp para conocer a sus futuros compañeros, resolver dudas, o para estar al tanto de las indicaciones que la oficina de admisión de la universidad puede estar ofreciendoles. <br>
-							<a href="https://chat.whatsapp.com/DS6oL399iXV3hkh9PkfX9I">CLICK AQUÍ Grupo 1 Whatsapp Examen unjam - admision</a> 
+							<strong>7).</strong> Después de cumplir todas las indicaciones hasta completar su inscripción, debe contar a la mano con su <strong>CONSTANCIA DE INSCRIPCIÓN</strong> impreso a colores. Está constancia de inscripción es prueba de una inscripción satisfactoria. Por lo que después deberá esperar pendiente a su correo electrónico las indicaciones para el día del examen. <br>
+							Puede unirse a los grupos de Whatsapp para conocer a sus futuros compañeros, resolver dudas, o para estar al tanto de las indicaciones de la oficina de admisión. <br>
+							<a href="https://chat.whatsapp.com/CUxw4ydJLMp2NGHVcpkN5E">GRUPO ADMISIÓN CEPRE 20212</a> 
 							<br> 
-							<a href="https://chat.whatsapp.com/KaIeRaO1Dxi3FJHoiwcqYS">CLICK AQUÍ Grupo 2 Whatsapp Examen unjam - admision</a>
+							<a href="https://chat.whatsapp.com/JfG5pxaMP3j2GSmKR2UIWN">GRUPO ADMISIÓN CEPRE 20212</a>
 							<br>
 							
 							</li>

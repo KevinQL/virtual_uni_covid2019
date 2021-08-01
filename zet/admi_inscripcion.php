@@ -105,7 +105,7 @@
 								echo '</strong>';        
 							echo '</td>';
 							echo '<td>';     
-									echo '<input type="file" id="imgInp" name="imgInp" class="form-control validar" autocomplete="off" autocapitalize="words"  value=""  placeholder="Seleccione foto voucher" aria-describedby="imgInp-message" style=" border-radius: 0;
+									echo '<input type="file" id="imgInp" name="imgInp" accept="image/*" class="form-control validar" autocomplete="off" autocapitalize="words"  value=""  placeholder="Seleccione foto voucher" aria-describedby="imgInp-message" style=" border-radius: 0;
 				-webkit-box-shadow: none!important;
 				box-shadow: none!important;
 				color: #ffffff;
@@ -129,7 +129,7 @@
 								echo '</strong>';        
 							echo '</td>';
 							echo '<td>';     
-									echo '<input type="file" id="imgEst" name="imgEst" class="form-control validar" autocomplete="off" autocapitalize="words"  value=""  placeholder="Seleccione foto voucher" aria-describedby="imgInp-message" style=" border-radius: 0;
+									echo '<input type="file" id="imgEst" name="imgEst" accept="image/*" class="form-control validar" autocomplete="off" autocapitalize="words"  value=""  placeholder="Seleccione foto voucher" aria-describedby="imgInp-message" style=" border-radius: 0;
 				-webkit-box-shadow: none!important;
 				box-shadow: none!important;
 				color: #ffffff;

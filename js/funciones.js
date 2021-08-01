@@ -49,8 +49,8 @@ function dataselectjason(id,param) {
 
 function grabar(id,obligatorio=[]){
     $("#dvmensaje").html('<i class="fa animated fa-spinner faa-spin"></i><h3>Cargando<span id="pt">0%</span></h3>');
-   // $('#divCapaWindow').show("fast");
-	$('input[type=submit]').hide()//attr('disabled',true)
+    // $('#divCapaWindow').show("fast");
+    $('input[type=submit]').hide()//attr('disabled',true)
     $('.progress').show("slow");
     var error=0;
 

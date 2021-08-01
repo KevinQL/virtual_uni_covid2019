@@ -1,3 +1,48 @@
+    <!-- hcatpcha API -->
+    <script src="https://hcaptcha.com/1/api.js" async defer></script>
+
+    <script>
+        /**
+         * Function for show the bottom of aceptar declarations
+         */
+        function mostrarBoton(element){
+            setTimeout(() => {
+                element.style.display = "block";
+            }, 2000);
+        }
+
+        /**
+         * ANIMACIÓN PARA CARGA DE PÁGINA ITEC
+         */
+        window.addEventListener("load", function(){
+            console.log("listoo!!")
+            
+            setTimeout(() => {
+                
+                function watching(){
+                    console.log("entro!")
+                    let valor = document.querySelector("textarea[name=h-captcha-response]").value;
+                    if(valor.length == 0){
+                        setTimeout(() => {
+                            watching();
+                        }, 1000);
+                    }else{
+                        document.querySelector(".hcaptcha").value = valor;
+                        console.log("fin")
+                        return null;
+                    }
+                }
+                /**
+                * Starting function for watch the captcha
+                */
+                watching();
+    
+            }, 3000);
+        })
+
+
+    </script>
+
 <?php 
 	require_once("zet_seg.php");
 	include_once(GL_DIR_FS_APP.'funciones/admi_fun_admision.php');
@@ -88,10 +133,28 @@
 									echo '<br>';
 								echo '</td>';							
 							echo '</tr>';
+							?>
+                                <tr>
+                                    <br>
+                                    <td align="center" colspan="2">
+                                        <!-- Elemento hCaptcha -->
+                                        <div class="pt-2 text-center">
+                                            <div class="h-captcha" data-sitekey="90541f3b-4b55-40ad-a480-1e07bf94bfdb">
+                                            </div>
+                                        </div>
+                                        <!--  -->
+                                    </td>
+                                </tr>
+                            <?php
 							echo '<tr>';
 								echo '<td colspan="2" align="center">';
 									echo '<input name="codigo" type="hidden" value="'.$codigozet.'">';
-									echo '<input name="cmdGrabar" type="submit" value="Aceptar" class="btn btn-primary">';
+									echo '<input name="hcaptcha" type="hidden" class="hcaptcha" value=""/>';
+									echo '<input name="cmdGrabar" 
+                                            type="submit" 
+                                            value="Aceptar" 
+                                            class="btn btn-primary"
+                                            onclick="mostrarBoton(this)">';
 								echo '</td>';							
 							echo '</tr>';
 						}
@@ -105,6 +168,9 @@
 		}
 	else
 		{
+            
+
+
 			echo '<div class="alert alert-danger">';
 			echo '<span class="semi-bold" style="font-size:16px;">Usted acept&oacute; las declaraciones juradas y la ficha de inscripci&oacute;n.</span>';
 			echo '</div>';
@@ -115,7 +181,7 @@
             echo '<br>';	
             echo '<a href="javascript:ventanaSecundaria(\''.GL_DIR_WS_HTTP_APP.'zet/admi_constancia_pdf.php?codigo='.$codigozet.'\')">';
             echo '<i class="fa fa-print"> Descargar Constancia de Inscripcion PDF </i>';
-			echo '</a>';			
+			echo '</a>';	
 			
 		}
 	?>

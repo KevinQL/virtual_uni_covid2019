@@ -42,21 +42,32 @@
                 <header class="dark col-lg-12 fa-hover">
                     <div class="panel-heading">
                         <h3 class="panel-title"> <i class="fa fa-leaf"></i>
-                            Subir PDF
+                            Recomendación:
                         </h3>
-
                         <b>
-                            <a href="https://www.ilovepdf.com/es/comprimir_pdf" target="_blank" class="text-warning stretched-link" style="color:#fb8500; font-size: 16px;">Comprima su documento PDF aquí, en el caso de que sea necesario (CLICK AQUÍ)</a>
+                            SI TU DOCUMENTO PDF NO SE SUBE CORRECTAMENTE. 
+                            <a href="https://www.ilovepdf.com/es/comprimir_pdf" target="_blank" class="text-danger small" style="color:#e74c3c; font-size: 16px;text-decoration: underline;">
+                            > Comprima su documento PDF aquí (CLICK AQUÍ) < </a>
                         </b>
-
+                        <br>
+                        <br>
+                        <h3 class="panel-title"> <i class="fa fa-leaf"></i>
+                            Subir PDF:
+                        </h3>
                     </div>
                 </header>
                 <div class="form-group col-lg-12"></div>
                 <!--<div class="row-fluid col-lg-12" style="background:none">-->
                     <div class="form-group col-lg-12">                        
-                        <br>
+                        <!-- <br> -->
                         <input type="hidden" name="codigo" value="<?php echo $codigo?>" />
-                        <input type="file" name="archivo" id="archivo">
+                        <input type="file" 
+                            name="archivo" id="archivo"
+                            class="form-control" 
+                            accept=".pdf"
+                            
+                        >
+                        <br>
                         <button type="submit" class="btn btn-success"><i class="icon-white icon-upload"></i>Subir Archivo</button>
                     </div>
                 <br>

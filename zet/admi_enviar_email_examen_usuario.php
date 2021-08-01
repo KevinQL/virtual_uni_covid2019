@@ -148,6 +148,7 @@
 	// CASO CONTRARIO. EN EL CASO DE QUE EL PROCESO NO SEA TRASLADOS
 	}else {
 
+		$asunto = "ADMISIÓN UNAJMA - EXAMEN CEPRE 2021-#";	
 		$cuerpo = '
 		<html>
 		<head>

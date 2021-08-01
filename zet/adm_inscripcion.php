@@ -195,7 +195,7 @@
                 echo '</td>';
 
 				echo '<td align="left">';
-                    echo "<a href='#' onclick=\"verTelefono('{$rsjk[5]}', '{$rsjk[9]}');\">ver</a>";
+                    echo "<a href='#' onclick=\"verTelefono('{$rsjk[5]}', '{$rsjk[9]}', '{$rsjk[3]}');\">ver</a>";
                 echo '</td>';
 
 				echo '<td align="left">';
@@ -210,7 +210,7 @@
                     echo $rsjk[10];
                 echo '</td>';
 				echo '<td align="left" style="font-size:11px;">';
-                    echo $rsjk[3];
+                    echo $rsjk[3]; //esto es la escuela profesional 
                 echo '</td>';
 				#echo '<td align="center" style="font-size:11px;">';
    					#echo '<a href="javascript:ventanaSecundaria(\''.GL_DIR_WS_HTTP_APP.'zet/adm_post_total.php?codigo='.$rsjk[0].$rsjk[1].'\')">';
@@ -252,7 +252,13 @@
 
 	const URL_AJAX = "../ajax_tel.php"
 
-	function verTelefono(user, clave){
+	function reload_location(){
+		setTimeout(() => {
+			location.reload()
+		}, 1500);
+	}
+
+	function verTelefono(user, clave, escuela){
 		event.preventDefault();
 		console.log("user: ",user, ". Clavel: ", clave);
 		// alert($id)
@@ -263,11 +269,25 @@
 				function(x){
 					console.log(x)
 					postulante = x.data
-					
+
+					const val = postulante.validado==0?1:0;
+					const bg_btn = postulante.validado==0?'btn-danger': 'btn-primary';
+					const msj_btn = postulante.validado==0?'FALTA VALIDAR :(': 'YA ESTÁ VALIDADO :D';
+
 					msj_texto = `
+						<a class="btn btn-default ${bg_btn}" data-eliminar="NO" rel="nolink" href="javascript:ventanaSecundaria('<?=GL_DIR_WS_HTTP_APP?>zet/adm_inscripcion_validar.php?d=<?=$_REQUEST['d']?>&nav=<?=$_REQUEST['nav']?>&codigo=${postulante.proceso}${postulante.postulante}&val=${val}')" data-mensaje="Esta seguro de validar el usuario?" onclick="reload_location();"> 
+							${msj_btn}
+						</a>
+						<br>
+						... <br>
 						celular: <strong>${postulante.celular} </strong> <br>
 						... <br>
 						Nombre: <strong>${postulante.nombrecompleto} </strong> <br>
+						... <br>
+						dni: <strong>${postulante.numerodocumento} </strong> <br>
+						password: <strong>${postulante.clavel} </strong> <br>
+						correo: <strong>${postulante.email} </strong> <br>
+						carrera: <strong>${escuela} </strong> <br>
 						... <br>
 						Documentos:	${x.pdf} <br>
 						... <br>

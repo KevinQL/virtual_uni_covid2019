@@ -58,10 +58,10 @@
 			<td width='3%'>
 			</td>
 			<td align='justify'>
-				Yo, <strong>$nombrealumno</strong>, identificado con documento de identidad Nro <strong>$dni</strong> con domicilio en $domicilio del distrito $nombredistrito, provincia $nombreprovincia de la regi&oacute;n $nombredepartamento; postulante por la modalidad <strong>$nombremodalidad</strong> a la Escuela Profesional de <strong>$nombreescuela</strong> –  Proceso de Admisión 2021-1.
+				Yo, <strong>$nombrealumno</strong>, identificado con documento de identidad Nro <strong>$dni</strong> con domicilio en $domicilio del distrito $nombredistrito, provincia $nombreprovincia de la regi&oacute;n $nombredepartamento; postulante por la modalidad <strong>$nombremodalidad</strong> a la Escuela Profesional de <strong>$nombreescuela</strong> –  Proceso de Admisión {$DJproceso}.
                 <br>
                 <br>
-                Declaro bajo juramento , que conozco y acepto el contenido del Reglamento del Proceso de Admisión 2021 – 1, Prospecto de Admisión y los lineamientos para el desarrollo del proceso de admisión, en el marco de emergencia sanitaria y medidas de prevención de contagio y propagación del COVID-19; así como las faltas, sanciones, riesgos y requisitos mínimos para participar en el examen virtual. Así mismo, durante el desarrollo del Examen de Admisión Virtual, me comprometo a cumplir con las instrucciones del supervisor o fiscalizador de la sesión virtual.
+                Declaro bajo juramento , que conozco y acepto el contenido del Reglamento del Proceso de Admisión {$DJreglamento}, Prospecto de Admisión y los lineamientos para el desarrollo del proceso de admisión, en el marco de emergencia sanitaria y medidas de prevención de contagio y propagación del COVID-19; así como las faltas, sanciones, riesgos y requisitos mínimos para participar en el examen virtual. Así mismo, durante el desarrollo del Examen de Admisión Virtual, me comprometo a cumplir con las instrucciones del supervisor o fiscalizador de la sesión virtual.
 			</td>
 		</tr>
 	</table>

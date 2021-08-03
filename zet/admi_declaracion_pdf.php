@@ -27,6 +27,18 @@
 	$mpdf = new \Mpdf\Mpdf();
 	#####################################
 
+	/**
+     * Number of the proccess current. ejem 2020-2
+     */ 
+    $DJproceso = "2021-2";
+    $DJresolucion = "N° 182-2020-CO-UNAJMA";
+    $DJreglamento = "2021-II";
+    $DJresolucion_remoto = "N° 182-2020-CO-UNAJMA";
+    $DJreglamento_remoto = "2020-II";
+	/**
+	 * FIN-----
+	 */
+
 	// FICHA DE INSCRIPCION Y TAMBIEN TIENE LA ESTRUCTURA PARA LAS DJ DE LA PRIMERA HOJA
 	require('admi_solicitud_pdf.php');
 

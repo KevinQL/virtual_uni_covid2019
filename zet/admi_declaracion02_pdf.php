@@ -58,10 +58,10 @@
 			<td width='3%'>
 			</td>
 			<td align='justify'>
-				Yo, <strong>$nombrealumno</strong>, identificado con documento de identidad Nro <strong>$dni</strong> con domicilio en $domicilio del distrito $nombredistrito, provincia $nombreprovincia de la regi&oacute;n $nombredepartamento; postulante por la modalidad <strong>$nombremodalidad</strong> a la Escuela Profesional de <strong>$nombreescuela</strong> –  Proceso de Admisión 2021-1.
+				Yo, <strong>$nombrealumno</strong>, identificado con documento de identidad Nro <strong>$dni</strong> con domicilio en $domicilio del distrito $nombredistrito, provincia $nombreprovincia de la regi&oacute;n $nombredepartamento; postulante por la modalidad <strong>$nombremodalidad</strong> a la Escuela Profesional de <strong>$nombreescuela</strong> –  Proceso de Admisión {$DJproceso}.
                 <br>
                 <br>
-                Declaro bajo juramento, que cumplo con los requisitos establecidos en el reglamento de admisión para el proceso remoto 2021-1, aprobado con resolucion __________, por lo que me comprometo a regularizar los documentos requeridos. 
+                Declaro bajo juramento, que cumplo con los requisitos establecidos en el reglamento de admisión para el proceso remoto {$DJreglamento}, aprobado con resolucion {$DJresolucion}, por lo que me comprometo a regularizar los documentos requeridos. 
                 <br>
                 Deseo mencionar también, que por motivo del Estado de Emergencia Nacional frente a la infección por Coronavirus (COVID-19), no fue posible obtener los documentos originales requeridos y proceder a la inscripción correcta del proceso de admisión, por la modalidad <strong>$nombremodalidad</strong>, por lo que recurro a esta declaración jurada en honor a la verdad.
                 <br>

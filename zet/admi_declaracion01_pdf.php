@@ -61,7 +61,7 @@ DE NO POSEER ANTECEDENTES PENALES POR LA COMISI&Oacute;N DE LOS DELITOS DE TERRO
 				<td width='3%'>
 				</td>
 				<td align='justify'>
-					Yo, <strong>{$nombrealumno}</strong>, de nacionalidad peruana, identificado con documento de identidad Nro <strong>$dni</strong> con domicilio en $domicilio del distrito $nombredistrito, provincia $nombreprovincia de la regi&oacute;n $nombredepartamento postulante a la carrera profesional de <strong>$nombreescuela</strong>, en la modalidad <strong>$nombremodalidad</strong> en el Proceso de admisi&oacute;n <strong>2021-1</strong> de la Universidad Nacional Jos&eacute; Mar&iacute;a Arguedas de Andahuaylas; en pleno uso de mis facultades f&iacute;sico mentales.
+					Yo, <strong>{$nombrealumno}</strong>, de nacionalidad peruana, identificado con documento de identidad Nro <strong>$dni</strong> con domicilio en $domicilio del distrito $nombredistrito, provincia $nombreprovincia de la regi&oacute;n $nombredepartamento postulante a la carrera profesional de <strong>$nombreescuela</strong>, en la modalidad <strong>$nombremodalidad</strong> en el Proceso de admisi&oacute;n <strong>{$DJproceso}</strong> de la Universidad Nacional Jos&eacute; Mar&iacute;a Arguedas de Andahuaylas; en pleno uso de mis facultades f&iacute;sico mentales.
 					<br>
 					<br>                
 					DECLARO BAJO JURAMENTO, no haber sido condenado por el delito de terrorismo o apolog&iacute;a al terrorismo en cualquiera de sus modalidades, que impida mi postulaci&oacute;n a la Universidad Nacional Jos&eacute; Mar&iacute;a Arguedas, seg&uacute;n el Art. 98° de la Ley Universitaria N° 30220, ni tampoco por los delitos de violaci&oacute;n a la libertad sexual o de tr&aacute;fico il&iacute;cito de drogas, seg&uacute;n Ley N° 29988.

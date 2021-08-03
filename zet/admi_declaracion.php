@@ -50,6 +50,17 @@
 	$cn_zoz = conectar();
 	#echo $persona;
 	#echo $usuario;
+    /**
+     * Number of the proccess current. ejem 2020-2
+     */ 
+    $DJproceso = "2021-2";
+    $DJresolucion = "N° 182-2020-CO-UNAJMA";
+    $DJreglamento = "2021-II";
+    $DJresolucion_remoto = "N° 182-2020-CO-UNAJMA";
+    $DJreglamento_remoto = "2020-II";
+	/**
+	 * FIN-----
+	 */
 	
     $vsql = "call zyz_CAMantenedorPostulante ('". $proceso . "', '". $persona . "','','','','','','1900-01-01','','','','','',0,0,'','','','','','','',0,0,0,0,0,'00','00','00','','',0,0,'','1','2','3','4','5','6','7','L')";
 
@@ -667,7 +678,7 @@ DE NO POSEER ANTECEDENTES PENALES POR LA COMISI&Oacute;N DE LOS DELITOS DE TERRO
     <tr>
     	<td style="font-size:14px;">
         <br>
-                Yo, <strong><?php echo $nombrecompleto; ?></strong>, de nacionalidad peruana, identificado con documento de identidad Nro <strong><?php echo $dni;?></strong> con domicilio en <?php echo $domicilio;?> del distrito <?php echo $nombredistrito;?>, provincia <?php echo $nombreprovincia;?> de la regi&oacute;n <?php echo $nombredepartamento?>; postulante a la carrera profesional de <strong><?php echo $nombreescuela; ?></strong>, en la modalidad <strong><?php echo $nombremodalidad?></strong> en el Proceso de admisi&oacute;n <strong>2021-1</strong> de la Universidad Nacional Jos&eacute; Mar&iacute;a Arguedas de Andahuaylas; en pleno uso de mis facultades f&iacute;sico mentales.
+                Yo, <strong><?php echo $nombrecompleto; ?></strong>, de nacionalidad peruana, identificado con documento de identidad Nro <strong><?php echo $dni;?></strong> con domicilio en <?php echo $domicilio;?> del distrito <?php echo $nombredistrito;?>, provincia <?php echo $nombreprovincia;?> de la regi&oacute;n <?php echo $nombredepartamento?>; postulante a la carrera profesional de <strong><?php echo $nombreescuela; ?></strong>, en la modalidad <strong><?php echo $nombremodalidad?></strong> en el Proceso de admisi&oacute;n <strong><?=$DJproceso?></strong> de la Universidad Nacional Jos&eacute; Mar&iacute;a Arguedas de Andahuaylas; en pleno uso de mis facultades f&iacute;sico mentales.
                 <br>
                 <br>                
                 DECLARO BAJO JURAMENTO, no haber sido condenado por el delito de terrorismo o apolog&iacute;a al terrorismo en cualquiera de sus modalidades, que impida mi postulaci&oacute;n a la Universidad Nacional Jos&eacute; Mar&iacute;a Arguedas, seg&uacute;n el Art. 98° de la Ley Universitaria N° 30220, ni tampoco por los delitos de violaci&oacute;n a la libertad sexual o de tr&aacute;fico il&iacute;cito de drogas, seg&uacute;n Ley N° 29988.
@@ -754,11 +765,11 @@ if($proceso == '0016' || $proceso != ""){
     <tr>
     	<td style="font-size:14px;">
         <br>
-                Yo, <strong><?php echo $nombrecompleto; ?></strong>, identificado con DNI Nro <strong><?php echo $dni;?></strong> con domicilio en <?php echo $domicilio;?> distrito <?php echo $nombredistrito;?> y provincia <?php echo $nombreprovincia;?> de la regi&oacute;n <?php echo $nombredepartamento?>; postulante por la modalidad <strong><?php echo $nombremodalidad?></strong> a la Escuela Profesional de <strong><?php echo $nombreescuela; ?></strong> –  Proceso de Admisión 2021-1.
+                Yo, <strong><?php echo $nombrecompleto; ?></strong>, identificado con DNI Nro <strong><?php echo $dni;?></strong> con domicilio en <?php echo $domicilio;?> distrito <?php echo $nombredistrito;?> y provincia <?php echo $nombreprovincia;?> de la regi&oacute;n <?php echo $nombredepartamento?>; postulante por la modalidad <strong><?php echo $nombremodalidad?></strong> a la Escuela Profesional de <strong><?php echo $nombreescuela; ?></strong> –  Proceso de Admisión <?=$DJproceso?>.
 
                 <br>
                 <br>
-                Declaro bajo juramento, que cumplo con los requisitos establecidos en el reglamento de admisión para el proceso remoto 2021-1, aprobado con resolucion __________, por lo que me comprometo a regularizar los documentos requeridos. 
+                Declaro bajo juramento, que cumplo con los requisitos establecidos en el reglamento de admisión para el proceso remoto <?=$DJreglamento_remoto?>, aprobado con resolucion <?=$DJresolucion_remoto?>, por lo que me comprometo a regularizar los documentos requeridos. 
                 <br>
                 Deseo mencionar también, que por motivo del Estado de Emergencia Nacional frente a la infección por Coronavirus (COVID-19), no fue posible obtener los documentos originales requeridos y proceder a la inscripción correcta del proceso de admisión, por la modalidad <strong><?php echo $nombremodalidad?></strong>, por lo que recurro a esta declaración jurada en honor a la verdad.
                 <br>
@@ -834,7 +845,7 @@ if($proceso == '0016' || $proceso != ""){
     <tr>
     	<td style="font-size:14px;">
         <br>
-                Yo, <strong><?php echo $nombrecompleto; ?></strong>, identificado con DNI Nro <strong><?php echo $dni;?></strong> con domicilio en <?php echo $domicilio;?> distrito <?php echo $nombredistrito;?> y provincia <?php echo $nombreprovincia;?> de la regi&oacute;n <?php echo $nombredepartamento?>; postulante por la modalidad <strong><?php echo $nombremodalidad?></strong> a la Escuela Profesional de <strong><?php echo $nombreescuela; ?></strong> –  Proceso de Admisión 2021-1.
+                Yo, <strong><?php echo $nombrecompleto; ?></strong>, identificado con DNI Nro <strong><?php echo $dni;?></strong> con domicilio en <?php echo $domicilio;?> distrito <?php echo $nombredistrito;?> y provincia <?php echo $nombreprovincia;?> de la regi&oacute;n <?php echo $nombredepartamento?>; postulante por la modalidad <strong><?php echo $nombremodalidad?></strong> a la Escuela Profesional de <strong><?php echo $nombreescuela; ?></strong> –  Proceso de Admisión <?=$DJproceso?>.
 
                 <br>
                 <br>
@@ -922,7 +933,7 @@ if($proceso == '0016' || $proceso != ""){
     <tr>
     	<td style="font-size:14px;">
         <br>
-                Yo, <strong><?php echo $nombrecompleto; ?></strong>, identificado con DNI Nro <strong><?php echo $dni;?></strong> con domicilio en <?php echo $domicilio;?> distrito <?php echo $nombredistrito;?> y provincia <?php echo $nombreprovincia;?> de la regi&oacute;n <?php echo $nombredepartamento?>; postulante por la modalidad <strong><?php echo $nombremodalidad?></strong> a la Escuela Profesional de <strong><?php echo $nombreescuela; ?></strong> –  Proceso de Admisión 2021-1.
+                Yo, <strong><?php echo $nombrecompleto; ?></strong>, identificado con DNI Nro <strong><?php echo $dni;?></strong> con domicilio en <?php echo $domicilio;?> distrito <?php echo $nombredistrito;?> y provincia <?php echo $nombreprovincia;?> de la regi&oacute;n <?php echo $nombredepartamento?>; postulante por la modalidad <strong><?php echo $nombremodalidad?></strong> a la Escuela Profesional de <strong><?php echo $nombreescuela; ?></strong> –  Proceso de Admisión <?=$DJproceso?>.
 
                 <br>
                 <br>
@@ -1036,11 +1047,11 @@ if($proceso == '0016' || $proceso != ""){
     <tr>
     	<td style="font-size:14px;">
         <br>
-                Yo, <strong><?php echo $nombrecompleto; ?></strong>, identificado con DNI Nro <strong><?php echo $dni;?></strong> con domicilio en <?php echo $domicilio;?> distrito <?php echo $nombredistrito;?> y provincia <?php echo $nombreprovincia;?> de la regi&oacute;n <?php echo $nombredepartamento?>; postulante por la modalidad <strong><?php echo $nombremodalidad?></strong> a la Escuela Profesional de <strong><?php echo $nombreescuela; ?></strong> –  Proceso de Admisión 2021-1.
+                Yo, <strong><?php echo $nombrecompleto; ?></strong>, identificado con DNI Nro <strong><?php echo $dni;?></strong> con domicilio en <?php echo $domicilio;?> distrito <?php echo $nombredistrito;?> y provincia <?php echo $nombreprovincia;?> de la regi&oacute;n <?php echo $nombredepartamento?>; postulante por la modalidad <strong><?php echo $nombremodalidad?></strong> a la Escuela Profesional de <strong><?php echo $nombreescuela; ?></strong> –  Proceso de Admisión <?=$DJproceso?>.
 
                 <br>
                 <br>
-                Declaro bajo juramento , que conozco y acepto el contenido del Reglamento del Proceso de Admisión 2021 – 1, Prospecto de Admisión y los lineamientos para el desarrollo del proceso de admisión, en el marco de emergencia sanitaria y medidas de prevención de contagio y propagación del COVID-19; así como las faltas, sanciones, riesgos y requisitos mínimos para participar en el examen virtual. Así mismo, durante el desarrollo del Examen de Admisión Virtual, me comprometo a cumplir con las instrucciones del supervisor o fiscalizador de la sesión virtual.
+                Declaro bajo juramento , que conozco y acepto el contenido del Reglamento del Proceso de Admisión <?=$DJproceso?>, Prospecto de Admisión y los lineamientos para el desarrollo del proceso de admisión, en el marco de emergencia sanitaria y medidas de prevención de contagio y propagación del COVID-19; así como las faltas, sanciones, riesgos y requisitos mínimos para participar en el examen virtual. Así mismo, durante el desarrollo del Examen de Admisión Virtual, me comprometo a cumplir con las instrucciones del supervisor o fiscalizador de la sesión virtual.
         </td>
     </tr>
     <tr>
@@ -1121,12 +1132,12 @@ elseif ($proceso == '0015') {
     <tr>
     	<td style="font-size:14px;">
         <br>
-                Yo, <strong><?php echo $nombrecompleto; ?></strong>, identificado con DNI Nro <strong><?php echo $dni;?></strong> con domicilio en <?php echo $domicilio;?> distrito <?php echo $nombredistrito;?> y provincia <?php echo $nombreprovincia;?> de la regi&oacute;n <?php echo $nombredepartamento?>; postulante por la modalidad <strong><?php echo $nombremodalidad?></strong> a la Escuela Profesional de <strong><?php echo $nombreescuela; ?></strong> –  Proceso de Admisión 2021-1.
+                Yo, <strong><?php echo $nombrecompleto; ?></strong>, identificado con DNI Nro <strong><?php echo $dni;?></strong> con domicilio en <?php echo $domicilio;?> distrito <?php echo $nombredistrito;?> y provincia <?php echo $nombreprovincia;?> de la regi&oacute;n <?php echo $nombredepartamento?>; postulante por la modalidad <strong><?php echo $nombremodalidad?></strong> a la Escuela Profesional de <strong><?php echo $nombreescuela; ?></strong> –  Proceso de Admisión <?=$DJproceso?>.
 
                 <br>
                 <br>
                 <br>
-                Declaro bajo juramento, que cumplo con los requisitos establecidos en el reglamento de admisión para el proceso remoto 2020-II, aprobado con resolución N° 182-2020-CO-UNAJMA, por lo que me comprometo a regularizar los documentos requeridos. 
+                Declaro bajo juramento, que cumplo con los requisitos establecidos en el reglamento de admisión para el proceso remoto <?=$DJreglamento_remoto?>, aprobado con resolución <?=$DJresolucion_remoto?>, por lo que me comprometo a regularizar los documentos requeridos. 
                 <br>
                 Deseo mencionar también, que por motivo del Estado de Emergencia Nacional frente a la infección por Coronavirus (COVID-19), no fue posible obtener los documentos originales requeridos y proceder a la inscripción correcta al proceso de admisión, por la modalidad <strong>Centro Pre Universitario</strong>, por lo que recurro a esta declaración jurada en honor a la verdad.
                 <br>

@@ -72,13 +72,13 @@
 					$nombremodalidad.
 					'</strong> a la escuela Profesional de <strong>'.
 					$nombreescuela.
-					'</strong>, Proceso de admisión  <strong>
-					2021-1
-					</strong>.
+					'</strong>, Proceso de admisión  <strong>'.
+					$DJproceso
+					.'</strong>.
 					<br>
 					<br>
 					<br>
-					Declaro bajo juramento, que cumplo con los requisitos establecidos en el reglamento de admisión para el proceso remoto 2020-II, aprobado con resolución N° 182-2020-CO-UNAJMA, por lo que me comprometo a regularizar los documentos requeridos. 
+					Declaro bajo juramento, que cumplo con los requisitos establecidos en el reglamento de admisión para el proceso remoto '.$DJreglamento_remoto.', aprobado con resolución '.$DJresolucion_remoto.', por lo que me comprometo a regularizar los documentos requeridos. 
                 	<br>
 					Deseo mencionar también, que por motivo del Estado de Emergencia Nacional frente a la infección por Coronavirus (COVID-19), no fue posible obtener los documentos originales requeridos y proceder a la inscripción correcta al proceso de admisión, por la modalidad <strong>Centro Pre Universitario</strong>, por lo que recurro a esta declaración jurada en honor a la verdad.
 					<br>

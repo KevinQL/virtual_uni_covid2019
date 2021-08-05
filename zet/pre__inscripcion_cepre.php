@@ -5,7 +5,7 @@
      * then put true for all when the inscription is availabel (true:true)
      * else put true : false;
      */
-    $pase = isset($_GET['externo2021'])? true : true;
+    $pase = (isset($_GET['externo2021']) || isset($_GET['other']))? true : false;
 
     if($pase){
 ?>
@@ -749,7 +749,7 @@ function readImage (input) {
             <div class="card-body">
                 <!-- <h5 class="card-title text-danger">EN ESTOS MOMENTOS NO PODEMOS ATENDERLE</h5> -->
                 <h5 class="card-title text-danger">INSCRIPCIONES UNAJMA </br> 2021 </h5>
-                <p class="card-text">Las inscripciones para el examen de CEPRE - 2021-1 </br> <b>FINALIZARÓN</b> A LAS 12:00 PM</p>
+                <p class="card-text">Las inscripciones para el examen de CEPRE - 2021-2 </br> <b>FINALIZÓ</b> A LAS 2:00 AM</p>
                 <a href="https://examen.admisionunajma.pe/index.php" class="btn btn-warning">Ir a la página principal</a>
             </div>
         </div>

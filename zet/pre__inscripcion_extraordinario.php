@@ -1,6 +1,12 @@
 <?php
-    if(false){
+/**
+     * the code let to controller the access post-inscription for INSCRIPCION CEPRE
+     * then put true for all when the inscription is availabel (true:true)
+     * else put true : false;
+     */
+    $pase = (isset($_GET['externo20212']) || isset($_GET['other']))? true : false;
 
+    if($pase){
 ?>
 
 <?php
@@ -46,6 +52,10 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <!-- font awesome -->
     <script src="https://kit.fontawesome.com/1c90e8b317.js" crossorigin="anonymous"></script>
+
+    <!-- hcatpcha API -->
+    <script src="https://hcaptcha.com/1/api.js" async defer></script>
+
 </head>
 
 <body background="../images/fondo.jpg">
@@ -63,7 +73,7 @@
 <br>
    
 <form action="pregrabar_extraordinario.php" method="post" id="grado" name="frmFotoGrado" enctype="multipart/form-data" onsubmit="return true;" >
-   <center><h3>INSCRIPCIÓN EXAMEN <u><strong>EXTRAORDINARIO</strong></u> ADMISIÓN UNAJMA</h3><h4 style="font-size:22px;">2021 - I</h4> </center> 
+   <center><h3>INSCRIPCIÓN EXAMEN <u><strong>EXTRAORDINARIO</strong></u> ADMISIÓN UNAJMA</h3><h4 style="font-size:22px;">2021 - II</h4> </center> 
 <table width="760" border="0" align="center" cellpadding="3" cellspacing="0" class="table-borderless">
 
 	<tr>
@@ -157,7 +167,7 @@
             </strong>        
         </td>
         <td>
-        	<input type="date" name="txtFechaNacimiento" data-type="date" id="txtFechaNacimiento" class="form-control validar" autocomplete="off" autocapitalize="words"  value="" maxlength="50"  placeholder="Ingresar email" aria-describedby="txtnombre-message">
+        	<input type="date" name="txtFechaNacimiento" data-type="date" id="txtFechaNacimiento" class="form-control validar" autocomplete="off" autocapitalize="words"  value="" maxlength="50"  placeholder="Ingresar fecha nacimiento" aria-describedby="txtnombre-message">
         </td>    
     </tr>
     <tr>
@@ -167,7 +177,10 @@
             </strong>        
         </td>
         <td>
-        	<input type="text" name="txtEmail" id="txtEmail" data-type="email" class="form-control validar" autocomplete="off" autocapitalize="words"  value="" maxlength="50"  placeholder="Ingresar email" aria-describedby="txtnombre-message">
+        	<input type="email" name="txtEmail" id="txtEmail" data-type="email" 
+            class="form-control validar txtEmail" 
+            onkeyup="agregarCorreoIndicacionesFooter(this);"
+            autocomplete="off" autocapitalize="words"  value="" maxlength="50"  placeholder="Ingresar email" aria-describedby="txtnombre-message">
         </td>    
     </tr>
     <tr>
@@ -311,10 +324,15 @@
             Foto Voucher: 
             </strong>        
             <br>
-            <small>(Pago de inscripcion en el banco de la nación)</small>
+            <small>
+                (Pago de inscripcion en el banco de la nación) <br>
+                <b class="text-success">CTA: 00 182 00 9784</b>
+            </small>
         </td>
         <td>     
-        	<input type='file' id="imgInp" name="imgInp" class="form-control validar" autocomplete="off" autocapitalize="words"  value=""  placeholder="Seleccione foto voucher" aria-describedby="imgInp-message" style=" border-radius: 0;
+        	<input type='file' id="imgInp" name="imgInp" class="form-control validar" 
+            accept="image/*"
+            autocomplete="off" autocapitalize="words"  value=""  placeholder="Seleccione foto voucher" aria-describedby="imgInp-message" style=" border-radius: 0;
     -webkit-box-shadow: none!important;
     box-shadow: none!important;
     color: #ffffff;
@@ -332,7 +350,9 @@
             </strong>        
         </td>
         <td>     
-        	<input type='file' id="imgEst" name="imgEst" class="form-control validar" autocomplete="off" autocapitalize="words"  value=""  placeholder="Seleccione foto estudiante" aria-describedby="imgInp-message" style=" border-radius: 0;
+        	<input type='file' id="imgEst" name="imgEst" class="form-control validar" 
+            accept="image/*"
+            autocomplete="off" autocapitalize="words"  value=""  placeholder="Seleccione foto estudiante" aria-describedby="imgInp-message" style=" border-radius: 0;
     -webkit-box-shadow: none!important;
     box-shadow: none!important;
     color: #ffffff;
@@ -349,25 +369,51 @@
             </strong>        
         </td>
         <td>     
-        	<input type='file' id="imgDni" name="imgDni" class="form-control validar" autocomplete="off" autocapitalize="words"  value=""  placeholder="Seleccione foto dni" aria-describedby="imgDni-message" style=" border-radius: 0;
-    -webkit-box-shadow: none!important;
-    box-shadow: none!important;
-    color: #ffffff;
-    background-color: #337ab7;
-    border: 1px solid #ffffff;
-">
+        	<input type='file' id="imgDni" name="imgDni" class="form-control validar" 
+            accept="image/*"
+            autocomplete="off" autocapitalize="words"  value=""  placeholder="Seleccione foto dni" aria-describedby="imgDni-message" style=" border-radius: 0;
+                -webkit-box-shadow: none!important;
+                box-shadow: none!important;
+                color: #ffffff;
+                background-color: #337ab7;
+                border: 1px solid #ffffff;
+            ">
 			<img id="blah2" src="https://i.ibb.co/ZKVB8xZ/image.png" alt="Tu imagen" width="150px" height="150px" style=""/>
         </td>    
     </tr>
 
+
+    <tr>
+        <br>
+        <br>
+        <td align="center" colspan="2" class="pt-5">
+            <h5>
+                COMPRUEBE QUE ES HUMANO <small>(click al cuadro y resuelva el reto)</small>
+            </h5>
+            <!-- Elemento hCaptcha -->
+            <div class="pt-2 text-center">
+                <div class="h-captcha" data-sitekey="90541f3b-4b55-40ad-a480-1e07bf94bfdb">
+                </div>
+            </div>
+            <!--  -->
+        </td>
+    </tr>
+
+
     <tr>
         <td align="left" colspan="2">
             <br>
-            <strong>Recuerda</strong> completar tu inscrición ingresando al <a href="https://examen.admisionunajma.pe/zetadmision/zet/index.php" target="_blank" rel="noopener noreferrer">SIGUIENTE SISTEMA VIRTUAL</a>, por lo que: 
+            <strong>Recuerda</strong> completar la segunda etapa de tu inscripción ingresando al <a href="https://examen.admisionunajma.pe/zetadmision/zet/index.php" target="_blank" rel="noopener noreferrer">SISTEMA VIRTUAL DE ADMISIÓN</a>, Pero antes tener en cuenta lo siguiente: 
             <ul>
-                <li>Deberás de ingresar al sistema virtual con tu usuario y contraseña, el cual te llegará al correo electrónico que estás registrando en este momento en el formulario de inscripción virtual</li>
-                <li>Ya dentro del sistema, tendrás que subir la Foto de tu firma digital en formato .jpg, tus documentos Requeridos en formato .PDF, aceptar las Declaraciones Juradas, y Finalmente tendrás que Descargar tu constacia de inscripción y Declaraciones Juradas en formato PDF.</li>
-                <li>NO OLVIDES PRESIONAR EL BOTON  DE <strong>AQUÍ ABAJO</strong> PARA COMPLETAR TU REGISTRO DE PREINSCRIPCIÓN</li>
+                <li>
+                    Debes esperar en tu correo electrónico <b><span class="correo-postulante text-success bold"></span></b> las indicaciones para la segunda etapa de tu inscripción. 
+                </li>
+                <li>
+                    Si los datos del formulario son correctos, te estaremos enviando además de las indicaciones, tu <b>credencial</b> (usuario y contrasena) para que puedas completar tu inscripción en el sistema virtual de <b>admision</b>. 
+                </li>
+                <li>
+                    NO OLVIDES PRESIONAR EL BOTON  DE <strong>AQUÍ ABAJO</strong> PARA COMPLETAR TU REGISTRO DE PREINSCRIPCIÓN <small>(primera etapa)</small>
+                </li>
             </ul>            
         </td>
     </tr>   
@@ -412,18 +458,71 @@
     }
 
     setTimeout(() => {
-        Swal.fire(
-        'Comunicado Postulante Extraordinario.',
-        `Estimado postulante al proceso de admisión EXTRAORDINARIO 2021-1, mencionarle que el día viernes 26 de febrero de 2021 a horas 04:40 p.m. se desarrollara un simulacro y prueba del examen de admisión virtual, para lo cual debe estar a partir de la hora indicada y en el caso de no haber recibido el correo con las instrucciones comunicarse con los siguientes números: 
-        991828881, 
-        913841534, 
-        928145892, 
-        916331094, 
-        985951660
+
+        Swal.fire({
+        title: '<strong>RECOMENDACIONES POSTULANTE <u>EXTRAORDINARIO</u></strong>',
+        icon: 'info',
+        html: `
+        Estimado postulante al proceso de admisión <b>EXTRAORDINARIO 2021-2</b> <br>
+        <ul class="text-justify">
+            <li>
+                Se recomienda usar una <b>pc de escritorio</b> para realizar su inscripción. 
+            </li>
+            <li>
+                Tener en cuanta el video tutorial de inscripción: <a href="https://www.youtube.com/watch?v=N7yxUvfPAL4&feature=youtu.be&ab_channel=Lenynflores" target="_blank">video</a>
+            </li>
+            <li>
+                Recuerde realizar el pago antes de su pre-inscripción. <a href="https://examen.admisionunajma.pe/pagina_extraordinario.php" target="_blank">ver costos de inscripción x modalidad</a> 
+            </li>
+            <li>
+                Revise bien <b>su correo electrónico</b>: Si el correo está mal o no existe, nunca le llegará las indicaciones para que pueda continuar con la segunda etapa de su inscripción.</li>
+            <li>
+                Revise bien <b>su número de celular</b>, para que nos contactemos con usted en el caso de que sea necesario.
+            </li>
+            <li>
+                Seleccione bien su carrera, después no tendrá oportunidad para cambiarlo.
+            </li>
+            <li>
+                Recorte las fotografias (voucher, rostro, dni) a un tamano visible y que enfoque solo el contenido. Puede utilizar diferentes herramientas para editar la foto, o usar el mismo WhatsApp para recortar la imagen. Comprima sus fotos para que pesen <b>menos de 2MB</b> cada uno; WhatsApp también comprime la foto cuando lo envia (es una funcion que actua por defecto).
+            </li>
+            <li>
+                Recuerde que usted es el único responsable para la culminación satisfactoria de su inscripción. Atengase a las consecuencias en el caso de que no llegue a cumplir las indicaciones correspondientes. Puede revizar aquí el reglamento admisión: <a href="https://examen.admisionunajma.pe/pagina_reglamento.php" target="_blank">REGLAMENTO ADMISION 2021-2</a>
+            </li>
+        </ul>
+        <br>
+        <br>
+        Admision 2021-2
         `,
-        'info'
-        )
+        showCloseButton: true,
+        showCancelButton: true,
+        focusConfirm: false,
+        confirmButtonText:
+            '<i class="fa fa-thumbs-up"></i> OK!',
+        confirmButtonAriaLabel: 'Thumbs up, great!',
+        cancelButtonText:
+            '<i class="fa fa-thumbs-down"></i> BEE!',
+        cancelButtonAriaLabel: 'Thumbs down'
+        })
     }, 1500);
+
+
+    /**
+    * Funcion que agrega el correo electrónico en el footer cuando se presiona en el input de correo elextrónico
+    *
+    */
+    function agregarCorreoIndicacionesFooter(element){
+        // alert(element)
+        let correoPostulante = document.querySelector(".correo-postulante");
+        //xtEmail
+        correoPostulante.innerText = element.value;
+    }
+
+    function comprobarCorreo(txtCorreo){
+
+    }
+
+
+
 
 
 //cod Z -------------------------

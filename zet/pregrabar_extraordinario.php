@@ -5,6 +5,33 @@
 	include_once('../funciones/admi_fun.php');
 
 	$zet = '../';
+
+	// var_dump($_POST);
+	
+	/**
+	 * code of the captcha by KLEBXY
+	 */
+	$data_hc = [
+		"secret" => "0x28899D6c004BBBB2489d955c4F2514cc94940a73",
+		"response" => $_POST['h-captcha-response']
+	];
+
+	$verify = curl_init();
+	curl_setopt($verify, CURLOPT_URL, "https://hcaptcha.com/siteverify");
+	curl_setopt($verify, CURLOPT_POST, true);
+	curl_setopt($verify, CURLOPT_POSTFIELDS, http_build_query($data_hc));
+	curl_setopt($verify, CURLOPT_RETURNTRANSFER, true);
+
+	$response = curl_exec($verify);
+	$responseData = json_decode($response);
+	
+	// var_dump($responseData);
+	/** fin code captcha */
+
+
+	// die();
+
+
 	
 	if (!isset($_POST["txtDni"]))
 		{
@@ -55,7 +82,7 @@
 	#define('GL_DIR_FS_APPS', 'd:/xampp/htdocs');
 	#################################################
 	#################################################
-	$proc="0016"; //PROCESO EXTRAORDINARIO
+	$proc="0024"; //PROCESO EXTRAORDINARIO (to change)
 	$status_voucher = "";
 	$destino_voucher = '../foto_voucher/'.$proc.$dni.'.jpg';
 	$archivo_voucher = $_FILES['imgInp'];
@@ -171,42 +198,50 @@
 	echo '<br>';
 	if ($pasa==1)
 		{
-			 echo '<table width="100%">';
-                    echo '<tr>';
-                    	echo '<td align="center">';
-                        	echo '<strong>REGISTRO CORRECTO.</strong>';
-                        echo '</td>';
-                    echo '</tr>';
-             echo '</table>';
-			#echo '</div>';
-			echo '<br>';
-			echo '<br>';
-			echo '<table width="100%" border="0">';
+
+			echo '<table width="100%">';
 			echo '<tr>';
-				echo '<td width="30%">&nbsp;';       	        
-				echo '</td>';
 				echo '<td align="center">';
-					echo '<span style="font-size:22px;">';
-					echo 'Estimado postulante, en el transcurso de 24 horas le llegar&aacute;n las instrucciones para completar su inscripci&oacute;n al correo electr&oacute;nico: ';
-					echo '</span>';
-					echo '<strong><h2><?php echo $email; ?></h2></strong> ';
-					echo '<br> ';
-					echo '<br>';
-					echo '<span style="font-size:22px;">';
-					echo 'En caso de no recibir las instrucciones, <br>';
-					echo 'comuníquese con los siguientes números: ';
-					echo '<br>';
-					echo '<strong>991828881, 928145892, 916331094, 985951660</strong>';
-					echo '<p></br>';
-					echo '<p><a href="https://youtu.be/K0iNbXUjynI?t=274" target="_blank">VER QUE PROCEDE<i class="fa fa-forward"></i></a> </p>';
-					echo '<p><a href="https://examen.admisionunajma.pe/pagina_temario.php" target="_blank">VER TEMARIO EXAMEN<i class="fa fa-forward"></i></a> </p>';
-					echo '<p><a href="https://www.youtube.com/watch?v=K0iNbXUjynI&ab_channel=Lenynflores">Salir ahora <i class="fa fa-forward"></i></a> </p>';
-					echo '</span>';
-				echo '</td>';
-				echo '<td width="30%">&nbsp; ';       	
+					echo '<strong>REGISTRO CORRECTO.</strong>';
 				echo '</td>';
 			echo '</tr>';
-			echo '</table>';
+	 echo '</table>';
+	#echo '</div>';
+	echo '<br>';
+	echo '<br>';
+	echo '<table width="100%" border="0">';
+	echo '<tr>';
+		echo '<td width="30%">&nbsp;';       	        
+		echo '</td>';
+		echo '<td align="center">';
+			echo '<span style="font-size:22px;">';
+			echo 'Estimado postulante, en el transcurso de 72 horas como máximo se le enviará a su correo electrónico que registró en el formulario, las instrucciones correspondientes para completar su inscripción: ';
+			echo '</span>';
+			echo "<strong><h2>{$email}</h2></strong> (Tu correo personal es correcto?)";
+			echo '<br> ';
+			echo "<strong><h2>{$celular}</h2></strong> (Tu numero de celular es correcto?)";
+			echo '<br> ';
+			echo "<span>Si tus datos no están correctos, comunicate con la oficina de admisión.</span>";
+			echo '<br> ';
+			echo '<br>';
+			echo '<span style="font-size:22px;">';
+			echo 'En caso de no recibir las instrucciones, <br>';
+			echo 'comuníquese con los siguientes números: ';
+			echo '<br>';
+			echo '<strong>991828881, 916331094, 985951660</strong>';
+			echo '<p></br>';
+			echo '<p><a href="https://youtu.be/N7yxUvfPAL4?t=403" target="_blank">Cómo completar mi inscripcion? (video instructivo)<i class="fa fa-forward"></i></a> </p>';
+			echo '<p><a href="https://examen.admisionunajma.pe/pagina_temario.php" target="_blank">Ver temario ejemplo.<i class="fa fa-forward"></i></a> </p>';
+			echo '<p><a href="https://examen.admisionunajma.pe/">Regresar a la página de admisión.<i class="fa fa-forward"></i></a> </p>';
+			echo '</span>';
+		echo '</td>';
+		echo '<td width="30%">&nbsp; ';       	
+		echo '</td>';
+	echo '</tr>';
+	echo '</table>';
+
+
+
 		}
 	else
 		{

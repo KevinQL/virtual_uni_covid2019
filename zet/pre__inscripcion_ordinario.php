@@ -4,7 +4,7 @@
      * then put true for all when the inscription is availabel (true:true)
      * else put true : false;
      */
-    $pase = isset($_GET['externo2021'])? true : false;
+    $pase = (isset($_GET['externo20212']) || isset($_GET['other']) )? true : true;
 
     if($pase){
 ?>
@@ -67,7 +67,7 @@
 <br>
    
 <form action="pregrabar_ordinario.php" method="post" id="grado" name="frmFotoGrado" enctype="multipart/form-data" onsubmit="return true;" >
-   <center><h3>INSCRIPCIÓN EXAMEN <u><strong>ORDINARIO</strong></u> ADMISIÓN UNAJMA</h3><h4 style="font-size:22px;">2021 - I</h4> </center> 
+   <center><h3>INSCRIPCIÓN EXAMEN <u><strong>ORDINARIO</strong></u> ADMISIÓN UNAJMA</h3><h4 style="font-size:22px;">2021 - II</h4> </center> 
 <table width="760" border="0" align="center" cellpadding="3" cellspacing="0" class="table-borderless">
 
 	<tr>
@@ -134,15 +134,15 @@
             </strong> 
         </td>
         <td>
-        	<?php //MostrarComboZet("cboEstructura",$vsqlescuela,$estructura,$pasa); ?>
-            <select name="cboEstructura" id="cboEstructura">
-                <!-- <option value="01" selected="">ADMINISTRACION DE EMPRESAS</option>
+        	<?php MostrarComboZet("cboEstructura",$vsqlescuela,$estructura,$pasa); ?>
+            <!-- <select name="cboEstructura" id="cboEstructura">
                 <option value="02">CONTABILIDAD</option>
-                <option value="03">EDUCACION PRIMARIA INTERCULTURAL</option> -->
+                <option value="03">EDUCACION PRIMARIA INTERCULTURAL</option>
+                <option value="06">INGENIERIA DE SISTEMAS</option>
+                <option value="01" selected="">ADMINISTRACION DE EMPRESAS</option>
                 <option value="04">INGENIERIA AGROINDUSTRIAL</option>
                 <option value="05">INGENIERIA AMBIENTAL</option>
-                <option value="06">INGENIERIA DE SISTEMAS</option>
-            </select>
+            </select> -->
         </td>    
     </tr> 
     <tr>
@@ -162,7 +162,8 @@
             </strong>        
         </td>
         <td>
-        	<input type="date" name="txtFechaNacimiento" data-type="date" id="txtFechaNacimiento" class="form-control validar" autocomplete="off" autocapitalize="words"  value="" maxlength="50"  placeholder="Ingresar email" aria-describedby="txtnombre-message">
+        	<input type="date" name="txtFechaNacimiento" data-type="date" id="txtFechaNacimiento" class="form-control validar" autocomplete="off" autocapitalize="words"  value="" maxlength="50"  placeholder="Ingresar fecha"
+            aria-describedby="txtnombre-message">
         </td>    
     </tr>
     <tr>
@@ -172,7 +173,9 @@
             </strong>        
         </td>
         <td>
-        	<input type="text" name="txtEmail" id="txtEmail" data-type="email" class="form-control validar" autocomplete="off" autocapitalize="words"  value="" maxlength="50"  placeholder="Ingresar email" aria-describedby="txtnombre-message">
+        	<input type="email" name="txtEmail" id="txtEmail" data-type="email" class="form-control validar" autocomplete="off" autocapitalize="words"  value="" maxlength="50"  placeholder="Ingresar email"
+            onkeyup="agregarCorreoIndicacionesFooter(this);" 
+            aria-describedby="txtnombre-message">
         </td>    
     </tr>
     <tr>
@@ -367,7 +370,11 @@
 
     <tr>
         <br>
-        <td align="center" colspan="2">
+        <br>
+        <td align="center" colspan="2" class="pt-5">
+            <h5>
+                COMPRUEBE QUE ES HUMANO <small>(click al cuadro y resuelva el reto)</small>
+            </h5>
             <!-- Elemento hCaptcha -->
             <div class="pt-2 text-center">
                 <div class="h-captcha" data-sitekey="90541f3b-4b55-40ad-a480-1e07bf94bfdb">
@@ -380,11 +387,17 @@
     <tr>
         <td align="left" colspan="2">
             <br>
-            <strong>Recuerda</strong> completar tu inscrición ingresando al <a href="https://examen.admisionunajma.pe/zetadmision/zet/index.php" target="_blank" rel="noopener noreferrer">SIGUIENTE SISTEMA VIRTUAL</a>, por lo que: 
+            <strong>Recuerda</strong> completar la segunda etapa de tu inscripción ingresando al <a href="https://examen.admisionunajma.pe/zetadmision/zet/index.php" target="_blank" rel="noopener noreferrer">SISTEMA VIRTUAL DE ADMISIÓN</a>, Pero antes tener en cuenta lo siguiente: 
             <ul>
-                <li>Deberás de ingresar al sistema virtual con tu usuario y contraseña, el cual te llegará al correo electrónico que estás registrando en este momento en el formulario de inscripción virtual</li>
-                <li>Ya dentro del sistema, tendrás que subir la Foto de tu firma digital en formato .jpg, tus documentos Requeridos en formato .PDF, aceptar las Declaraciones Juradas, y Finalmente tendrás que Descargar tu constacia de inscripción y Declaraciones Juradas en formato PDF.</li>
-                <li>NO OLVIDES PRESIONAR EL BOTON  DE <strong>AQUÍ ABAJO</strong> PARA COMPLETAR TU REGISTRO DE PREINSCRIPCIÓN</li>
+                <li>
+                    Debes esperar en tu correo electrónico <b><span class="correo-postulante text-success bold"></span></b> las indicaciones para la segunda etapa de tu inscripción. 
+                </li>
+                <li>
+                    Si los datos del formulario son correctos, te estaremos enviando además de las indicaciones, tu <b>credencial</b> (usuario y contrasena) para que puedas completar tu inscripción en el sistema virtual de <b>admision</b>. 
+                </li>
+                <li>
+                    NO OLVIDES PRESIONAR EL BOTON  DE <strong>AQUÍ ABAJO</strong> PARA COMPLETAR TU REGISTRO DE PREINSCRIPCIÓN <small>(primera etapa)</small>
+                </li>
             </ul>            
         </td>
     </tr>   
@@ -427,6 +440,73 @@
                 footer: `<a href="#">${txt_footer}</a>`
         })
     }
+
+
+  setTimeout(() => {
+
+        Swal.fire({
+        title: '<strong>RECOMENDACIONES POSTULANTE <u>ORDINARIO</u></strong>',
+        icon: 'info',
+        html: `
+        Estimado postulante al proceso de admisión <b>ORDINARIO 2021-2</b> <br>
+        <ul class="text-justify">
+            <li>
+                Se recomienda usar una <b>pc de escritorio</b> para realizar su inscripción. 
+            </li>
+            <li>
+                Tener en cuanta el video tutorial de inscripción: <a href="https://www.youtube.com/watch?v=N7yxUvfPAL4&feature=youtu.be&ab_channel=Lenynflores" target="_blank">video</a>
+            </li>
+            <li>
+                Recuerde realizar el pago antes de su pre-inscripción. <a href="https://examen.admisionunajma.pe/pagina_ordinario.php" target="_blank">ver costos de inscripción x modalidad</a> 
+            </li>
+            <li>
+                Revise bien <b>su correo electrónico</b>: Si el correo está mal o no existe, nunca le llegará las indicaciones para que pueda continuar con la segunda etapa de su inscripción.</li>
+            <li>
+                Revise bien <b>su número de celular</b>, para que nos contactemos con usted en el caso de que sea necesario.
+            </li>
+            <li>
+                Seleccione bien su carrera, después no tendrá oportunidad para cambiarlo.
+            </li>
+            <li>
+                Recorte las fotografias (voucher, rostro, dni) a un tamano visible y que enfoque solo el contenido. Puede utilizar diferentes herramientas para editar la foto, o usar el mismo WhatsApp para recortar la imagen. Comprima sus fotos para que pesen <b>menos de 2MB</b> cada uno; WhatsApp también comprime la foto cuando lo envia (es una funcion que actua por defecto).
+            </li>
+            <li>
+                Recuerde que usted es el único responsable para la culminación satisfactoria de su inscripción. Atengase a las consecuencias en el caso de que no llegue a cumplir las indicaciones correspondientes. Puede revizar aquí el reglamento admisión: <a href="https://examen.admisionunajma.pe/pagina_reglamento.php" target="_blank">REGLAMENTO ADMISION 2021-2</a>
+            </li>
+        </ul>
+        <br>
+        <br>
+        Admision 2021-2
+        `,
+        showCloseButton: true,
+        showCancelButton: true,
+        focusConfirm: false,
+        confirmButtonText:
+            '<i class="fa fa-thumbs-up"></i> OK!',
+        confirmButtonAriaLabel: 'Thumbs up, great!',
+        cancelButtonText:
+            '<i class="fa fa-thumbs-down"></i> BEE!',
+        cancelButtonAriaLabel: 'Thumbs down'
+        })
+    }, 1500);
+
+
+
+
+    /**
+    * Funcion que agrega el correo electrónico en el footer cuando se presiona en el input de correo elextrónico
+    *
+    */
+    function agregarCorreoIndicacionesFooter(element){
+        // alert(element)
+        let correoPostulante = document.querySelector(".correo-postulante");
+        //xtEmail
+        correoPostulante.innerText = element.value;
+    }
+
+
+
+
 
 
 //cod Z -------------------------

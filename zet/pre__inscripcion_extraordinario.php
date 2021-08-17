@@ -1,10 +1,17 @@
 <?php
+
+	/*====================================
+	=    Zona horaria - Time zone        =
+	====================================*/
+	date_default_timezone_set("America/Lima");
+
 /**
      * the code let to controller the access post-inscription for INSCRIPCION CEPRE
      * then put true for all when the inscription is availabel (true:true)
      * else put true : false;
      */
-    $pase = (isset($_GET['externo20212']) || isset($_GET['other']))? true : false;
+    
+    $pase = (isset($_GET['externo20212']) || isset($_GET['other']) )? true : true;
 
     if($pase){
 ?>

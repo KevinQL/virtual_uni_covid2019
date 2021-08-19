@@ -47,7 +47,22 @@
 	#echo '<br>';
 	#echo $celular;
 	#echo '<br>';
+
+	/**
+	 * function to rand phone number of the ofice admision
+	 */
+	function phoneRandAdmision($phones){
+		shuffle($phones);
+		$result = implode(", ", $phones);
+		return $result;
+	}
+
+	$phones = ["913841534","974148417","991828881","916331094","985951660"];
+	$numeros_admision = phoneRandAdmision($phones);
+
+
 	if($proceso === "0022"){
+		// CERRADO
 
 		$cuerpo = '
 		<html>
@@ -124,7 +139,7 @@
 				<tr>
 				  <td>
 						Cualquier consulta, comunicarse con nosotros a los n&uacute;mero: 
-						<strong> 991828881, 916331094, 985951660 </strong>						
+						<strong>'.$numeros_admision.'</strong>						
 				  </td>
 				</tr>
 				<tr>
@@ -145,8 +160,260 @@
 			';
 
 
-	// CASO CONTRARIO. EN EL CASO DE QUE EL PROCESO NO SEA TRASLADOS
+	}
+	else if($proceso === "0024") {
+		// (PROCESS EXTRAORDINARIO), two process configureds for the proccess EXTRAORDINARIO 
+		# code...
+	
+		$asunto = "ADMISIÓN UNAJMA - EXAMEN EXTRAORDINARIO 2021-2 SEPT.";	
+
+		$title_correo = "EXTRAORDINARIO 2021-2 SEPT.";
+
+		$cuerpo = '
+		<html>
+		<head>
+			  <title>EXAMEN DE ADMISION</title>
+		</head>
+		<body>
+			  <table>
+				<tr>
+					<td align="center">
+						<strong>
+						UNIVERSIDAD NACIONAL JOSÉ MARÍA ARGUEDAS
+						</strong>
+						<br>
+						<strong>
+						'.$title_correo.'
+						</strong>
+						<br>
+						<br>
+					</td>
+				</tr>
+				
+			  	<tr>
+					<td>
+						Estimado(a) postulante: <strong>' .$nombre .'</strong>, 
+						<br>DNI:<strong> ' .$numerodocumento . '</strong>, <br>
+						correo electr&oacute;nico:<strong> '.$email.'</strong>:
+						</strong> <br>
+						<strong>SE RECOMIENDA USAR SU COMPUTADORA PARA LAS SIGUIENTES INDICACIONES.</strong>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<ul>
+							<li> 
+							<strong>1).</strong> Descargue la <strong>declaración jurada COVID</strong> en formato word (<a href="https://drive.google.com/file/d/1M27E0UAXf44-6ZSERaIGd2YUGeiQ-LD6/view?usp=sharing">CLICK AQUÍ PARA DESCARGAR ARCHIVO</a>).<br> 
+							Una vez descargado el archivo, <string>IMPRIMALO</string>; y luego rellene los datos requeridos con lapicero azul.<br>
+							No se olvide de <strong>firmar</strong> el documento, así también de ser menor de edad debe ir la firma de su apoderado.<br> 
+							<strong>ESTE REQUISITO ES IMPORTANTE Y POR LO TANTO NO PUEDE QUEDAR EXCLUIDO</strong>
+							</li>
+							<li>
+							<strong>2).</strong> Asegurese de contar con su <strong>Certificado de estudios o ficha de logros de aprendizaje</strong> Así mismo sus documentos solicitados según su modalidad de postulación.
+							</li>
+							<li>
+							<strong>3).</strong> Antes de proceder con esta indicación, debe tener impreso y llenado los documentos solicitados (*Declaración Jurada COVID).<br>
+							<strong>Escanee</strong> los documentos como UN SOLO <strong>archivo en formato PDF (*Su declaración jurada COVID, y su certificado de estudios)</strong>.
+							<br>
+							Debe obtener <strong>UN SOLO</strong> archivo PDF(documento en formato pdf).
+							<br>
+							<a href="https://www.youtube.com/watch?v=myzSi6vEHr0&ab_channel=TooSmart">Click Aquí video para escanear con el CELULAR</a> 
+							<br>
+							<a href="https://www.youtube.com/watch?v=tXJBEDfrcHI&ab_channel=FranquiciasTiendasAPP">¿Qué es escanear?</a>
+							</li>
+							<li>
+							<strong>4).</strong> Debe tener las siguientes fotografías:<br>
+							<strong>Una fotografía de su <strong>rostro actual</strong> tipo carnet de identificación;</strong><br> 
+							Una fotografía de <strong>su firma<strong> (firma del <strong>postulante</strong>) en una hoja de fondo blanco;<br> 
+							Una fotografía de <strong>la firma</strong> del <strong>apoderado</strong> en una hoja de fondo blanco.<br>
+							Por favor recortar las firmas a los tamaños de las firmas, pueden usar Paint o el mismo Whatsaap para realizar el recorte (<a href="https://www.youtube.com/watch?v=fcaeUdxpZVI&ab_channel=webscomgt">Click Auí video para realizar recorte con paint</a>.)
+							</li>
+							<li>
+							<strong>5).</strong> Debe mirar obligatoriamente el siguiente <strong>video instructivo</strong> de la universidad para no tener dificultades en su <strong>inscripción</strong> (<a href="https://www.youtube.com/watch?v=N7yxUvfPAL4&feature=youtu.be&ab_channel=Lenynflores">Click Aquí Video Inscripción evaluación virtual</a>)
+							</li>
+							<li>
+							<strong>6).</strong> <br>
+							<strong>******************************IMPORTANTE**************************************************</strong>
+							<br>
+							INGRESE AL <strong>SISTEMA VIRTUAL DE ADMISIÓN</strong> PARA TERMINAR SU INSCRIPCIÓN, Y ASÍ PODER SUBIR LAS FIRMAS (POSTULANTE Y APODERADO EN CASO SEA MENOR DE EDAD),Y SU DOCUMENTO PDF (declaración jurada COVID y certificado de estudios o constancia de logro de aprendizaje).
+							<br>
+							<strong>Utilice estos credenciales para ingresar al sistema y COMPLETAR su inscripción.</strong> <br>
+							USUARIO:<strong>'.$numerodocumento.'</strong><br>
+							CONTRASEÑA:<strong>'.$clave.'</strong>
+							<br> --> <a href="https://examen.admisionunajma.pe/zetadmision/zet/index.php">
+							CLICK AQUÍ SISTEMA VIRTUAL DE ADMISIÓN UNAJMA
+							</a> <-- 
+							<br>
+							<strong>******************************************************************************************</strong>
+							</li>
+							
+							<li>							
+							<strong>7).</strong> Después de cumplir todas las indicaciones hasta completar su inscripción, debe contar a la mano con su <strong>CONSTANCIA DE INSCRIPCIÓN</strong> impreso a colores. Está constancia de inscripción es prueba de una inscripción satisfactoria. Por lo que después deberá esperar pendiente a su correo electrónico las indicaciones para el día del examen. <br>
+							Puede unirse a los grupos de Whatsapp para conocer a sus futuros compañeros, resolver dudas, o para estar al tanto de las indicaciones de la oficina de admisión. 
+							<br>
+							<a href="https://chat.whatsapp.com/G9GEZn6xJao0rmAnUH9Vcj">GRUPO ADMISIÓN EXTRAORDINARIO 20212</a> 
+							<br> 
+
+							</li>
+						</ul>
+					</td>
+				</tr>			
+			</table>
+			<br>				
+			<table>
+				<tr>
+				  <td>
+						Cualquier consulta, comunicarse con nosotros a los n&uacute;mero: 
+						<strong>'.$numeros_admision.'</strong>						
+				  </td>
+				</tr>
+				<tr>
+				  <td>
+						<br>
+						Atentamente					
+				  </td>
+				</tr>
+				<tr>
+				  <td>
+						<br>
+						<strong>Oficina Central de Admisi&oacute;n</strong>
+				  </td>
+				</tr>
+			</table>
+			</body>
+			</html>
+			';
+
+			
+			
+	}
+	elseif ($proceso === "0025" || $proceso === "0026") {
+		// (PROCESS ORDINARIO), two process configureds for the proccess ORDINARIO 
+		# code...
+	
+		$asunto = "ADMISIÓN UNAJMA - EXAMEN ORDINARIO 2021-2 SEPT.";	
+
+		$title_correo = "ORDINARIO 2021-2 SEPT.";
+
+		$cuerpo = '
+		<html>
+		<head>
+			  <title>EXAMEN DE ADMISION</title>
+		</head>
+		<body>
+			  <table>
+				  <tr>
+					<td align="center">
+						<strong>
+						UNIVERSIDAD NACIONAL JOSÉ MARÍA ARGUEDAS
+						</strong>
+						<br>
+						<strong>
+						'.$title_correo.'
+						</strong>
+						<br>
+						<br>
+					</td>
+				</tr>
+			  	<tr>
+					<td>
+						Estimado(a) postulante: <strong>' .$nombre .'</strong>, 
+						<br>DNI:<strong> ' .$numerodocumento . '</strong>, <br>
+						correo electr&oacute;nico:<strong> '.$email.'</strong>:
+						</strong> <br>
+						<strong>SE RECOMIENDA USAR UN ORIDENADOR DE ESCRITORIO PARA LAS SIGUIENTES INDICACIONES.</strong>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<ul>
+							<li> 
+							<strong>1).</strong> Descargue la <strong>declaración jurada COVID</strong> en formato word (<a href="https://drive.google.com/file/d/1M27E0UAXf44-6ZSERaIGd2YUGeiQ-LD6/view?usp=sharing">CLICK AQUÍ PARA DESCARGAR ARCHIVO</a>).<br> 
+							Una vez descargado el archivo, <string>IMPRIMALO</string>; y luego rellene los datos requeridos con lapicero azul.<br>
+							No se olvide de <strong>firmar</strong> el documento, así también de ser menor de edad debe ir la firma de su apoderado.<br> 
+							<strong>ESTE REQUISITO ES IMPORTANTE Y POR LO TANTO NO PUEDE QUEDAR EXCLUIDO</strong>
+							</li>
+							<li>
+							<strong>2).</strong> Asegurese de contar con su <strong>Certificado de estudios o ficha de logros de aprendizaje</strong> Así mismo sus documentos solicitados según su modalidad de postulación.
+							</li>
+							<li>
+							<strong>3).</strong> Antes de proceder con esta indicación, debe tener impreso y llenado los documentos solicitados (*Declaración Jurada COVID).<br>
+							<strong>Escanee</strong> los documentos como UN SOLO <strong>archivo en formato PDF (*Su declaración jurada COVID, y su certificado de estudios)</strong>.
+							<br>
+							Debe obtener <strong>UN SOLO</strong> archivo PDF(documento en formato pdf).
+							<br>
+							<a href="https://www.youtube.com/watch?v=myzSi6vEHr0&ab_channel=TooSmart">Click Aquí video para escanear con el CELULAR</a> 
+							<br>
+							<a href="https://www.youtube.com/watch?v=tXJBEDfrcHI&ab_channel=FranquiciasTiendasAPP">¿Qué es escanear?</a>
+							</li>
+							<li>
+							<strong>4).</strong> Debe tener las siguientes fotografías:<br>
+							<strong>Una fotografía de su <strong>rostro actual</strong> tipo carnet de identificación;</strong><br> 
+							Una fotografía de <strong>su firma<strong> (firma del <strong>postulante</strong>) en una hoja de fondo blanco;<br> 
+							Una fotografía de <strong>la firma</strong> del <strong>apoderado</strong> en una hoja de fondo blanco.<br>
+							Por favor recortar las firmas a los tamaños de las firmas, pueden usar Paint o el mismo Whatsaap para realizar el recorte (<a href="https://www.youtube.com/watch?v=fcaeUdxpZVI&ab_channel=webscomgt">Click Auí video para realizar recorte con paint</a>.)
+							</li>
+							<li>
+							<strong>5).</strong> Debe mirar obligatoriamente el siguiente <strong>video instructivo</strong> de la universidad para no tener dificultades en su <strong>inscripción</strong> (<a href="https://www.youtube.com/watch?v=N7yxUvfPAL4&feature=youtu.be&ab_channel=Lenynflores">Click Aquí Video Inscripción evaluación virtual</a>)
+							</li>
+							<li>
+							<strong>6).</strong> <br>
+							<strong>******************************IMPORTANTE**************************************************</strong>
+							<br>
+							INGRESE AL <strong>SISTEMA VIRTUAL DE ADMISIÓN</strong> PARA TERMINAR SU INSCRIPCIÓN, Y ASÍ PODER SUBIR LAS FIRMAS (POSTULANTE Y APODERADO EN CASO SEA MENOR DE EDAD),Y SU DOCUMENTO PDF (declaración jurada COVID y certificado de estudios o constancia de logro de aprendizaje).
+							<br>
+							<strong>Utilice estos credenciales para ingresar al sistema y COMPLETAR su inscripción.</strong> <br>
+							USUARIO:<strong>'.$numerodocumento.'</strong><br>
+							CONTRASEÑA:<strong>'.$clave.'</strong>
+							<br> --> <a href="https://examen.admisionunajma.pe/zetadmision/zet/index.php">
+							CLICK AQUÍ SISTEMA VIRTUAL DE ADMISIÓN UNAJMA
+							</a> <-- 
+							<br>
+							<strong>******************************************************************************************</strong>
+							</li>
+							
+							<li>							
+							<strong>7).</strong> Después de cumplir todas las indicaciones hasta completar su inscripción, debe contar a la mano con su <strong>CONSTANCIA DE INSCRIPCIÓN</strong> impreso a colores. Está constancia de inscripción es prueba de una inscripción satisfactoria. Por lo que después deberá esperar pendiente a su correo electrónico las indicaciones para el día del examen. <br>
+							Puede unirse a los grupos de Whatsapp para conocer a sus futuros compañeros, resolver dudas, o para estar al tanto de las indicaciones de la oficina de admisión. <br>
+							<a href="https://chat.whatsapp.com/FKSXQQS4driIex3mOTVUVDS">GRUPO ADMISIÓN ORDINARIO 20212</a> 
+							<br> 
+							<a href="https://chat.whatsapp.com/JV9vpX2W0hoFvmWNpRjjUe">GRUPO ADMISIÓN ORDINARIO 20212</a>
+							<br>
+							
+							</li>
+						</ul>
+					</td>
+				</tr>			
+			</table>
+			<br>				
+			<table>
+				<tr>
+				  <td>
+						Cualquier consulta, comunicarse con nosotros a los n&uacute;mero: 
+						<strong>'.$numeros_admision.'</strong>						
+				  </td>
+				</tr>
+				<tr>
+				  <td>
+						<br>
+						Atentamente					
+				  </td>
+				</tr>
+				<tr>
+				  <td>
+						<br>
+						<strong>Oficina Central de Admisi&oacute;n</strong>
+				  </td>
+				</tr>
+			</table>
+			</body>
+			</html>
+			';
+
+			
+
 	}else {
+		// CASO CONTRARIO. EN EL CASO DE QUE EL PROCESO NO SEA TRASLADOS
 
 		$asunto = "ADMISIÓN UNAJMA - EXAMEN CEPRE 2021-#";	
 		$cuerpo = '
@@ -170,7 +437,7 @@
 						<br>DNI:<strong> ' .$numerodocumento . '</strong>, <br>
 						correo electr&oacute;nico:<strong> '.$email.'</strong>:
 						</strong> <br>
-						<strong>SE RECOMIENDA USAR SU COMPUTADORA PARA LAS SIGUIENTES INDICACIONES.</strong>
+						<strong>SE RECOMIENDA USAR UN ORDENADOR DE ESCRITORIO PARA LAS SIGUIENTES INDICACIONES.</strong>
 					</td>
 				</tr>
 				<tr>
@@ -277,7 +544,12 @@
 		$vsql = "call zyz_CAMantenedorPostulante ('". $proceso . "', '". $postulante . "','1','2','3','4','5','1900-01-01','1','2','3','4','5',0,0,'1','2','3','4','5','6','7',0,0,0,0,0,'1','2','3','4','5',0,0,'','1','2','3','4','5','6','7','U')";
 		$rs_zet = mysqli_query($cn_email_zet, $vsql);	
 		
-		echo 'Envio Correcto';
+		// echo 'Envio Correcto :D';
+
+		// echo "<br> ".$numeros_admision;
+
+		// echo "<br>";
+
 	
 	#if ($z=='1')
 	#	{
@@ -288,3 +560,75 @@
 	#		echo json_encode(array('error'=>1,'mensaje'=>'Se produjo un error...'));
 	#	}
 ?>
+
+<style>
+
+	body{
+		margin:0px;
+		padding:0px;
+		background:black;
+		color:white;
+	}
+
+	.centrar-contenido{
+
+	}
+
+	.text-center{
+		text-align: center;
+	}
+
+	.container{
+		padding: 10% 30%;
+	}
+
+	.mt-default{
+		margin-top: 30px;
+	}
+
+	.img-gif{
+		border: none;
+		border-radius: 100%;
+	}
+
+</style>
+
+<div class="centrar-contenido">
+	
+	<div class="container text-center"> 
+		<h3>ENVIÓ CORRECTO!! :D</h3>
+		<div>
+			<?=$numeros_admision?>
+		</div>
+		<strong class="msj_close">
+			... 
+		</strong>
+
+		<br>
+		
+		<img src="./public/dance-dog.gif" 
+			alt="dance-dog :V" 
+			class="img-gif mt-default" >
+
+	</div>
+</div>
+
+
+<script>
+
+	/**
+	* Funcition to close the page of the sended message 
+	 */
+	window.onload = function () {
+
+		let txt_close = "Esta ventana se cerrará en un momento :DD";
+		let msj_close = document.querySelector(".msj_close");
+
+		msj_close.innerText = txt_close; 
+
+		setTimeout(() => {
+			window.close();
+		}, 2000);
+	}
+
+</script>

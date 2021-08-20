@@ -2,6 +2,9 @@
 	session_start();
 	include('../funciones/admi_con.php');
 	$cn = conectar();
+	mysqli_query($cn,"SET CHARACTER SET utf8");
+	mysqli_query($cn,"SET NAMES utf8");
+
 	$usuario = trim($_POST['txtUsuario']);
 	$password = trim($_POST['txtPassword']);
 	$nivel = $_POST['cboNivel'];
@@ -41,6 +44,7 @@
 		else
 		{
 			$rsjk = mysqli_fetch_row($rs);
+
 			//print_r($rsjk);
 			$_SESSION["persona"] = $rsjk[0];
 			$_SESSION["usuario"] = $rsjk[1];

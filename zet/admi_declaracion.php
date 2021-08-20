@@ -12,7 +12,7 @@
         }
 
         /**
-         * ANIMACIÓN PARA CARGA DE PÁGINA ITEC
+         * ANIMACIÓN PARA CARGA DE PÁGINA (INCLUIR)
          */
         window.addEventListener("load", function(){
             console.log("listoo!!")
@@ -48,20 +48,29 @@
 	include_once(GL_DIR_FS_APP.'funciones/admi_fun_admision.php');
 	$cn_zyz = conectar();
 	$cn_zoz = conectar();
+
+    mysqli_query($cn_zyz,"SET CHARACTER SET utf8");
+	mysqli_query($cn_zyz,"SET NAMES utf8");
+	mysqli_query($cn_zoz,"SET CHARACTER SET utf8");
+	mysqli_query($cn_zoz,"SET NAMES utf8");
 	#echo $persona;
 	#echo $usuario;
+
+
     /**
      * Number of the proccess current. ejem 2020-2
+     * Resolución (previous) : N° 182-2020-CO-UNAJMA
      */ 
-    $DJproceso = "2021-2";
-    $DJresolucion = "N° 182-2020-CO-UNAJMA";
+    $DJproceso = "2021-II";
+    $DJresolucion = "N° 204-2021-CO-UNAJMA";
     $DJreglamento = "2021-II";
-    $DJresolucion_remoto = "N° 182-2020-CO-UNAJMA";
-    $DJreglamento_remoto = "2020-II";
+    $DJresolucion_remoto = "N° 204-2021-CO-UNAJMA"; // 
+    $DJreglamento_remoto = "2021-II";
 	/**
-	 * FIN-----
+	 * FIN -----
 	 */
-	
+
+
     $vsql = "call zyz_CAMantenedorPostulante ('". $proceso . "', '". $persona . "','','','','','','1900-01-01','','','','','',0,0,'','','','','','','',0,0,0,0,0,'00','00','00','','',0,0,'','1','2','3','4','5','6','7','L')";
 
 	#echo $vsql;
@@ -85,7 +94,7 @@
 			$colegio = $row["colegio"];
 			$apellidopaterno = $row["apellidopaterno"];
 			$apellidomaterno = $row["apellidomaterno"];
-			$nombre = $row["nombre"];
+			$nombre =  $row["nombre"];
 			$email = $row["email"];
 			$celular = $row["celular"];	
 			$colegio = $row["colegio"];
@@ -97,6 +106,9 @@
         
 
     $conex=conectar();
+    mysqli_query($conex,"SET CHARACTER SET utf8");
+	mysqli_query($conex,"SET NAMES utf8");
+
     $query = "SELECT apoderado FROM adm_proceso_postulante WHERE numerodocumento = '$dni'";
     $res = mysqli_query($conex, $query);	
     $registros = mysqli_num_rows($res); 
@@ -230,7 +242,7 @@
 			?>
         </td>
     </tr>
-    <tr>
+    <tr class="text-uppercase">
     	<td align="left">
         	<strong>APELLIDO PATERNO:</strong>
         </td>
@@ -238,7 +250,7 @@
         	<?php echo $apellidopaterno;?>
         </td>
     </tr>
-    <tr>
+    <tr class="text-uppercase">
     	<td align="left">
         	<strong>APELLIDO MATERNO:</strong>
         </td>
@@ -246,7 +258,7 @@
         	<?php echo $apellidomaterno;?>
         </td>
     </tr>
-    <tr>
+    <tr class="text-uppercase">
     	<td align="left">
         	<strong>NOMBRE:</strong>
         </td>

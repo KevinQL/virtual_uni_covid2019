@@ -290,8 +290,10 @@
 	
 
 	//ESTRUCTURA Y DATOS DE LA CONSTANCIA DE INSCRIPCION DE DOBLE SECCION
-	$nombreConstancia = "Dr. JOHN PETER AGUIRRE LANDA";
-	$dniConstancia = '10002395';
+	// $nombreConstancia = "Dr. JOHN PETER AGUIRRE LANDA";
+	// $dniConstancia = '10002395';
+	$nombreConstancia = "Mgtr. EDWIN DANIEL FELIX BENITES";
+	$dniConstancia = '06673433';
 	$fotitoConstancia = mostrarfoto_ing_firma_pfd($dniConstancia);
 
 	$v4 = '

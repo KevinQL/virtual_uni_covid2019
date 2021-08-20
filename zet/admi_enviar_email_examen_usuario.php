@@ -16,6 +16,11 @@
 	#exit;
 	#$z = enviar_email_examen_usuario($proceso, $postulante, $tipo);
 	$cn_email = conectar();
+	mysqli_query($cn_email,"SET CHARACTER SET utf8");
+	mysqli_query($cn_email,"SET NAMES utf8");
+	mysqli_query($cn_email_zet,"SET CHARACTER SET utf8");
+	mysqli_query($cn_email_zet,"SET NAMES utf8");
+	
 	error_reporting(E_ALL);
 	ini_set('display_errors', '1');
 		
@@ -536,7 +541,7 @@
 		#exit;
 		#echo $cuerpo;
 		#echo '<br>';
-		mail($email, $asunto, $cuerpo, $cabeceras);
+		mail($email, utf8_decode($asunto), utf8_decode($cuerpo), $cabeceras);
 		#echo 'hola';
 		#exit;
 		mysqli_close($cn_email);

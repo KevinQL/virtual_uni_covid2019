@@ -65,6 +65,20 @@
 	$phones = ["913841534","974148417","991828881","916331094","985951660"];
 	$numeros_admision = phoneRandAdmision($phones);
 
+	//LAST DATA PROCESS
+	$link_videos = [];
+	$link_videos["2021-1"] = "https://www.youtube.com/watch?v=N7yxUvfPAL4&feature=youtu.be&ab_channel=Lenynflores";
+
+	//DATA PROCESS CURRENTS
+	$link_consulta = '<a href="https://examen.admisionunajma.pe/admision2000/?pg=consult">ADMISIÓN CONSULTA PROCESO 2021-2 (CLICK)</a>';
+	$link_tutorial = "https://youtu.be/6gkC9VvA1yY";
+	$link_DJ = "https://drive.google.com/file/d/1M27E0UAXf44-6ZSERaIGd2YUGeiQ-LD6/view?usp=sharing";
+	$link_wsp = [];
+	$link_wsp["ordi1"] = "https://chat.whatsapp.com/JV9vpX2W0hoFvmWNpRjjUe";
+	$link_wsp["ordi2"] = "https://chat.whatsapp.com/FKSXQQS4driIex3mOTVUVDS";
+	$link_wsp["extra1"] = "https://chat.whatsapp.com/G9GEZn6xJao0rmAnUH9Vcj";
+	// $link_wsp["extra2"] = "";
+
 
 	if($proceso === "0022"){
 		// CERRADO
@@ -119,7 +133,7 @@
 							</li>
 
 							<li>
-							<strong>4).</strong> Debe mirar obligatoriamente el siguiente <strong>video instructivo</strong> de la universidad para no tener dificultades en su <strong>inscripción</strong> (<a href="https://www.youtube.com/watch?v=N7yxUvfPAL4&feature=youtu.be&ab_channel=Lenynflores">Click Aquí Video Inscripción evaluación virtual</a>)
+							<strong>4).</strong> Debe mirar obligatoriamente el siguiente <strong>video instructivo</strong> de la universidad para no tener dificultades en su <strong>inscripción</strong> (<a href="'.$link_tutorial.'">Click Aquí Video Inscripción evaluación virtual</a>)
 							</li>
 							<li>
 							<strong>5).</strong> <br>
@@ -208,7 +222,7 @@
 					<td>
 						<ul>
 							<li> 
-							<strong>1).</strong> Descargue la <strong>declaración jurada COVID</strong> en formato word (<a href="https://drive.google.com/file/d/1M27E0UAXf44-6ZSERaIGd2YUGeiQ-LD6/view?usp=sharing">CLICK AQUÍ PARA DESCARGAR ARCHIVO</a>).<br> 
+							<strong>1).</strong> Descargue la <strong>declaración jurada COVID</strong> en formato word (<a href="'.$link_DJ.'">CLICK AQUÍ PARA DESCARGAR ARCHIVO</a>).<br> 
 							Una vez descargado el archivo, <string>IMPRIMALO</string>; y luego rellene los datos requeridos con lapicero azul.<br>
 							No se olvide de <strong>firmar</strong> el documento, así también de ser menor de edad debe ir la firma de su apoderado.<br> 
 							<strong>ESTE REQUISITO ES IMPORTANTE Y POR LO TANTO NO PUEDE QUEDAR EXCLUIDO</strong>
@@ -234,7 +248,7 @@
 							Por favor recortar las firmas a los tamaños de las firmas, pueden usar Paint o el mismo Whatsaap para realizar el recorte (<a href="https://www.youtube.com/watch?v=fcaeUdxpZVI&ab_channel=webscomgt">Click Auí video para realizar recorte con paint</a>.)
 							</li>
 							<li>
-							<strong>5).</strong> Debe mirar obligatoriamente el siguiente <strong>video instructivo</strong> de la universidad para no tener dificultades en su <strong>inscripción</strong> (<a href="https://www.youtube.com/watch?v=N7yxUvfPAL4&feature=youtu.be&ab_channel=Lenynflores">Click Aquí Video Inscripción evaluación virtual</a>)
+							<strong>5).</strong> DEBE MIRAR OBLIGATORIAMENTE EL <strong>VIDEO INSTRUCTIVO</strong> PARA SEGUIR ADECUADAMENTE EL <strong>PROCESO DE INSCRIPCIÓN VIRTUAL</strong> (<a href="'.$link_tutorial.'">VIDEO TUTORIAL PARA LA INSCRIPCIÓN VIRTUAL</a>)
 							</li>
 							<li>
 							<strong>6).</strong> <br>
@@ -251,12 +265,19 @@
 							<br>
 							<strong>******************************************************************************************</strong>
 							</li>
+
+							<li>
+								<strong>7).</strong> Recuerde que puede consultar el estado de su inscripción en la siguiente página. 
+								<br>
+								'.$link_consulta.'
+								<br> 
+							</li>
 							
 							<li>							
-							<strong>7).</strong> Después de cumplir todas las indicaciones hasta completar su inscripción, debe contar a la mano con su <strong>CONSTANCIA DE INSCRIPCIÓN</strong> impreso a colores. Está constancia de inscripción es prueba de una inscripción satisfactoria. Por lo que después deberá esperar pendiente a su correo electrónico las indicaciones para el día del examen. <br>
+							<strong>8).</strong> Después de cumplir todas las indicaciones hasta completar su inscripción, debe contar a la mano con su <strong>CONSTANCIA DE INSCRIPCIÓN</strong> impreso a colores. Está constancia de inscripción es prueba de una inscripción satisfactoria. Por lo que después deberá esperar pendiente a su correo electrónico las indicaciones para el día del examen. <br>
 							Puede unirse a los grupos de Whatsapp para conocer a sus futuros compañeros, resolver dudas, o para estar al tanto de las indicaciones de la oficina de admisión. 
 							<br>
-							<a href="https://chat.whatsapp.com/G9GEZn6xJao0rmAnUH9Vcj">GRUPO ADMISIÓN EXTRAORDINARIO 20212</a> 
+							<a href="'.$link_wsp["extra1"].'">GRUPO ADMISIÓN EXTRAORDINARIO 20212</a> 
 							<br> 
 
 							</li>
@@ -333,7 +354,7 @@
 					<td>
 						<ul>
 							<li> 
-							<strong>1).</strong> Descargue la <strong>declaración jurada COVID</strong> en formato word (<a href="https://drive.google.com/file/d/1M27E0UAXf44-6ZSERaIGd2YUGeiQ-LD6/view?usp=sharing">CLICK AQUÍ PARA DESCARGAR ARCHIVO</a>).<br> 
+							<strong>1).</strong> Descargue la <strong>declaración jurada COVID</strong> en formato word (<a href="'.$link_DJ.'">CLICK AQUÍ PARA DESCARGAR ARCHIVO</a>).<br> 
 							Una vez descargado el archivo, <string>IMPRIMALO</string>; y luego rellene los datos requeridos con lapicero azul.<br>
 							No se olvide de <strong>firmar</strong> el documento, así también de ser menor de edad debe ir la firma de su apoderado.<br> 
 							<strong>ESTE REQUISITO ES IMPORTANTE Y POR LO TANTO NO PUEDE QUEDAR EXCLUIDO</strong>
@@ -359,7 +380,7 @@
 							Por favor recortar las firmas a los tamaños de las firmas, pueden usar Paint o el mismo Whatsaap para realizar el recorte (<a href="https://www.youtube.com/watch?v=fcaeUdxpZVI&ab_channel=webscomgt">Click Auí video para realizar recorte con paint</a>.)
 							</li>
 							<li>
-							<strong>5).</strong> Debe mirar obligatoriamente el siguiente <strong>video instructivo</strong> de la universidad para no tener dificultades en su <strong>inscripción</strong> (<a href="https://www.youtube.com/watch?v=N7yxUvfPAL4&feature=youtu.be&ab_channel=Lenynflores">Click Aquí Video Inscripción evaluación virtual</a>)
+							<strong>5).</strong> DEBE MIRAR OBLIGATORIAMENTE EL <strong>VIDEO INSTRUCTIVO</strong> PARA SEGUIR ADECUADAMENTE EL <strong>PROCESO DE INSCRIPCIÓN VIRTUAL</strong> (<a href="'.$link_tutorial.'">VIDEO TUTORIAL PARA LA INSCRIPCIÓN VIRTUAL</a>)
 							</li>
 							<li>
 							<strong>6).</strong> <br>
@@ -376,13 +397,20 @@
 							<br>
 							<strong>******************************************************************************************</strong>
 							</li>
+
+							<li>
+								<strong>7).</strong> Recuerde que puede consultar el estado de su inscripción en la siguiente página: => 
+								'.$link_consulta.'
+								<br> 
+							</li>
+							
 							
 							<li>							
-							<strong>7).</strong> Después de cumplir todas las indicaciones hasta completar su inscripción, debe contar a la mano con su <strong>CONSTANCIA DE INSCRIPCIÓN</strong> impreso a colores. Está constancia de inscripción es prueba de una inscripción satisfactoria. Por lo que después deberá esperar pendiente a su correo electrónico las indicaciones para el día del examen. <br>
+							<strong>8).</strong> Después de cumplir todas las indicaciones hasta completar su inscripción, debe contar a la mano con su <strong>CONSTANCIA DE INSCRIPCIÓN</strong> impreso a colores. Está constancia de inscripción es prueba de una inscripción satisfactoria. Por lo que después deberá esperar pendiente a su correo electrónico las indicaciones para el día del examen. <br>
 							Puede unirse a los grupos de Whatsapp para conocer a sus futuros compañeros, resolver dudas, o para estar al tanto de las indicaciones de la oficina de admisión. <br>
-							<a href="https://chat.whatsapp.com/FKSXQQS4driIex3mOTVUVDS">GRUPO ADMISIÓN ORDINARIO 20212</a> 
+							<a href="'.$link_wsp["ordi1"].'">GRUPO ADMISIÓN ORDINARIO 20212</a> 
 							<br> 
-							<a href="https://chat.whatsapp.com/JV9vpX2W0hoFvmWNpRjjUe">GRUPO ADMISIÓN ORDINARIO 20212</a>
+							<a href="'.$link_wsp["ordi2"].'">GRUPO ADMISIÓN ORDINARIO 20212</a>
 							<br>
 							
 							</li>
@@ -449,7 +477,7 @@
 					<td>
 						<ul>
 							<li> 
-							<strong>1).</strong> Descargue la <strong>declaración jurada COVID</strong> en formato word (<a href="https://drive.google.com/file/d/1M27E0UAXf44-6ZSERaIGd2YUGeiQ-LD6/view?usp=sharing">CLICK AQUÍ PARA DESCARGAR ARCHIVO</a>).<br> 
+							<strong>1).</strong> Descargue la <strong>declaración jurada COVID</strong> en formato word (<a href="'.$link_DJ.'">CLICK AQUÍ PARA DESCARGAR ARCHIVO</a>).<br> 
 							Una vez descargado el archivo, <string>IMPRIMALO</string>; y luego rellene los datos requeridos con lapicero azul.<br>
 							No se olvide de <strong>firmar</strong> el documento, así también de ser menor de edad debe ir la firma de su apoderado.<br> 
 							<strong>ESTE REQUISITO ES IMPORTANTE Y POR LO TANTO NO PUEDE QUEDAR EXCLUIDO</strong>
@@ -475,7 +503,7 @@
 							Por favor recortar las firmas a los tamaños de las firmas, pueden usar Paint o el mismo Whatsaap para realizar el recorte (<a href="https://www.youtube.com/watch?v=fcaeUdxpZVI&ab_channel=webscomgt">Click Auí video para realizar recorte con paint</a>.)
 							</li>
 							<li>
-							<strong>5).</strong> Debe mirar obligatoriamente el siguiente <strong>video instructivo</strong> de la universidad para no tener dificultades en su <strong>inscripción</strong> (<a href="https://www.youtube.com/watch?v=N7yxUvfPAL4&feature=youtu.be&ab_channel=Lenynflores">Click Aquí Video Inscripción evaluación virtual</a>)
+							<strong>5).</strong> Debe mirar obligatoriamente el siguiente <strong>video instructivo</strong> de la universidad para no tener dificultades en su <strong>inscripción</strong> (<a href="'.$link_tutorial.'">Click Aquí Video Inscripción evaluación virtual</a>)
 							</li>
 							<li>
 							<strong>6).</strong> <br>

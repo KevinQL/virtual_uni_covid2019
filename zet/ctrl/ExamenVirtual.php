@@ -322,21 +322,21 @@
             if($pdf){
                 $res_pdf = '<a href="javascript:ventanaSecundaria(\'../zet/admi_mostrar_archivo.php?file='.$file.'\')"> Ver PDF </a>';	
             }
-
+            
             //VER FOTO FIRMA POSTULANTE
-            $url_fto_firma = "https://examen.admisionunajma.pe/zetadmision/foto_ing_firma/".$data["numerodocumento"].".jpg";
+            $url_fto_firma = "https://examen.admisionunajma.pe/zetadmision/foto_ing_firma/".$data["numerodocumento"].".jpg?".time();
             $fto_firm = '<img src="'.$url_fto_firma.'" border="0" width="100%">';
 
             //VER FOTO VOUCHER 
-            $url_fto_voucher = "https://examen.admisionunajma.pe/zetadmision/foto_voucher/".$busca.".jpg";
+            $url_fto_voucher = "https://examen.admisionunajma.pe/zetadmision/foto_voucher/".$busca.".jpg?".time();
             $fto_voucher = '<img src="'.$url_fto_voucher.'" border="0" width="100%">';
 
             //VER FOTO rostro POSTULANTE
-            $url_fto_postulante = "https://examen.admisionunajma.pe/zetadmision/foto_postulante/".$data["numerodocumento"].".jpg";
+            $url_fto_postulante = "https://examen.admisionunajma.pe/zetadmision/foto_postulante/".$data["numerodocumento"].".jpg?".time();
             $fto_postulante = '<img src="'.$url_fto_postulante.'" border="0" width="100%">';
 
             //VER FOTO DNI
-            $url_fto_dni = "https://examen.admisionunajma.pe/zetadmision/foto_dni/".$data["numerodocumento"].".jpg";
+            $url_fto_dni = "https://examen.admisionunajma.pe/zetadmision/foto_dni/".$data["numerodocumento"].".jpg?".time();
             $fto_dni = '<img src="'.$url_fto_dni.'" border="0" width="100%">';
 
 

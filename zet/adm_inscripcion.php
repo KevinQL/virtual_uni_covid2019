@@ -279,7 +279,15 @@
 							${msj_btn}
 						</a>
 						<br>
-						... <br>
+						<br>
+							<a href="https://examen.admisionunajma.pe/admision2000/?pg=m_admin/studentfiles&codedni=${postulante.numerodocumento}&codeproc=${postulante.proceso}&namepost=${postulante.nombrecompleto}" 
+								target="_blank"
+								class="btn btn-warning"
+							>
+								actualizar archivos
+							</a> 
+						<br>
+						<br>
 						celular: <strong>${postulante.celular} </strong> <br>
 						... <br>
 						Nombre: <strong>${postulante.nombrecompleto} </strong> <br>

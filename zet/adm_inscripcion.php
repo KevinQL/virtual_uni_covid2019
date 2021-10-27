@@ -288,8 +288,33 @@
 							</a> 
 						<br>
 						<br>
-						celular: <strong>${postulante.celular} </strong> <br>
-						... <br>
+						celular: <strong>
+								${postulante.celular} 
+						</strong> 
+						<br>
+						<br>
+						msj 1(wsp): <strong>
+							<a class="appWhatsapp" target="_blank" href="https://api.whatsapp.com/send?phone=51${postulante.celular}&text=(DNI estudiante: ${postulante.numerodocumento}). Hola ${postulante.nombre} te escribo de parte de admisión de la universidad...">
+								${postulante.celular} 
+							</a>
+						</strong> 
+						<br>
+						<br>
+						msj 2(wsp): <strong>
+							<a class="appWhatsapp" target="_blank" href="https://api.whatsapp.com/send?phone=51${postulante.celular}&text=(DNI estudiante: ${postulante.numerodocumento}). Hola ${postulante.nombre} te escribo de parte de admisión de la universidad... Ya se te envió las indicaciones al correo electrónico (${postulante.email}). Por favor completar la segunda etapa de tu inscripción virtual.">
+								${postulante.celular}
+							</a>
+						</strong> 
+						<br>
+						<br>
+						msj 3(wsp): <strong>
+							<a class="appWhatsapp" target="_blank" href="https://api.whatsapp.com/send?phone=51${postulante.celular}&text=(DNI estudiante: ${postulante.numerodocumento}). Hola ${postulante.nombre} te escribo de parte de admisión de la universidad... Tu inscripción ya está conforme.">
+								${postulante.celular}
+							</a>
+						</strong> 
+						<br>
+						... 
+						<br>
 						Nombre: <strong>${postulante.nombrecompleto} </strong> <br>
 						... <br>
 						dni: <strong>${postulante.numerodocumento} </strong> <br>

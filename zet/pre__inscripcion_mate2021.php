@@ -67,7 +67,7 @@
 <br>
    
 <form action="pregrabar_mate.php" method="post" id="grado" name="frmFotoGrado" enctype="multipart/form-data" onsubmit="return true;" >
-   <center><h3>INSCRIPCIÓN EXAMEN <u><strong>ORDINARIO</strong></u> ADMISIÓN UNAJMA</h3><h4 style="font-size:22px;">2021 - II</h4> </center> 
+   <center><h3>INSCRIPCIÓN EXAMEN <u><strong>CONCURSO MATEMÁTICA</strong></u> UNAJMA</h3><h4 style="font-size:22px;">2021</h4> </center> 
 <table width="760" border="0" align="center" cellpadding="3" cellspacing="0" class="table-borderless">
 
 	<tr>
@@ -397,16 +397,19 @@
     <tr>
         <td align="left" colspan="2">
             <br>
-            <strong>Recuerda</strong> completar la segunda etapa de tu inscripción ingresando al <a href="https://examen.admisionunajma.pe/zetadmision/zet/index.php" target="_blank" rel="noopener noreferrer">SISTEMA VIRTUAL DE ADMISIÓN</a>, Pero antes tener en cuenta lo siguiente: 
+            <strong>Ten en cuenta las siguientes indicaciones</strong>
             <ul>
                 <li>
-                    Debes esperar en tu correo electrónico <b><span class="correo-postulante text-success bold"></span></b> las indicaciones para la segunda etapa de tu inscripción. 
+                    Te estaremos enviando tus credenciales(usuario y contraseña) a tu correo electrónico personal -> <b><span class="correo-postulante text-success bold"></span></b>. 
                 </li>
                 <li>
-                    Si los datos del formulario son correctos, te estaremos enviando además de las indicaciones, tu <b>credencial</b> (usuario y contrasena) para que puedas completar tu inscripción en el sistema virtual de <b>admision</b>. 
+                    Deberás ingresar en el siguiente enlace para rendir tu evaluación virtual <a href="https://examen.admisionunajma.pe/zetadmision/zet/index.php" target="_blank" rel="noopener noreferrer">SISTEMA VIRTUAL DE ADMISIÓN UNAJMA</a>. Recuerda que tus credenciales(usuario y contraseña) estarán en tu correo electrónico personal.
                 </li>
                 <li>
-                    NO OLVIDES PRESIONAR EL BOTON  DE <strong>AQUÍ ABAJO</strong> PARA COMPLETAR TU REGISTRO DE PREINSCRIPCIÓN <small>(primera etapa)</small>
+                    Procura verificar tus datos para no tener problemas con tu inscripción virtual. Sobre todo los necesarios para poder comunicarnos contigo en el caso de que existan inconvenientes con tu inscripción (CORREO ELECTRÓNICO Y NUMERO CELULAR). 
+                </li>
+                <li>
+                    NO OLVIDES PRESIONAR EL BOTON  DE <strong>AQUÍ ABAJO</strong> PARA COMPLETAR TU REGISTRO DE PREINSCRIPCIÓN.
                 </li>
             </ul>            
         </td>

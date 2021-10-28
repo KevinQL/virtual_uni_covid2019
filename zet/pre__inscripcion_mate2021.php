@@ -133,18 +133,18 @@
             </strong> 
         </td>
         <td>
-        	<?php MostrarComboZet("cboEstructura",$vsqlescuela,$estructura,$pasa); ?>
-            <!-- <select name="cboEstructura" id="cboEstructura">
-                <option value="02">CONTABILIDAD</option>
-                <option value="03">EDUCACION PRIMARIA INTERCULTURAL</option>
-                <option value="06">INGENIERIA DE SISTEMAS</option>
-                <option value="01" selected="">ADMINISTRACION DE EMPRESAS</option>
-                <option value="04">INGENIERIA AGROINDUSTRIAL</option>
-                <option value="05">INGENIERIA AMBIENTAL</option>
-            </select> -->
+        	<?php //MostrarComboZet("cboEstructura",$vsqlescuela,$estructura,$pasa); ?>
+            <select name="cboEstructura" id="cboEstructura">
+                <option value="09" selected="">MATEMATICA PRIMER GRADO </option>
+                <option value="10">MATEMATICA SEGUNDO GRADO</option>
+                <option value="11">MATEMATICA TERCER GRADO</option>
+                <option value="12">MATEMATICA CUARTO GRADO</option>
+                <option value="13">MATEMATICA QUINTO GRADO</option>
+            </select>
         </td>    
     </tr> 
-    <tr>
+
+    <!-- <tr>
     	<td>
         	<strong>
             Sexo:
@@ -153,8 +153,9 @@
         <td>
         	<?php MostrarComboZet("cboSexo",$vsqlsexo,$sexo,$pasa); ?>
         </td>    
-    </tr>
-    <tr>
+    </tr> -->
+
+    <!-- <tr>
     	<td>
         	<strong>
             Fecha Nacimiento:
@@ -164,7 +165,7 @@
         	<input type="hidden" name="txtFechaNacimiento" data-type="date" id="txtFechaNacimiento" class="form-control" autocomplete="off" autocapitalize="words"  value="" maxlength="50"  placeholder="Ingresar fecha"
             aria-describedby="txtnombre-message">
         </td>    
-    </tr>
+    </tr> -->
 
     <tr>
     	<td>
@@ -189,23 +190,23 @@
         </td>    
     </tr>
 
-	<tr>
+	<!-- <tr>
 		<td align="left">
         	<strong>Departamento:</strong>
         </td>
 		<td>
 			<?php MostrarCombo2("cboDepartamento",$vsqldepartamento,$departamento)?>
         </td>
-	</tr>
-	<tr>
+	</tr> -->
+	<!-- <tr>
 			<td align="left">
             	<strong>Provincia:</strong>
             </td>
 			<td>
 				<?php MostrarCombo2("cboProvincia",$vsqlprovincia,$provincia); ?>
              </td>
-	</tr>
-	<tr>
+	</tr> -->
+	<!-- <tr>
 			<td align="left">
             	<strong>Distrito:</strong>
             </td>
@@ -221,10 +222,9 @@
             </strong>        
         </td>
         <td>
-        	<!--  data-type="texto"  -->
         	<input type="hidden" name="txtDireccion" id="txtDireccion" class="form-control" autocomplete="off" autocapitalize="words"  value="" maxlength="30"  placeholder="Ingresar direccion" aria-describedby="txtnombre-message">
         </td>    
-    </tr> 
+    </tr>  -->
 
 
     <tr>
@@ -283,7 +283,7 @@
         	<input type="text" name="txtColegio" id="txtColegio" class="form-control validar" autocomplete="off" autocapitalize="words"  value="" maxlength="30"  placeholder="Ingresar nombre colegio" aria-describedby="txtnombre-message">
         </td>    
     </tr>  
-    <tr>
+    <!-- <tr>
     	<td>
         	<strong>
             A&ntilde;o que culmino colegio:
@@ -292,33 +292,37 @@
         <td>
         	<input type="hidden" name="txtAnioEgreso" id="txtAnioEgreso" data-type="number" class="form-control" autocomplete="off" autocapitalize="words"  value="" maxlength="4"  placeholder="2018" aria-describedby="txtnombre-message">
         </td>    
-    </tr>     
-	<tr>
+    </tr>      
+    -->
+
+	<!-- <tr>
 		<td align="left">
         	<strong>Departamento Procedencia:</strong>
         </td>
 		<td>
 			<?php MostrarCombo2("cboDepartamentoProcedencia",$vsqldepartamento,$departamento)?>
         </td>
-	</tr>
-	<tr>
+	</tr> -->
+
+	<!-- <tr>
 			<td align="left">
             	<strong>Provincia Procedencia:</strong>
             </td>
 			<td>
 				<?php MostrarCombo2("cboProvinciaProcedencia",$vsqlprovincia,$provincia); ?>
              </td>
-	</tr>
-	<tr>
+	</tr> -->
+
+	<!-- <tr>
 			<td align="left">
             	<strong>Distrito Procedencia:</strong>
             </td>
 			<td>
 				<?php MostrarCombo2("cboDistritoProcedencia",$vsqldistrito,$distrito); ?>
             </td>
-    </tr>      
+    </tr>       -->
     
-    <tr>
+    <!-- <tr>
     	<td>
         	<strong>
             Foto Voucher: 
@@ -328,17 +332,17 @@
         </td>
         <td>     
         	<input type='file' accept='image/*' id="imgInp" name="imgInp" class="form-control " autocomplete="off" autocapitalize="words"  value=""  placeholder="Seleccione foto voucher" aria-describedby="imgInp-message" style=" border-radius: 0;
-    -webkit-box-shadow: none!important;
-    box-shadow: none!important;
-    color: #ffffff;
-    background-color: #337ab7;
-    border: 1px solid #ffffff;
-">
+            -webkit-box-shadow: none!important;
+            box-shadow: none!important;
+            color: #ffffff;
+            background-color: #337ab7;
+            border: 1px solid #ffffff;
+        ">
 			<img id="blah" src="https://i.ibb.co/Br8tf3Y/Whats-App-Image-2020-09-26-at-12-50-00-PM.jpg" alt="Tu imagen" width="150" height="150px" />
         </td>    
-    </tr>
+    </tr> -->
 
-    <tr>
+    <!-- <tr>
     	<td>
         	<strong>
             Foto Rostro Postulante:
@@ -346,16 +350,17 @@
         </td>
         <td>     
         	<input type='file' accept='image/*' id="imgEst" name="imgEst" class="form-control " autocomplete="off" autocapitalize="words"  value=""  placeholder="Seleccione foto estudiante" aria-describedby="imgInp-message" style=" border-radius: 0;
-    -webkit-box-shadow: none!important;
-    box-shadow: none!important;
-    color: #ffffff;
-    background-color: #337ab7;
-    border: 1px solid #ffffff;
-">
+                -webkit-box-shadow: none!important;
+                box-shadow: none!important;
+                color: #ffffff;
+                background-color: #337ab7;
+                border: 1px solid #ffffff;
+            ">
 			<img id="blah1" src="https://i.ibb.co/Tm3hb97/image.png" alt="Tu imagen" width="150px" height="150px" style=""/>
         </td>    
-    </tr>
-    <tr>
+    </tr> -->
+
+    <!-- <tr>
     	<td>
         	<strong>
             Foto Dni o Ficha Reniec:
@@ -363,15 +368,15 @@
         </td>
         <td>     
         	<input type='file' accept='image/*' id="imgDni" name="imgDni" class="form-control " autocomplete="off" autocapitalize="words"  value=""  placeholder="Seleccione foto dni" aria-describedby="imgDni-message" style=" border-radius: 0;
-    -webkit-box-shadow: none!important;
-    box-shadow: none!important;
-    color: #ffffff;
-    background-color: #337ab7;
-    border: 1px solid #ffffff;
-">
+                -webkit-box-shadow: none!important;
+                box-shadow: none!important;
+                color: #ffffff;
+                background-color: #337ab7;
+                border: 1px solid #ffffff;
+            ">
 			<img id="blah2" src="https://i.ibb.co/ZKVB8xZ/image.png" alt="Tu imagen" width="150px" height="150px" style=""/>
         </td>    
-    </tr>
+    </tr> -->
 
     <tr>
         <br>

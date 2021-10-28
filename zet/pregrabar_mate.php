@@ -6,8 +6,6 @@
 
 	$zet = '../';
 
-	var_dump($_POST);
-
 	/*
 	array(26) { 
 		["txtDni"]=> string(8) "12312312" 
@@ -37,28 +35,6 @@
 		["g-recaptcha-response"]=> string(0) "" 
 		["h-captcha-response"]=> string(0) "" }
 	*/
-	//die();
-	
-	/**
-	 * code of the captcha by KLEBXY
-	 */
-	$data_hc = [
-		"secret" => "0x28899D6c004BBBB2489d955c4F2514cc94940a73",
-		"response" => $_POST['h-captcha-response']
-	];
-
-	$verify = curl_init();
-	curl_setopt($verify, CURLOPT_URL, "https://hcaptcha.com/siteverify");
-	curl_setopt($verify, CURLOPT_POST, true);
-	curl_setopt($verify, CURLOPT_POSTFIELDS, http_build_query($data_hc));
-	curl_setopt($verify, CURLOPT_RETURNTRANSFER, true);
-
-	$response = curl_exec($verify);
-	$responseData = json_decode($response);
-	
-	// var_dump($responseData);
-	/** fin code captcha */
-
 	
 	if (!isset($_POST["txtDni"]))
 		{
@@ -71,7 +47,7 @@
 	$nombres = $_POST["txtNombres"];
 	$modalidad = "14"; #$_POST["cboModalidad"];
 	$estructura = $_POST["cboEstructura"];
-	$sexo = $_POST["cboSexo"];
+	$sexo = "M"; #$_POST["cboSexo"];
 	$fechanacimiento = "2021-10-15"; #$_POST["txtFechaNacimiento"]; 
 	$email = $_POST["txtEmail"];
 	$celular = $_POST["txtCelular"];
@@ -93,50 +69,12 @@
 	$cn_foto = conectar();
 	mysqli_query($cn_foto,"SET CHARACTER SET utf8");
 	mysqli_query($cn_foto,"SET NAMES utf8");
-	
-	$max_size = 12000000;
-	#################################################
-	#################################################
-	#define('GL_DIR_FS_APPS', 'd:/xampp/htdocs');
-	#################################################
-	#################################################
 
 	$proc="0027"; //PROCESO matematica (to change)
-	
 
-	$status_voucher = "";
-	$destino_voucher = '../foto_voucher/'.$proc.$dni.'.jpg';
-	$archivo_voucher = $_FILES['imgInp'];
-	#################################################
-	#################################################
-	$status_postulante = "";
-	$destino_postulante = '../foto_postulante/'.$dni.'.jpg';
-	$archivo_postulante = $_FILES['imgEst'];
-	#define('GL_DIR_FS_APPS', 'd:/xampp/htdocs');
-	#################################################
-	#################################################
-	
-
-	#################################################
-	#################################################
-	$status_dni = "";
-	$destino_dni = '../foto_dni/'.$dni.'.jpg';
-	$archivo_dni = $_FILES['imgDni'];
-	#define('GL_DIR_FS_APPS', 'd:/xampp/htdocs');
-	#################################################
-	#################################################	
-	
-
-	#echo 'oiga';
-	if (true || ($archivo_postulante['size'] <= $max_size && $archivo_postulante['size'] > 0) )
+	if (true)
 		{
-			#include_once('pre_fotovoucher.php');
 			
-			#include_once('pre_fotovoucher_1.php');
-			#include('pre_fotopostulante.php');
-			#include('pre_fotodni.php');
-			
-			#echo 'hola 1';
 			$copied = true;
 			if ($copied) 
 				{
@@ -170,12 +108,7 @@
 						$vsql = $vsql . " '". $distritoprocedencia ."',";
 						$vsql = $vsql . " '','',0,0,";
 						$vsql = $vsql . " 'N')";
-	
-					#echo 'hola 3';
-					#echo $vsql;
-					#echo $vsql;
-					
-					#exit;
+
 					mysqli_query($cn_foto, $vsql) or die (mysql_error());
 					#########
 					$msg = 'Se subio el archivo correctamente.';

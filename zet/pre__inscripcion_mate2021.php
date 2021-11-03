@@ -253,30 +253,30 @@
         </td>    
     </tr>
 
-	<tr>
+	<!-- <tr>
 		<td align="left">
         	<strong>Departamento Colegio:</strong>
         </td>
 		<td>
 			<?php MostrarCombo2("cboDepartamentoColegio",$vsqldepartamento,$departamento)?>
         </td>
-	</tr>
-	<tr>
+	</tr> -->
+	<!-- <tr>
 			<td align="left">
             	<strong>Provincia Colegio:</strong>
             </td>
 			<td>
 				<?php MostrarCombo2("cboProvinciaColegio",$vsqlprovincia,$provincia); ?>
              </td>
-	</tr>
-	<tr>
+	</tr> -->
+	<!-- <tr>
 			<td align="left">
             	<strong>Distrito Colegio:</strong>
             </td>
 			<td>
 				<?php MostrarCombo2("cboDistritoColegio",$vsqldistrito,$distrito); ?>
             </td>
-	</tr> 
+	</tr>  -->
     <tr>
     	<td>
         	<strong>

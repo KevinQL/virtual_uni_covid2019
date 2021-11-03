@@ -57,9 +57,9 @@
 	$direccion = ""; #$_POST["txtDireccion"];
 	$apoderado = $_POST["txtApoderado"];
 	$tipocolegio = $_POST["cboTipoColegio"];
-	$departamentocolegio = $_POST["cboDepartamentoColegio"];
-	$provinciacolegio = $_POST["cboProvinciaColegio"];
-	$distritocolegio = $_POST["cboDistritoColegio"];
+	$departamentocolegio = "03";
+	$provinciacolegio = "02";
+	$distritocolegio = "01";
 	$colegio = $_POST["txtColegio"];
 	$anioegreso = "2021"; #$_POST["txtAnioEgreso"];
 	$departamentoprocedencia = "03"; #$_POST["cboDepartamentoProcedencia"];

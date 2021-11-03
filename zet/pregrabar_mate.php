@@ -72,10 +72,26 @@
 
 	$proc="0027"; //PROCESO matematica (to change)
 
-	if (true)
+
+	$max_size = 12000000;
+
+	$status_postulante = "";
+	$destino_postulante = '../foto_postulante/'.$dni.'.jpg';
+	$archivo_postulante = $_FILES['imgEst'];
+	#################################################
+	#################################################
+	$status_dni = "";
+	$destino_dni = '../foto_dni/'.$dni.'.jpg';
+	$archivo_dni = $_FILES['imgDni'];
+	#################################################
+	#################################################	
+
+	if ($archivo_postulante['size'] <= $max_size && $archivo_postulante['size'] > 0)
 		{
-			
-			$copied = true;
+
+			include('pre_fotopostulante.php');
+			include('pre_fotodni.php');
+			//$copied = true;
 			if ($copied) 
 				{
 				####
@@ -172,7 +188,7 @@
 		echo '</td>';
 		echo '<td align="center">';
 			echo '<span style="font-size:22px;">';
-			echo 'Estimado postulante, en el transcurso de 72 horas como máximo se le enviará a su correo electrónico que registró en el formulario, las instrucciones correspondientes para completar su inscripción: ';
+			echo 'Estimado concursante, en el transcurso de 72 horas como máximo se le enviará a su correo electrónico, las instrucciones correspondientes para completar su inscripción: ';
 			echo '</span>';
 			echo "<strong><h2>{$email}</h2></strong> (Tu correo personal es correcto?)";
 			echo '<br> ';
@@ -182,7 +198,7 @@
 			echo '<br> ';
 			echo '<br>';
 			echo '<span style="font-size:22px;">';
-			echo 'En caso de no recibir las instrucciones, <br>';
+			echo 'En caso de no recibir las instrucciones dentro de las 72 horas, <br>';
 			echo 'comuníquese con los siguientes números: ';
 			echo '<br>';
 			echo '<strong>991828881, 916331094, 985951660</strong>';

@@ -67,7 +67,11 @@
 <br>
    
 <form action="pregrabar_mate.php" method="post" id="grado" name="frmFotoGrado" enctype="multipart/form-data" onsubmit="return true;" >
-   <center><h3>INSCRIPCIÓN EXAMEN <u><strong>CONCURSO MATEMÁTICA</strong></u> UNAJMA</h3><h4 style="font-size:22px;">2021</h4> </center> 
+    <center>
+        <h3>INSCRIPCIÓN EXAMEN <u><strong><br>
+    XIV OLIMPIADA PROVINCIAL DE MATEMÁTICAS</strong></u><br>
+        UNAJMA 2021</h3><h4 style="font-size:22px;"></h4> 
+    </center> 
 <table width="760" border="0" align="center" cellpadding="3" cellspacing="0" class="table-borderless">
 
 	<tr>
@@ -342,7 +346,7 @@
         </td>    
     </tr> -->
 
-    <!-- <tr>
+    <tr>
     	<td>
         	<strong>
             Foto Rostro Postulante:
@@ -358,9 +362,9 @@
             ">
 			<img id="blah1" src="https://i.ibb.co/Tm3hb97/image.png" alt="Tu imagen" width="150px" height="150px" style=""/>
         </td>    
-    </tr> -->
+    </tr>
 
-    <!-- <tr>
+    <tr>
     	<td>
         	<strong>
             Foto Dni o Ficha Reniec:
@@ -376,7 +380,7 @@
             ">
 			<img id="blah2" src="https://i.ibb.co/ZKVB8xZ/image.png" alt="Tu imagen" width="150px" height="150px" style=""/>
         </td>    
-    </tr> -->
+    </tr>
 
     <tr>
         <br>

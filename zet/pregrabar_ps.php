@@ -6,92 +6,133 @@
 
 	$zet = '../';
 
-	/*
-	array(26) { 
-		["txtDni"]=> string(8) "12312312" 
-		["txtApellidoPaterno"]=> string(3) "oeo" 
-		["txtApellidoMaterno"]=> string(7) "daksdak" 
-		["txtNombres"]=> string(7) "dksafka" 
-		["cboModalidad"]=> string(2) "14" 
-		["cboEstructura"]=> string(2) "11" 
-		["cboSexo"]=> string(1) "M" 
-		["txtFechaNacimiento"]=> string(10) "2021-10-15" 
-		["txtEmail"]=> string(19) "unajmakev@gmail.com" 
-		["txtCelular"]=> string(8) "94566821" 
-		["cboDepartamento"]=> string(2) "03" 
-		["cboProvincia"]=> string(2) "02" 
-		["cboDistrito"]=> string(2) "01" 
-		["txtDireccion"]=> string(23) "av. los libertadores sn" 
-		["txtApoderado"]=> string(5) "kevin" 
-		["cboTipoColegio"]=> string(2) "01" 
-		["cboDepartamentoColegio"]=> string(2) "03" 
-		["cboProvinciaColegio"]=> string(2) "02" 
-		["cboDistritoColegio"]=> string(2) "01" 
-		["txtColegio"]=> string(4) "jeme" 
-		["txtAnioEgreso"]=> string(4) "2020" 
-		["cboDepartamentoProcedencia"]=> string(2) "03" 
-		["cboProvinciaProcedencia"]=> string(2) "02" 
-		["cboDistritoProcedencia"]=> string(2) "01" 
-		["g-recaptcha-response"]=> string(0) "" 
-		["h-captcha-response"]=> string(0) "" }
-	*/
+	// var_dump($_POST);
+	
+	/**
+	 * code of the captcha by KLEBXY
+	 */
+	$data_hc = [
+		"secret" => "0x28899D6c004BBBB2489d955c4F2514cc94940a73",
+		"response" => $_POST['h-captcha-response']
+	];
+
+	$verify = curl_init();
+	curl_setopt($verify, CURLOPT_URL, "https://hcaptcha.com/siteverify");
+	curl_setopt($verify, CURLOPT_POST, true);
+	curl_setopt($verify, CURLOPT_POSTFIELDS, http_build_query($data_hc));
+	curl_setopt($verify, CURLOPT_RETURNTRANSFER, true);
+
+	$response = curl_exec($verify);
+	$responseData = json_decode($response);
+	
+	// var_dump($responseData);
+	/** fin code captcha */
+
+
+	// die();
+
+
 	
 	if (!isset($_POST["txtDni"]))
 		{
-			header ("location: pre__inscripcion_mate2021.php");
+			header ("location: pre__inscripcion_ps.php");
 		}
 		
+	#$define('GL_DIR_FS_APPS', 'd:/xampp/htdocs');
+	#echo 'hola';
 	$dni = $_POST["txtDni"];
 	$apellidopaterno = $_POST["txtApellidoPaterno"];
 	$apellidomaterno = $_POST["txtApellidoMaterno"];
 	$nombres = $_POST["txtNombres"];
-	$modalidad = "14"; #$_POST["cboModalidad"];
+	$modalidad = $_POST["cboModalidad"];
 	$estructura = $_POST["cboEstructura"];
-	$sexo = "M"; #$_POST["cboSexo"];
-	$fechanacimiento = "2021-10-15"; #$_POST["txtFechaNacimiento"]; 
+	$sexo = $_POST["cboSexo"];
+	$fechanacimiento = $_POST["txtFechaNacimiento"]; 
+	#echo $fechanacimiento;
+	#$fechanacimiento = substr($fechanacimiento,6,4)."/".substr($fechanacimiento,3,2)."/".substr($fechanacimiento,0,2);
 	$email = $_POST["txtEmail"];
 	$celular = $_POST["txtCelular"];
-	$departamento = "03"; #$_POST["cboDepartamento"];
-	$provincia = "02"; #$_POST["cboProvincia"];
-	$distrito = "01"; #$_POST["cboDistrito"];
-	$direccion = ""; #$_POST["txtDireccion"];
+	$departamento = $_POST["cboDepartamento"];
+	$provincia = $_POST["cboProvincia"];
+	$distrito = $_POST["cboDistrito"];
+	$direccion = $_POST["txtDireccion"];
 	$apoderado = $_POST["txtApoderado"];
 	$tipocolegio = $_POST["cboTipoColegio"];
-	$departamentocolegio = "03";
-	$provinciacolegio = "02";
-	$distritocolegio = "01";
+	$departamentocolegio = $_POST["cboDepartamentoColegio"];
+	$provinciacolegio = $_POST["cboProvinciaColegio"];
+	$distritocolegio = $_POST["cboDistritoColegio"];
 	$colegio = $_POST["txtColegio"];
-	$anioegreso = "2021"; #$_POST["txtAnioEgreso"];
-	$departamentoprocedencia = "03"; #$_POST["cboDepartamentoProcedencia"];
-	$provinciaprocedencia = "02"; #$_POST["cboProvinciaProcedencia"];
-	$distritoprocedencia = "01"; #$_POST["cboDistritoProcedencia"];
+	$anioegreso = $_POST["txtAnioEgreso"];
+	$departamentoprocedencia = $_POST["cboDepartamentoProcedencia"];
+	$provinciaprocedencia = $_POST["cboProvinciaProcedencia"];
+	$distritoprocedencia = $_POST["cboDistritoProcedencia"];
+
+	#echo $vsql;
+	#exit;
+
 	
 	$cn_foto = conectar();
 	mysqli_query($cn_foto,"SET CHARACTER SET utf8");
 	mysqli_query($cn_foto,"SET NAMES utf8");
-
-	$proc="0027"; //PROCESO matematica (to change)
-
-
+	
 	$max_size = 12000000;
+	#################################################
+	#################################################
+	#define('GL_DIR_FS_APPS', 'd:/xampp/htdocs');
+	#################################################
+	#################################################
 
+	// PRUEBA PARA NUEVOS PROCESOS 
+	// var_dump($estructura );
+	// die();
+
+		// <select name="cboEstructura" id="cboEstructura">
+		// 	<option value="01" selected="">ADMINISTRACION DE EMPRESAS</option>
+		// 	<option value="02">CONTABILIDAD</option>
+		// 	<option value="03">EDUCACION PRIMARIA INTERCULTURAL</option>
+		// 	<option value="04">INGENIERIA AGROINDUSTRIAL</option>
+		// 	<option value="05">INGENIERIA AMBIENTAL</option>
+		// 	<option value="06">INGENIERIA DE SISTEMAS</option>
+		// </select>
+	// FIN PRUEBAS NUEVO PROCESOS
+
+	if( $estructura === "01" || $estructura === "04" || $estructura === "05" ){
+		$proc="0028"; //PROCESO EXTRAORDINARIO (to change)
+	}else{
+		$proc="0028"; //PROCESO EXTRAORDINARIO (to change)
+	}
+
+	$status_voucher = "";
+	$destino_voucher = '../foto_voucher/'.$proc.$dni.'.jpg';
+	$archivo_voucher = $_FILES['imgInp'];
+	#################################################
+	#################################################
 	$status_postulante = "";
 	$destino_postulante = '../foto_postulante/'.$dni.'.jpg';
 	$archivo_postulante = $_FILES['imgEst'];
+	#define('GL_DIR_FS_APPS', 'd:/xampp/htdocs');
+	#################################################
+	#################################################
+	
+
 	#################################################
 	#################################################
 	$status_dni = "";
 	$destino_dni = '../foto_dni/'.$dni.'.jpg';
 	$archivo_dni = $_FILES['imgDni'];
+	#define('GL_DIR_FS_APPS', 'd:/xampp/htdocs');
 	#################################################
 	#################################################	
+	
 
+	#echo 'oiga';
 	if ($archivo_postulante['size'] <= $max_size && $archivo_postulante['size'] > 0)
 		{
-
+			#include_once('pre_fotovoucher.php');
+			include_once('pre_fotovoucher_1.php');
 			include('pre_fotopostulante.php');
 			include('pre_fotodni.php');
-			//$copied = true;
+			#echo 'hola 1';
 			if ($copied) 
 				{
 				####
@@ -124,7 +165,12 @@
 						$vsql = $vsql . " '". $distritoprocedencia ."',";
 						$vsql = $vsql . " '','',0,0,";
 						$vsql = $vsql . " 'N')";
-
+	
+					#echo 'hola 3';
+					#echo $vsql;
+					#echo $vsql;
+					
+					#exit;
 					mysqli_query($cn_foto, $vsql) or die (mysql_error());
 					#########
 					$msg = 'Se subio el archivo correctamente.';
@@ -188,7 +234,7 @@
 		echo '</td>';
 		echo '<td align="center">';
 			echo '<span style="font-size:22px;">';
-			echo 'Estimado concursante sus credenciales para el acceso al sistema se le remitirá una vez se corrobore su inscripción con la autorización de su Institución Educativa.';
+			echo 'Estimado postulante, en el transcurso de 72 horas como máximo se le enviará a su correo electrónico que registró en el formulario, las instrucciones correspondientes para completar su inscripción: ';
 			echo '</span>';
 			echo "<strong><h2>{$email}</h2></strong> (Tu correo personal es correcto?)";
 			echo '<br> ';
@@ -198,8 +244,10 @@
 			echo '<br> ';
 			echo '<br>';
 			echo '<span style="font-size:22px;">';
+			echo 'En caso de no recibir las instrucciones, <br>';
+			echo 'comuníquese con los siguientes números: ';
 			echo '<br>';
-			echo '<strong>916331094, 985951660</strong>';
+			echo '<strong>991828881, 916331094, 985951660</strong>';
 			echo '<p></br>';
 			echo '<p><a href="https://youtu.be/N7yxUvfPAL4?t=403" target="_blank">Cómo completar mi inscripcion? (video instructivo)<i class="fa fa-forward"></i></a> </p>';
 			echo '<p><a href="https://examen.admisionunajma.pe/pagina_temario.php" target="_blank">Ver temario ejemplo.<i class="fa fa-forward"></i></a> </p>';

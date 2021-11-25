@@ -188,6 +188,28 @@ function mostrarfoto_postulante_pfd($numerodocumento)
 		return $fotex;
 	}
 
+	//Para OCA
+	function mostrarfoto_firma_existe($codigo){
+
+		$ruta = GL_DIR_FS_APP;
+		$file = trim($ruta).'foto_ing_firma/'.$codigo.".jpg";
+		$file1 = trim($ruta).'foto_ing_firma/'.$codigo.".JPG";
+	
+		if (file_exists($file))
+			{
+				$mostrarfoto_firma_existe=1;
+			}
+		elseif (file_exists($file1))
+			{
+				$mostrarfoto_firma_existe=1;
+			}		
+		else
+			{
+				$mostrarfoto_firma_existe=0;	
+			}
+		return $mostrarfoto_firma_existe;
+	}
+
 function mostrarfoto_voucher_existe($codigo)
 	{
 		$ruta = GL_DIR_FS_APP;
@@ -216,6 +238,7 @@ function mostrarfoto_voucher($numerodocumento)
 		$proce = substr($numerodocumento,0,4);
 		$dni_zet = substr($numerodocumento,4,8);
 
+		/*
 		if ($proce=='0006' or $proce=='0007')
 			{
 				$busca1 = $proce.$dni_zet;
@@ -296,52 +319,15 @@ function mostrarfoto_voucher($numerodocumento)
 						echo 'SIN FOTO';	
 					}
 			}
-
-			// proceso de primera seleccion
-			if ($proce=='0014')
-			{
-				$busca1 = $proce.$dni_zet;
-				$ruta = GL_DIR_FS_APP;
-				$file = trim($ruta).'foto_voucher/'.$busca1.".jpg";
-	
-				if (file_exists($file))
-					{
-						$ruta1='../';
-						$filezet = $ruta1.'foto_voucher/'.$busca1.".jpg";
-						echo '<img src="'.$filezet.'" border="0" width="300">';
-					}	
-				else
-					{
-						echo 'SIN FOTO';	
-					}
-			}
-
-			// proceso de preba
-			if ($proce=='0016')
-			{
-				$busca1 = $proce.$dni_zet;
-				$ruta = GL_DIR_FS_APP;
-				$file = trim($ruta).'foto_voucher/'.$busca1.".jpg";
-	
-				if (file_exists($file))
-					{
-						$ruta1='../';
-						$filezet = $ruta1.'foto_voucher/'.$busca1.".jpg";
-						echo '<img src="'.$filezet.'" border="0" width="300">';
-					}	
-				else
-					{
-						echo 'SIN FOTO';	
-					}
-			}
-
 		/*
 		else
 			{
+		*/
 				$busca1 = $proce.$dni_zet;
 				$ruta = GL_DIR_FS_APP;
 				$file = trim($ruta).'foto_voucher/'.$busca1.".jpg";
 				$file1 = trim($ruta).'foto_voucher/'.$busca1.".JPG";
+				#echo $busca1;
 			
 				if (file_exists($file))
 					{
@@ -359,8 +345,8 @@ function mostrarfoto_voucher($numerodocumento)
 					{
 						echo '';	
 					}
-			}
-			*/
+			#}
+			
 		
 		
 	
@@ -458,28 +444,6 @@ function mostrarfoto_ing_firma_pfd($numerodocumento)
 				$firmazet =  '';	
 			}
 		return $firmazet;
-	}
-
-	//Para OCA
-	function mostrarfoto_firma_existe($codigo){
-
-		$ruta = GL_DIR_FS_APP;
-		$file = trim($ruta).'foto_ing_firma/'.$codigo.".jpg";
-		$file1 = trim($ruta).'foto_ing_firma/'.$codigo.".JPG";
-	
-		if (file_exists($file))
-			{
-				$mostrarfoto_firma_existe=1;
-			}
-		elseif (file_exists($file1))
-			{
-				$mostrarfoto_firma_existe=1;
-			}		
-		else
-			{
-				$mostrarfoto_firma_existe=0;	
-			}
-		return $mostrarfoto_firma_existe;
 	}
 	
 function validarconforme($proceso,$postulante)

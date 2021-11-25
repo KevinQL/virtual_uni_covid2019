@@ -1,17 +1,22 @@
 <?php
+    /**
+     * the code let to controller the access post-inscription for INSCRIPCION CEPRE
+     * then put true for all when the inscription is availabel (true:true)
+     * else put true : false;
+     */
+    $pase = (isset($_GET['externo20213']) || isset($_GET['other']) )? false : false;
+
+    if($pase){
+?>
+
+
+<?php
 	include('../funciones/admi_con.php');
 	include('../funciones/admi_fun.php');
 	$departamento = '03';
 	$provincia = '02';
 	$distrito = '01';
-	// $vsqlescuela = "select estructura, descripcion from mae_estructura order by descripcion";
-	// $vsqlmodalidadadmision = "select modalidadadmision, descripcion from adm_modalidadadmision where activo=1 order by descripcion";
-	// $vsqlsexo = "select sexo, descripcion from adm_sexo order by descripcion";
-	// $vsqltipocolegio = "select tipocolegio, descripcion from adm_tipocolegio order by descripcion";
-	// $vsqldepartamento="SELECT departamento,descripcion FROM mae_ubigeo WHERE provincia='00' AND distrito='00' order by 2";
-	// $vsqlprovincia="SELECT provincia,descripcion FROM mae_ubigeo WHERE departamento='$departamento' AND provincia<>'00' AND distrito='00' order by 2";
-    // $vsqldistrito="SELECT distrito,descripcion FROM mae_ubigeo WHERE departamento='$departamento' AND provincia='$provincia' AND distrito<>'00' order by 2";
-    
+
     $vsqlescuela = "select estructura, descripcion from mae_estructura where activo=1 order by descripcion";
 	$vsqlmodalidadadmision = "select modalidadadmision, descripcion from adm_modalidadadmision where activo=1 order by descripcion";
 	$vsqlsexo = "select sexo, descripcion from adm_sexo order by descripcion";
@@ -41,6 +46,10 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <!-- font awesome -->
     <script src="https://kit.fontawesome.com/1c90e8b317.js" crossorigin="anonymous"></script>
+
+    <!-- hcatpcha API -->
+    <script src="https://hcaptcha.com/1/api.js" async defer></script>
+
 </head>
 
 <body background="../images/fondo.jpg">
@@ -57,8 +66,8 @@
 <br>
 <br>
    
-<form action="pregrabar.php" method="post" id="grado" name="frmFotoGrado" enctype="multipart/form-data" onsubmit="return true;" >
-   <center><h3>INSCRIPCIÓN EXAMEN <u><strong>EXTRAORDINARIO</strong></u> ADMISIÓN UNAJMA</h3><h4 style="font-size:22px;">2021 - I</h4> </center> 
+<form action="pregrabar_ps.php" method="post" id="grado" name="frmFotoGrado" enctype="multipart/form-data" onsubmit="return true;" >
+   <center><h3>INSCRIPCIÓN EXAMEN <u><strong>PRIMERA SELECCIÓN</strong></u> ADMISIÓN UNAJMA</h3><h4 style="font-size:22px;">2022 - I</h4> </center> 
 <table width="760" border="0" align="center" cellpadding="3" cellspacing="0" class="table-borderless">
 
 	<tr>
@@ -108,24 +117,32 @@
     <tr>
     	<td>
         	<strong>
-            Modalidad admisi&oacute;n:
+            Modalidad admisión:
             </strong>        
         </td>
         <td>
-        	<?php MostrarComboZet("cboModalidad",$vsqlmodalidadadmision,$modalidad,$pasa); ?>
-            <!-- <select name="cboModalidad" id="cboModalidad">
-                <option value="02">1. EXTRAORDINARIO- PRIMERA SELECCION</option>
-            </select> -->
+        	<?php //MostrarComboZet("cboModalidad",$vsqlmodalidadadmision,$modalidad,$pasa); ?>
+            <select name="cboModalidad" id="cboModalidad">
+                <option value="02">EXTRAORDINARIO - PRIMERA SELECCION (MODALIDAD)</option>
+            </select>
         </td>    
     </tr>  
     <tr>
     	<td>
         	<strong>
             Escuela Profesional:
-            </strong>        
+            </strong> 
         </td>
         <td>
-        	<?php MostrarComboZet("cboEstructura",$vsqlescuela,$estructura,$pasa); ?>
+        	<?php //MostrarComboZet("cboEstructura",$vsqlescuela,$estructura,$pasa); ?>
+            <select name="cboEstructura" id="cboEstructura">
+                <option value="01" selected="">ADMINISTRACION DE EMPRESAS</option>
+                <option value="02">CONTABILIDAD</option>
+                <option value="03">EDUCACION PRIMARIA INTERCULTURAL</option>
+                <option value="04">INGENIERIA AGROINDUSTRIAL</option>
+                <option value="05">INGENIERIA AMBIENTAL</option>
+                <option value="06">INGENIERIA DE SISTEMAS</option>
+            </select>
         </td>    
     </tr> 
     <tr>
@@ -145,7 +162,8 @@
             </strong>        
         </td>
         <td>
-        	<input type="date" name="txtFechaNacimiento" data-type="date" id="txtFechaNacimiento" class="form-control validar" autocomplete="off" autocapitalize="words"  value="" maxlength="50"  placeholder="Ingresar email" aria-describedby="txtnombre-message">
+        	<input type="date" name="txtFechaNacimiento" data-type="date" id="txtFechaNacimiento" class="form-control validar" autocomplete="off" autocapitalize="words"  value="" maxlength="50"  placeholder="Ingresar fecha"
+            aria-describedby="txtnombre-message">
         </td>    
     </tr>
     <tr>
@@ -155,7 +173,9 @@
             </strong>        
         </td>
         <td>
-        	<input type="text" name="txtEmail" id="txtEmail" data-type="email" class="form-control validar" autocomplete="off" autocapitalize="words"  value="" maxlength="50"  placeholder="Ingresar email" aria-describedby="txtnombre-message">
+        	<input type="email" name="txtEmail" id="txtEmail" data-type="email" class="form-control validar" autocomplete="off" autocapitalize="words"  value="" maxlength="50"  placeholder="Ingresar email"
+            onkeyup="agregarCorreoIndicacionesFooter(this);" 
+            aria-describedby="txtnombre-message">
         </td>    
     </tr>
     <tr>
@@ -195,7 +215,7 @@
 	<tr>
     	<td>
         	<strong>
-            Direcci&oacute;n actual:
+            Dirección actual:
             </strong>        
         </td>
         <td>
@@ -210,8 +230,8 @@
             </strong>        
         </td>
         <td>
-        	<! data-type="texto" -->
-        	<input type="text" name="txtApoderado" id="txtApoderado" class="form-control validar" autocomplete="off" autocapitalize="words"  value="" maxlength="30"  placeholder="Ingresar apoderado" aria-describedby="txtnombre-message">
+        	<!-- data-type="texto" -->
+        	<input type="text" name="txtApoderado" id="txtApoderado" class="form-control validar" autocomplete="off" autocapitalize="words"  value="" maxlength="30"  placeholder="Puedes ser tú mismo, solo en el caso de que seas mayor de edad" aria-describedby="txtnombre-message">
         </td>    
     </tr>  
     <tr>
@@ -255,7 +275,7 @@
             </strong>        
         </td>
         <td>
-        	<input type="text" name="txtColegio" id="txtColegio" class="form-control validar" autocomplete="off" autocapitalize="words"  value="" maxlength="30"  placeholder="Ingresar colegio" aria-describedby="txtnombre-message">
+        	<input type="text" name="txtColegio" id="txtColegio" class="form-control validar" autocomplete="off" autocapitalize="words"  value="" maxlength="30"  placeholder="Ingresar nombre colegio" aria-describedby="txtnombre-message">
         </td>    
     </tr>  
     <tr>
@@ -265,7 +285,7 @@
             </strong>        
         </td>
         <td>
-        	<input type="text" name="txtAnioEgreso" id="txtAnioEgreso" data-type="number" class="form-control validar" autocomplete="off" autocapitalize="words"  value="" maxlength="4"  placeholder="Ingresar colegio" aria-describedby="txtnombre-message">
+        	<input type="text" name="txtAnioEgreso" id="txtAnioEgreso" data-type="number" class="form-control validar" autocomplete="off" autocapitalize="words"  value="" maxlength="4"  placeholder="2018" aria-describedby="txtnombre-message">
         </td>    
     </tr>     
 	<tr>
@@ -296,18 +316,20 @@
     <tr>
     	<td>
         	<strong>
-            Foto Voucher:
+            Foto Voucher: 
             </strong>        
+            <br>
+            <small>(Pago de inscripcion en el banco de la nación)</small>
         </td>
         <td>     
-        	<input type='file' id="imgInp" name="imgInp" class="form-control validar" autocomplete="off" autocapitalize="words"  value=""  placeholder="Seleccione foto voucher" aria-describedby="imgInp-message" style=" border-radius: 0;
+        	<input type='file' accept='image/*' id="imgInp" name="imgInp" class="form-control validar" autocomplete="off" autocapitalize="words"  value=""  placeholder="Seleccione foto voucher" aria-describedby="imgInp-message" style=" border-radius: 0;
     -webkit-box-shadow: none!important;
     box-shadow: none!important;
     color: #ffffff;
     background-color: #337ab7;
     border: 1px solid #ffffff;
 ">
-			<img id="blah" src="https://via.placeholder.com/150" alt="Tu imagen" width="150" height="150px" />
+			<img id="blah" src="https://i.ibb.co/Br8tf3Y/Whats-App-Image-2020-09-26-at-12-50-00-PM.jpg" alt="Tu imagen" width="150" height="150px" />
         </td>    
     </tr>
 
@@ -318,7 +340,7 @@
             </strong>        
         </td>
         <td>     
-        	<input type='file' id="imgEst" name="imgEst" class="form-control validar" autocomplete="off" autocapitalize="words"  value=""  placeholder="Seleccione foto estudiante" aria-describedby="imgInp-message" style=" border-radius: 0;
+        	<input type='file' accept='image/*' id="imgEst" name="imgEst" class="form-control validar" autocomplete="off" autocapitalize="words"  value=""  placeholder="Seleccione foto estudiante" aria-describedby="imgInp-message" style=" border-radius: 0;
     -webkit-box-shadow: none!important;
     box-shadow: none!important;
     color: #ffffff;
@@ -335,7 +357,7 @@
             </strong>        
         </td>
         <td>     
-        	<input type='file' id="imgDni" name="imgDni" class="form-control validar" autocomplete="off" autocapitalize="words"  value=""  placeholder="Seleccione foto dni" aria-describedby="imgDni-message" style=" border-radius: 0;
+        	<input type='file' accept='image/*' id="imgDni" name="imgDni" class="form-control validar" autocomplete="off" autocapitalize="words"  value=""  placeholder="Seleccione foto dni" aria-describedby="imgDni-message" style=" border-radius: 0;
     -webkit-box-shadow: none!important;
     box-shadow: none!important;
     color: #ffffff;
@@ -347,13 +369,35 @@
     </tr>
 
     <tr>
+        <br>
+        <br>
+        <td align="center" colspan="2" class="pt-5">
+            <h5>
+                COMPRUEBE QUE ES HUMANO <small>(click al cuadro y resuelva el reto)</small>
+            </h5>
+            <!-- Elemento hCaptcha -->
+            <div class="pt-2 text-center">
+                <div class="h-captcha" data-sitekey="90541f3b-4b55-40ad-a480-1e07bf94bfdb">
+                </div>
+            </div>
+            <!--  -->
+        </td>
+    </tr>
+
+    <tr>
         <td align="left" colspan="2">
             <br>
-            <strong>Recuerda</strong> completar tu inscrición ingresando al <a href="https://examen.admisionunajma.pe/zetadmision/zet/index.php" target="_blank" rel="noopener noreferrer">SIGUIENTE SISTEMA VIRTUAL</a>, por lo que: 
+            <strong>Recuerda</strong> completar la segunda etapa de tu inscripción ingresando al <a href="https://examen.admisionunajma.pe/zetadmision/zet/index.php" target="_blank" rel="noopener noreferrer">SISTEMA VIRTUAL DE ADMISIÓN</a>, Pero antes tener en cuenta lo siguiente: 
             <ul>
-                <li>Deberás de ingresar al sistema virtual con tu usuario y contraseña, el cual te llegará al correo electrónico que estás registrando en este momento en el formulario de inscripción virtual</li>
-                <li>Ya dentro del sistema, tendrás que subir la Foto de tu firma digital en formato .jpg, tus documentos Requeridos en formato .PDF, aceptar las Declaraciones Juradas, y Finalmente tendrás que Descargar tu constacia de inscripción y Declaraciones Juradas en formato PDF.</li>
-                <li>NO OLVIDES PRESIONAR EL BOTON  DE <strong>AQUÍ ABAJO</strong> PARA COMPLETAR TU REGISTRO DE PREINSCRIPCIÓN</li>
+                <li>
+                    Debes esperar en tu correo electrónico <b><span class="correo-postulante text-success bold"></span></b> las indicaciones para la segunda etapa de tu inscripción. 
+                </li>
+                <li>
+                    Si los datos del formulario son correctos, te estaremos enviando además de las indicaciones, tu <b>credencial</b> (usuario y contrasena) para que puedas completar tu inscripción en el sistema virtual de <b>admision</b>. 
+                </li>
+                <li>
+                    NO OLVIDES PRESIONAR EL BOTON  DE <strong>AQUÍ ABAJO</strong> PARA COMPLETAR TU REGISTRO DE PREINSCRIPCIÓN <small>(primera etapa)</small>
+                </li>
             </ul>            
         </td>
     </tr>   
@@ -396,6 +440,73 @@
                 footer: `<a href="#">${txt_footer}</a>`
         })
     }
+
+
+  setTimeout(() => {
+
+        Swal.fire({
+        title: '<strong>RECOMENDACIONES POSTULANTE <u>PRIMERA SELECCIÓN</u></strong>',
+        icon: 'info',
+        html: `
+        Estimado postulante al proceso de admisión <b>PRIMERA SELECCIÓN 2022-I</b> <br>
+        <ul class="text-justify">
+            <li>
+                Se recomienda usar una <b>pc de escritorio</b> para realizar su inscripción. 
+            </li>
+            <li>
+                Tener en cuanta el video tutorial de inscripción: <a href="https://www.youtube.com/watch?v=N7yxUvfPAL4&feature=youtu.be&ab_channel=Lenynflores" target="_blank">video</a>
+            </li>
+            <li>
+                Recuerde realizar el pago antes de su pre-inscripción. <a href="https://examen.admisionunajma.pe/pagina_ps.php" target="_blank">ver costos de inscripción x modalidad</a> 
+            </li>
+            <li>
+                Revise bien <b>su correo electrónico</b>: Si el correo está mal o no existe, nunca le llegará las indicaciones para que pueda continuar con la segunda etapa de su inscripción.</li>
+            <li>
+                Revise bien <b>su número de celular</b>, para que nos contactemos con usted en el caso de que sea necesario.
+            </li>
+            <li>
+                Seleccione bien su carrera, después no tendrá oportunidad para cambiarlo.
+            </li>
+            <li>
+                Recorte las fotografias (voucher, rostro, dni) a un tamano visible y que enfoque solo el contenido. Puede utilizar diferentes herramientas para editar la foto, o usar el mismo WhatsApp para recortar la imagen. Comprima sus fotos para que pesen <b>menos de 2MB</b> cada uno; WhatsApp también comprime la foto cuando lo envia (es una funcion que actua por defecto).
+            </li>
+            <li>
+                Recuerde que usted es el único responsable para la culminación satisfactoria de su inscripción. Atengase a las consecuencias en el caso de que no llegue a cumplir las indicaciones correspondientes. Puede revizar aquí el reglamento admisión: <a href="https://examen.admisionunajma.pe/pagina_reglamento.php" target="_blank">REGLAMENTO ADMISION 2021-2</a>
+            </li>
+        </ul>
+        <br>
+        <br>
+        Admision 2021-2
+        `,
+        showCloseButton: true,
+        showCancelButton: true,
+        focusConfirm: false,
+        confirmButtonText:
+            '<i class="fa fa-thumbs-up"></i> OK!',
+        confirmButtonAriaLabel: 'Thumbs up, great!',
+        cancelButtonText:
+            '<i class="fa fa-thumbs-down"></i> BEE!',
+        cancelButtonAriaLabel: 'Thumbs down'
+        })
+    }, 1500);
+
+
+
+
+    /**
+    * Funcion que agrega el correo electrónico en el footer cuando se presiona en el input de correo elextrónico
+    *
+    */
+    function agregarCorreoIndicacionesFooter(element){
+        // alert(element)
+        let correoPostulante = document.querySelector(".correo-postulante");
+        //xtEmail
+        correoPostulante.innerText = element.value;
+    }
+
+
+
+
 
 
 //cod Z -------------------------
@@ -659,3 +770,105 @@ function readImage (input) {
   });
 
 </script>
+
+
+
+
+
+<?php
+        
+    }else {
+        # code...
+
+?>
+
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="icon" href="public/img/logo_u.ico">
+    <title>ADMISIÓN UNAJMA</title>
+
+    <style>
+
+        .seccion-contenedor{
+            height: 100vh;
+
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap:wrap;
+
+        }
+
+        .seccion-contenedor div{
+          display: block;
+          width: 100%;          
+          text-align: center;
+        }
+    </style>
+
+  </head>
+  <body>
+    
+
+    <div class="seccion-contenedor">        
+        <div class="card text-center" style="width: 18rem;">
+            <div class="card-body">
+                <!-- <h5 class="card-title text-danger">EN ESTOS MOMENTOS NO PODEMOS ATENDERLE</h5> -->
+                <!-- <h5 class="card-title text-danger">INSCRIPCIONES UNAJMA </br> 2021 </h5>
+                <p class="card-text">Las inscripciones para el examen de PRIMERA SELECCIÓN - 2021-3 </br> <b>FINALIZARÓN</b> </p>
+                <a href="https://examen.admisionunajma.pe/index.php" class="btn btn-warning">Ir a la página principal</a> -->
+
+                <h5 class="card-title text-danger">INSCRIPCIONES UNAJMA </br> 2021 </h5>
+                <p class="card-text">Las inscripciones para el examen de PRIMERA SELECCIÓN - 2022-1 </br> <b>ESTÁ EN MANTENIMIENTO!!</b> </p>
+                <a href="https://examen.admisionunajma.pe/index.php" class="btn btn-warning">Ir a la página principal</a>
+
+            </div>
+        </div>
+        <div>
+          <img src="logo_u.png" alt="">
+        </div>
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<?php
+        
+    }
+
+?>

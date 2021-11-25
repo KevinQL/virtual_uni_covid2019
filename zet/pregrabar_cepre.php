@@ -82,7 +82,7 @@
 	//PROCESO ORDINARIO GRUPO 1 // admi(01), ambiental(05) y agro(04)
 	//PROCESO ORDINARIO GRUPO 2 // sistemas(06), contabilidad(02) y educacion(03)
 
-	$proc="0023"; // its one group in the new proccess 2021-2
+	$proc="0029"; // its one group in the new proccess 2021-2
 
 	// $status_voucher = ""; 
 	// $destino_voucher = '../foto_voucher/'.$proc.$dni.'.jpg';

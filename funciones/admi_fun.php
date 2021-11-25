@@ -29,6 +29,29 @@ function nombrecanal($canal)
 	return $nombrecanal;
 }
 
+function procesodefecto()
+{
+	$cn_zoz= conectar();
+	mysqli_query($cn_zoz,"SET CHARACTER SET utf8");
+	mysqli_query($cn_zoz,"SET NAMES utf8");
+	$vsql = "select max(proceso) as proceso from adm_proceso where activo=1";
+	#echo $vsql;
+	$rs = mysqli_query($cn_zoz,$vsql);	
+	$num= mysqli_num_rows($rs); 	
+	if ($num > 0)
+		{
+			$rsjk = mysqli_fetch_row($rs);
+			$procesodefecto = $rsjk[0];
+		}
+	else
+		{
+			$procesodefecto = '0000';	
+		}
+	
+	return $procesodefecto;	
+	#echo $procesodefecto;
+}
+
 function nombreproceso($proceso)
 {
 	$cn= conectar();

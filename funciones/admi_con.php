@@ -15,7 +15,7 @@
 		#return $conection;
 		
 		$db_host="localhost";
-		$db_name="admision_simulacros"; //admision_zet   /   admision_respaldo / admision_simulacros 
+		$db_name="admision_zet"; //admision_zet   /   admision_respaldo / admision_simulacros 
 		$db_user="admision_zet";
 		$db_password="carlsen2020";
 		$conection= mysqli_connect($db_host,$db_user,$db_password) or die ("Error conectando a la DB");

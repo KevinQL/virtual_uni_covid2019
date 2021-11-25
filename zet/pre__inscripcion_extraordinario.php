@@ -11,7 +11,7 @@
      * else put true : false;
      */
     
-    $pase = (isset($_GET['externo20212']) || isset($_GET['other']) )? true : true;
+    $pase = (isset($_GET['externo20212']) || isset($_GET['other']) )? true : false;
 
     if($pase){
 ?>
@@ -853,7 +853,7 @@ function readImage (input) {
             <div class="card-body">
                 <!-- <h5 class="card-title text-danger">EN ESTOS MOMENTOS NO PODEMOS ATENDERLE</h5> -->
                 <h5 class="card-title text-danger">INSCRIPCIONES UNAJMA </br> 2021 </h5>
-                <p class="card-text">Las inscripciones para el examen de EXTRAORDINARIO - 2021-1 </br> <b>FINALIZARÓN</b> A LAS 12:38 PM</p>
+                <p class="card-text">Las inscripciones para el examen EXTRAORDINARIO - 2021-2 </br> <b>FINALIZARÓN</b> A LAS 05:00 PM</p>
                 <a href="https://examen.admisionunajma.pe/index.php" class="btn btn-warning">Ir a la página principal</a>
             </div>
         </div>

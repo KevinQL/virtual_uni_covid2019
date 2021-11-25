@@ -4,7 +4,7 @@
      * then put true for all when the inscription is availabel (true:true)
      * else put true : false;
      */
-    $pase = (isset($_GET['mate2021']) || isset($_GET['other']) )? false : false;
+    $pase = (isset($_GET['mate2021']) || isset($_GET['other']) )? true : false;
 
     if($pase){
 ?>
@@ -39,6 +39,9 @@
     <title>UNIVERSIDAD NACIONAL JOSE MARIA ARGUEDAS</title>
     <link rel="icon" href="logo.ico">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="pre__estilos-unajma.css">
+    
     <script src="https://code.jquery.com/jquery-3.5.0.js" integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=" crossorigin="anonymous">
     </script>
 
@@ -52,401 +55,123 @@
 
 </head>
 
-<body background="../images/fondo.jpg">
+<body>
 
-                    <table width="100%">
-                    <tr>
-                    <td align="center">
-                    <img src="../images/logo.png" alt="Logo" width="100"/>
-                    <strong>UNIVERSIDAD NACIONAL JOSÉ MARÍA ARGUEDAS</strong>
-                    </td>
-                    </tr>
-                    </table>
+    <div class="container_cabecera-logo">
+        <img src="../images/logo.png" alt="logo unajma" >
+        <h5 class="rojo">UNIVERSIDAD <br> NACIONAL JOSÉ MARÍA ARGUEDAS</h5>
+    </div>
 
-<br>
-<br>
-   
-<form action="pregrabar_mate.php" method="post" id="grado" name="frmFotoGrado" enctype="multipart/form-data" onsubmit="return true;" >
-    <center>
-        <h3>INSCRIPCIÓN EXAMEN <u><strong><br>
-    XIV OLIMPIADA PROVINCIAL DE MATEMÁTICAS</strong></u><br>
-        UNAJMA 2021</h3><h4 style="font-size:22px;"></h4> 
-    </center> 
-<table width="760" border="0" align="center" cellpadding="3" cellspacing="0" class="table-borderless">
-
-	<tr>
-    	<td width="32%">
-        	<strong>
-            DNI
-            </strong>        
-        </td>
-        <td>
-        	<input type="text" name="txtDni"  data-type="number" id="txtDni" class="form-control validar" autocomplete="off" autocapitalize="words" value="" maxlength="8"  placeholder="Ingresar dni del estudiante" aria-describedby="txtnombre-message">
-        </td>    
-    </tr>
-
-	<tr>
-    	<td>
-        	<strong>
-            Apellido Paterno:
-            </strong>        
-        </td>
-        <td>
-        	<!--  data-type="texto"  -->
-        	<input type="text" name="txtApellidoPaterno" id="txtApellidoPaterno"  class="form-control validar" autocomplete="off" autocapitalize="words"  value="" maxlength="30"  placeholder="Ingresar apellido paterno del estudiante" aria-describedby="txtnombre-message">
-        </td>    
-    </tr>  
-	<tr>
-    	<td>
-        	<strong>
-            Apellido Materno:
-            </strong>        
-        </td>
-        <td>
-        	<!--  data-type="texto"  -->
-        	<input type="text" name="txtApellidoMaterno" id="txtApellidoMaterno"  class="form-control validar" autocomplete="off" autocapitalize="words"  value="" maxlength="30"  placeholder="Ingresar apellido materno del estudiante" aria-describedby="txtnombre-message">
-        </td>    
-    </tr> 
-    <tr>
-    	<td>
-        	<strong>
-            Nombres:
-            </strong>        
-        </td>
-        <td>
-        	<!--  data-type="texto"  -->
-        	<input type="text" name="txtNombres" id="txtNombres" class="form-control validar" autocomplete="off" autocapitalize="words"  value="" maxlength="30"  placeholder="Ingresar nombres del estudiante" aria-describedby="txtnombre-message">
-        </td>    
-    </tr>
-
-    <!-- <tr>
-    	<td>
-        	<strong>
-            Modalidad admisi&oacute;n:
-            </strong>        
-        </td>
-        <td>
-        	<?php MostrarComboZet("cboModalidad",$vsqlmodalidadadmision,$modalidad,$pasa); ?>
-        </td>    
-    </tr>   -->
-
-    <tr>
-    	<td>
-        	<strong>
-            Grado estudiante
-            </strong> 
-        </td>
-        <td>
-        	<?php //MostrarComboZet("cboEstructura",$vsqlescuela,$estructura,$pasa); ?>
-            <select name="cboEstructura" id="cboEstructura">
-                <option value="09" selected="">MATEMATICA PRIMER GRADO </option>
-                <option value="10">MATEMATICA SEGUNDO GRADO</option>
-                <option value="11">MATEMATICA TERCER GRADO</option>
-                <option value="12">MATEMATICA CUARTO GRADO</option>
-                <option value="13">MATEMATICA QUINTO GRADO</option>
-            </select>
-        </td>    
-    </tr> 
-
-    <!-- <tr>
-    	<td>
-        	<strong>
-            Sexo:
-            </strong>        
-        </td>
-        <td>
-        	<?php MostrarComboZet("cboSexo",$vsqlsexo,$sexo,$pasa); ?>
-        </td>    
-    </tr> -->
-
-    <!-- <tr>
-    	<td>
-        	<strong>
-            Fecha Nacimiento:
-            </strong>        
-        </td>
-        <td>
-        	<input type="hidden" name="txtFechaNacimiento" data-type="date" id="txtFechaNacimiento" class="form-control" autocomplete="off" autocapitalize="words"  value="" maxlength="50"  placeholder="Ingresar fecha"
-            aria-describedby="txtnombre-message">
-        </td>    
-    </tr> -->
-
-    <tr>
-    	<td>
-        	<strong>
-            Email:
-            </strong>        
-        </td>
-        <td>
-        	<input type="email" name="txtEmail" id="txtEmail" data-type="email" class="form-control validar" autocomplete="off" autocapitalize="words"  value="" maxlength="50"  placeholder="Ingresar email del estudiante"
-            onkeyup="agregarCorreoIndicacionesFooter(this);" 
-            aria-describedby="txtnombre-message">
-        </td>    
-    </tr>
-    <tr>
-    	<td>
-        	<strong>
-            Celular:
-            </strong>        
-        </td>
-        <td>
-        	<input type="text" name="txtCelular" data-type="number" id="txtCelular" class="form-control validar" autocomplete="off" autocapitalize="words"  value="" maxlength="12"  placeholder="Ingresar celular del estudiante" aria-describedby="txtnombre-message">
-        </td>    
-    </tr>
-
-	<!-- <tr>
-		<td align="left">
-        	<strong>Departamento:</strong>
-        </td>
-		<td>
-			<?php MostrarCombo2("cboDepartamento",$vsqldepartamento,$departamento)?>
-        </td>
-	</tr> -->
-	<!-- <tr>
-			<td align="left">
-            	<strong>Provincia:</strong>
-            </td>
-			<td>
-				<?php MostrarCombo2("cboProvincia",$vsqlprovincia,$provincia); ?>
-             </td>
-	</tr> -->
-	<!-- <tr>
-			<td align="left">
-            	<strong>Distrito:</strong>
-            </td>
-			<td>
-				<?php MostrarCombo2("cboDistrito",$vsqldistrito,$distrito); ?>
-            </td>
-	</tr>  
-
-	<tr>
-    	<td>
-        	<strong>
-            Direcci&oacute;n actual:
-            </strong>        
-        </td>
-        <td>
-        	<input type="hidden" name="txtDireccion" id="txtDireccion" class="form-control" autocomplete="off" autocapitalize="words"  value="" maxlength="30"  placeholder="Ingresar direccion" aria-describedby="txtnombre-message">
-        </td>    
-    </tr>  -->
+    <br>
+    <header class="container text-center">
+        <h3 class="title-inscription">
+            INSCRIPCIÓN EXAMEN <u><strong><br>
+            XIV OLIMPIADA PROVINCIAL DE MATEMÁTICAS</strong></u><br>
+            UNAJMA 2021
+        </h3>
+    </header> 
 
 
-    <tr>
-    	<td>
-        	<strong>
-            Director o docente que autoriza su participación:
-            </strong>        
-        </td>
-        <td>
-        	<!-- data-type="texto" -->
-        	<input type="text" name="txtApoderado" id="txtApoderado" class="form-control validar" autocomplete="off" autocapitalize="words"  value="" maxlength="30"  placeholder="Nombre y apellido del Director o docente que autoriza su participación" aria-describedby="txtnombre-message">
-        </td>    
-    </tr>  
-    <tr>
-    	<td>
-        	<strong>
-            Tipo Colegio:
-            </strong>        
-        </td>
-        <td>
-        	<?php MostrarComboZet("cboTipoColegio",$vsqltipocolegio,$tipocolegio,$pasa); ?>
-        </td>    
-    </tr>
+    <section class="container pt-3 px-3 mt-4 container-form">
 
-	<!-- <tr>
-		<td align="left">
-        	<strong>Departamento Colegio:</strong>
-        </td>
-		<td>
-			<?php MostrarCombo2("cboDepartamentoColegio",$vsqldepartamento,$departamento)?>
-        </td>
-	</tr> -->
-	<!-- <tr>
-			<td align="left">
-            	<strong>Provincia Colegio:</strong>
-            </td>
-			<td>
-				<?php MostrarCombo2("cboProvinciaColegio",$vsqlprovincia,$provincia); ?>
-             </td>
-	</tr> -->
-	<!-- <tr>
-			<td align="left">
-            	<strong>Distrito Colegio:</strong>
-            </td>
-			<td>
-				<?php MostrarCombo2("cboDistritoColegio",$vsqldistrito,$distrito); ?>
-            </td>
-	</tr>  -->
-    <tr>
-    	<td>
-        	<strong>
-            Nombre colegio:
-            </strong>        
-        </td>
-        <td>
-        	<input type="text" name="txtColegio" id="txtColegio" class="form-control validar" autocomplete="off" autocapitalize="words"  value="" maxlength="30"  placeholder="Ingresar nombre colegio del estudiante" aria-describedby="txtnombre-message">
-        </td>    
-    </tr>  
-    <!-- <tr>
-    	<td>
-        	<strong>
-            A&ntilde;o que culmino colegio:
-            </strong>        
-        </td>
-        <td>
-        	<input type="hidden" name="txtAnioEgreso" id="txtAnioEgreso" data-type="number" class="form-control" autocomplete="off" autocapitalize="words"  value="" maxlength="4"  placeholder="2018" aria-describedby="txtnombre-message">
-        </td>    
-    </tr>      
-    -->
-
-	<!-- <tr>
-		<td align="left">
-        	<strong>Departamento Procedencia:</strong>
-        </td>
-		<td>
-			<?php MostrarCombo2("cboDepartamentoProcedencia",$vsqldepartamento,$departamento)?>
-        </td>
-	</tr> -->
-
-	<!-- <tr>
-			<td align="left">
-            	<strong>Provincia Procedencia:</strong>
-            </td>
-			<td>
-				<?php MostrarCombo2("cboProvinciaProcedencia",$vsqlprovincia,$provincia); ?>
-             </td>
-	</tr> -->
-
-	<!-- <tr>
-			<td align="left">
-            	<strong>Distrito Procedencia:</strong>
-            </td>
-			<td>
-				<?php MostrarCombo2("cboDistritoProcedencia",$vsqldistrito,$distrito); ?>
-            </td>
-    </tr>       -->
+        <div class="row">
+            <div class="col-md-7 pt-3 px-5">
     
-    <!-- <tr>
-    	<td>
-        	<strong>
-            Foto Voucher: 
-            </strong>        
-            <br>
-            <small>(Pago de inscripcion en el banco de la nación)</small>
-        </td>
-        <td>     
-        	<input type='file' accept='image/*' id="imgInp" name="imgInp" class="form-control " autocomplete="off" autocapitalize="words"  value=""  placeholder="Seleccione foto voucher" aria-describedby="imgInp-message" style=" border-radius: 0;
-            -webkit-box-shadow: none!important;
-            box-shadow: none!important;
-            color: #ffffff;
-            background-color: #337ab7;
-            border: 1px solid #ffffff;
-        ">
-			<img id="blah" src="https://i.ibb.co/Br8tf3Y/Whats-App-Image-2020-09-26-at-12-50-00-PM.jpg" alt="Tu imagen" width="150" height="150px" />
-        </td>    
-    </tr> -->
+                <form action="pregrabar_mate.php" method="post" id="grado" name="frmFotoGrado" enctype="multipart/form-data" onsubmit="return true;">
+            
+                    <input type="text" name="txtDni"  data-type="number" id="txtDni" class="form-control validar" autocomplete="off" autocapitalize="words" value="" maxlength="8"  placeholder="Ingresar dni del estudiante" aria-describedby="txtnombre-message">
+                
+                    <input type="text" name="txtApellidoPaterno" id="txtApellidoPaterno"  class="form-control validar" autocomplete="off" autocapitalize="words"  value="" maxlength="30"  placeholder="Ingresar apellido paterno del estudiante" aria-describedby="txtnombre-message">
 
-    <tr>
-    	<td>
-        	<strong>
-            Foto Rostro Estudiante:
-            </strong>        
-        </td>
-        <td>     
-        	<input type='file' accept='image/*' id="imgEst" name="imgEst" class="form-control validar" autocomplete="off" autocapitalize="words"  value=""  placeholder="Seleccione foto estudiante" aria-describedby="imgInp-message" style=" border-radius: 0;
-                -webkit-box-shadow: none!important;
-                box-shadow: none!important;
-                color: #ffffff;
-                background-color: #337ab7;
-                border: 1px solid #ffffff;
-            ">
-			<img id="blah1" src="https://i.ibb.co/Tm3hb97/image.png" alt="Tu imagen" width="150px" height="150px" style=""/>
-        </td>    
-    </tr>
+                    <input type="text" name="txtApellidoMaterno" id="txtApellidoMaterno"  class="form-control validar" autocomplete="off" autocapitalize="words"  value="" maxlength="30"  placeholder="Ingresar apellido materno del estudiante" aria-describedby="txtnombre-message">
 
-    <tr>
-    	<td>
-        	<strong>
-            Foto Dni o Ficha Reniec Estudiante:
-            </strong>        
-        </td>
-        <td>     
-        	<input type='file' accept='image/*' id="imgDni" name="imgDni" class="form-control validar" autocomplete="off" autocapitalize="words"  value=""  placeholder="Seleccione foto dni" aria-describedby="imgDni-message" style=" border-radius: 0;
-                -webkit-box-shadow: none!important;
-                box-shadow: none!important;
-                color: #ffffff;
-                background-color: #337ab7;
-                border: 1px solid #ffffff;
-            ">
-			<img id="blah2" src="https://i.ibb.co/ZKVB8xZ/image.png" alt="Tu imagen" width="150px" height="150px" style=""/>
-        </td>    
-    </tr>
+                    <input type="text" name="txtNombres" id="txtNombres" class="form-control validar" autocomplete="off" autocapitalize="words"  value="" maxlength="30"  placeholder="Ingresar nombres del estudiante" aria-describedby="txtnombre-message">
 
-    <tr>
-        <br>
-        <br>
-        <td align="center" colspan="2" class="pt-5">
-            <h5>
-                COMPRUEBE QUE ES HUMANO <small>(click al cuadro y resuelva el reto)</small>
-            </h5>
-            <!-- Elemento hCaptcha -->
-            <div class="pt-2 text-center">
-                <div class="h-captcha" data-sitekey="90541f3b-4b55-40ad-a480-1e07bf94bfdb">
-                </div>
+                    <select name="cboEstructura" id="cboEstructura">
+                        <option value="09" selected="">MATEMATICA PRIMER GRADO </option>
+                        <option value="10">MATEMATICA SEGUNDO GRADO</option>
+                        <option value="11">MATEMATICA TERCER GRADO</option>
+                        <option value="12">MATEMATICA CUARTO GRADO</option>
+                        <option value="13">MATEMATICA QUINTO GRADO</option>
+                    </select>
+
+                    <input type="email" name="txtEmail" id="txtEmail" data-type="email" class="form-control validar" autocomplete="off" autocapitalize="words"  value="" maxlength="50"  placeholder="Ingresar email del estudiante"
+                    onkeyup="agregarCorreoIndicacionesFooter(this);" 
+                    aria-describedby="txtnombre-message">
+
+                    <input type="text" name="txtCelular" data-type="number" id="txtCelular" class="form-control validar" autocomplete="off" autocapitalize="words"  value="" maxlength="12"  placeholder="Ingresar celular del estudiante" aria-describedby="txtnombre-message">
+
+                    <input type="text" name="txtApoderado" id="txtApoderado" class="form-control validar" autocomplete="off" autocapitalize="words"  value="" maxlength="30"  placeholder="Nombre y apellido del Director o docente que autoriza su participación" aria-describedby="txtnombre-message">
+
+                    <?php MostrarComboZet("cboTipoColegio",$vsqltipocolegio,$tipocolegio,$pasa); ?>
+
+                    <input type="text" name="txtColegio" id="txtColegio" class="form-control validar" autocomplete="off" autocapitalize="words"  value="" maxlength="30"  placeholder="Ingresar nombre colegio del estudiante" aria-describedby="txtnombre-message">
+
+                    <input type='file' accept='image/*' id="imgEst" name="imgEst" class="form-control validar" autocomplete="off" autocapitalize="words"  value=""  placeholder="Seleccione foto estudiante" aria-describedby="imgInp-message" style=" border-radius: 0;
+                    -webkit-box-shadow: none!important;
+                    box-shadow: none!important;
+                    color: #ffffff;
+                    background-color: #337ab7;
+                    border: 1px solid #ffffff;
+                    ">
+                    <img id="blah1" src="https://i.ibb.co/Tm3hb97/image.png" alt="Tu imagen" width="100px" height="100px" style=""/>
+
+
+                    <input type='file' accept='image/*' id="imgDni" name="imgDni" class="form-control validar" autocomplete="off" autocapitalize="words"  value=""  placeholder="Seleccione foto dni" aria-describedby="imgDni-message" style=" border-radius: 0;
+                    -webkit-box-shadow: none!important;
+                    box-shadow: none!important;
+                    color: #ffffff;
+                    background-color: #337ab7;
+                    border: 1px solid #ffffff;
+                    ">
+                    <img id="blah2" src="https://i.ibb.co/ZKVB8xZ/image.png" alt="Tu imagen" width="200px" height="135px" style=""/>
+
+
+                    <h5 class="pt-2 text-center">
+                        COMPRUEBE QUE ES HUMANO <small>(click al cuadro y resuelva el reto)</small>
+                    </h5>
+                    <!-- Elemento hCaptcha -->
+                    <div class="pt-2 text-center">
+                        <div class="h-captcha" data-sitekey="90541f3b-4b55-40ad-a480-1e07bf94bfdb">
+                        </div>
+                    </div>
+                    <!--  -->
+
+                    <button type="button" class="submit btn-u-registro" style="">
+                            <span class="bigger-110">Registrarse <i class="fa fa-forward"></i></span>
+                            <!--<i class="ace-icon fa fa-arrow-right icon-on-right"></i>-->
+                    </button>
+                    <br>
+
+                </form>
             </div>
-            <!--  -->
-        </td>
-    </tr>
+    
+            <div class="col-md-5 pt-3 pr-5 text-indications">
+                <strong>Ten en cuenta las siguientes indicaciones</strong>
+                <ul>
+                    <li>
+                        Te estaremos enviando tus credenciales(usuario y contraseña) a tu correo electrónico personal -> <b><span class="correo-postulante text-success bold"></span></b>. 
+                    </li>
+                    <li>
+                        Deberás ingresar en el siguiente enlace para rendir tu evaluación virtual <a href="https://examen.admisionunajma.pe/zetadmision/zet/index.php" target="_blank" rel="noopener noreferrer">SISTEMA VIRTUAL DE ADMISIÓN UNAJMA</a>. Recuerda que tus credenciales(usuario y contraseña) estarán en tu correo electrónico personal.
+                    </li>
+                    <li>
+                        Procura verificar tus datos para no tener problemas con tu inscripción virtual. Sobre todo los necesarios para poder comunicarnos contigo en el caso de que existan inconvenientes con tu inscripción (CORREO ELECTRÓNICO Y NUMERO CELULAR). 
+                    </li>
+                    <li>
+                        NO OLVIDES PRESIONAR EL BOTON  DE <strong>AQUÍ ABAJO</strong> PARA COMPLETAR TU REGISTRO DE PREINSCRIPCIÓN.
+                    </li>
+                </ul>     
+            </div>
+        </div>
+    </section>
 
-    <tr>
-        <td align="left" colspan="2">
-            <br>
-            <strong>Ten en cuenta las siguientes indicaciones</strong>
-            <ul>
-                <li>
-                    Estimado concursante sus credenciales para el acceso al sistema se le remitirá una vez se corrobore su inscripción con la autorización de su Institución Educativa.
-                </li>
-                <li>
-                    Te estaremos enviando tus credenciales(usuario y contraseña) a tu correo electrónico personal -> <b><span class="correo-postulante text-success bold"></span></b>. 
-                </li>
-                <li>
-                    Deberás ingresar en el siguiente enlace para rendir tu evaluación virtual <a href="https://examen.admisionunajma.pe/zetadmision/zet/index.php" target="_blank" rel="noopener noreferrer">SISTEMA VIRTUAL DE ADMISIÓN UNAJMA</a>. Recuerda que tus credenciales(usuario y contraseña) estarán en tu correo electrónico personal.
-                </li>
-                <li>
-                    Procura verificar tus datos para no tener problemas con tu inscripción virtual. Sobre todo los necesarios para poder comunicarnos contigo en el caso de que existan inconvenientes con tu inscripción (CORREO ELECTRÓNICO Y NUMERO CELULAR). 
-                </li>
-                <li>
-                    NO OLVIDES PRESIONAR EL BOTON  DE <strong>AQUÍ ABAJO</strong> PARA COMPLETAR TU REGISTRO DE PREINSCRIPCIÓN.
-                </li>
-            </ul>            
-        </td>
-    </tr>   
+        
+    <br>
+    <br>
+    <br>
 
-	<tr>
-    	<td colspan="2" align="center">        	
-            <button type="button" class="submit btn-u-registro" style="background-color: #337ab7; 
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;">
-					<span class="bigger-110">Registrarse <i class="fa fa-forward"></i></span>
-					<!--<i class="ace-icon fa fa-arrow-right icon-on-right"></i>-->
-			</button>
-            <br>
-        </td>    
-    </tr>  
-</table>
-</form>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+
 </body>
 </html>
 <script>
@@ -844,7 +569,7 @@ function readImage (input) {
             <div class="card-body">
                 <!-- <h5 class="card-title text-danger">EN ESTOS MOMENTOS NO PODEMOS ATENDERLE</h5> -->
                 <h5 class="card-title text-danger">INSCRIPCIONES UNAJMA </br> 2021 </h5>
-                <p class="card-text">Las inscripciones para el XIV OLIMPIADA PROVINCIAL DE MATEMÁTICAS  - 2021 </br> <b>FINALIZARÓN</b> </p>
+                <p class="card-text">Las inscripciones para el examen de ORDINARIO - 2021-1 </br> <b>FINALIZARÓN</b> </p>
                 <a href="https://examen.admisionunajma.pe/index.php" class="btn btn-warning">Ir a la página principal</a>
             </div>
         </div>

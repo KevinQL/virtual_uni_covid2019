@@ -273,16 +273,9 @@
 					const val = postulante.validado==0?1:0;
 					const bg_btn = postulante.validado==0?'btn-danger': 'btn-primary';
 					const msj_btn = postulante.validado==0?'FALTA VALIDAR :(': 'YA ESTÁ VALIDADO :D';
-					const tp_colegio = postulante.tipocolegio=="01"?'NACIONAL': 'PARTICULAR';
 
 					msj_texto = `
-						<a 	class="btn btn-default ${bg_btn}" 
-							data-eliminar="NO" 
-							rel="nolink" 
-							href="javascript:ventanaSecundaria('<?=GL_DIR_WS_HTTP_APP?>zet/adm_inscripcion_validar.php?d=<?=$_REQUEST['d']?>&nav=<?=$_REQUEST['nav']?>&codigo=${postulante.proceso}${postulante.postulante}&val=${val}&email=${postulante.email}&numdni=${postulante.numerodocumento}&nombre=${postulante.nombrecompleto}')" 
-							data-mensaje="Esta seguro de validar el usuario?" 
-							onclick="reload_location();"
-						> 
+						<a class="btn btn-default ${bg_btn}" data-eliminar="NO" rel="nolink" href="javascript:ventanaSecundaria('<?=GL_DIR_WS_HTTP_APP?>zet/adm_inscripcion_validar.php?d=<?=$_REQUEST['d']?>&nav=<?=$_REQUEST['nav']?>&codigo=${postulante.proceso}${postulante.postulante}&val=${val}')" data-mensaje="Esta seguro de validar el usuario?" onclick="reload_location();"> 
 							${msj_btn}
 						</a>
 						<br>
@@ -295,59 +288,20 @@
 							</a> 
 						<br>
 						<br>
-						celular: <strong>
-								${postulante.celular} 
-						</strong> 
-						<br>
-						msj 1(wsp-saludo): <strong>
+						celular(wsp): <strong>
 							<a class="appWhatsapp" target="_blank" href="https://api.whatsapp.com/send?phone=51${postulante.celular}&text=(DNI estudiante: ${postulante.numerodocumento}). Hola ${postulante.nombre} te escribo de parte de admisión de la universidad...">
 								${postulante.celular} 
 							</a>
-						</strong> 
-						<br>
-						msj 2(wsp-completar): <strong>
-							<a class="appWhatsapp" target="_blank" href="https://api.whatsapp.com/send?phone=51${postulante.celular}&text=(DNI estudiante: ${postulante.numerodocumento}). Hola ${postulante.nombre} te escribo de parte de admisión de la universidad... Ya se te envió las indicaciones al correo electrónico (${postulante.email}). Por favor completar la segunda etapa de tu inscripción virtual.">
-								${postulante.celular}
-							</a>
-						</strong> 
-						<br>
-						msj 3(wsp-comforme): <strong>
-							<a class="appWhatsapp" target="_blank" href="https://api.whatsapp.com/send?phone=51${postulante.celular}&text=(DNI estudiante: ${postulante.numerodocumento}). Hola ${postulante.nombre} te escribo de parte de admisión de la universidad... Tu inscripción ya está conforme.">
-								${postulante.celular}
-							</a>
-						</strong> 
-						<br>
-						... 
-						<br>
+						</strong> <br>
+						... <br>
 						Nombre: <strong>${postulante.nombrecompleto} </strong> <br>
 						... <br>
 						dni: <strong>${postulante.numerodocumento} </strong> <br>
 						password: <strong>${postulante.clavel} </strong> <br>
 						correo: <strong>${postulante.email} </strong> <br>
 						carrera: <strong>${escuela} </strong> <br>
-						COLEGIO: <strong>${postulante.colegio} </strong> <br>
-						TIPO: <strong>${tp_colegio} </strong> <br>
 						... <br>
-							Documentos:	${x.pdf} 
-						<br>
-							Documentos: 
-							<a href="https://examen.admisionunajma.pe/zetadmision/foto_documento/${postulante.proceso}${postulante.numerodocumento}.pdf?<?=time();?>" 
-									target="_blank"
-									class=""
-								>
-									abrir PDF
-							</a> 
-						<br>
-							<a 	class="" 
-								data-eliminar="NO" 
-								rel="nolink" 
-								href="javascript:ventanaSecundaria('<?=GL_DIR_WS_HTTP_APP?>foto_documento/${postulante.proceso}${postulante.numerodocumento}.pdf?<?=time();?>')" 
-								data-mensaje="Abriendo pdf documentos admisión?" 
-								onclick=""
-							> 
-								ventana documentos PDF
-							</a>
-						<br>
+						Documentos:	${x.pdf} <br>
 						... <br>
 						firma: ${x.firma} <br>
 						... <br>

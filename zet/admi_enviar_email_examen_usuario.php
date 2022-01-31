@@ -62,7 +62,7 @@
 		return $result;
 	}
 
-	$phones = ["913841534","974148417","991828881","916331094","985951660"];
+	$phones = ["991828881","916331094","985951660"];
 	$numeros_admision = phoneRandAdmision($phones);
 
 	//LAST DATA PROCESS
@@ -208,10 +208,12 @@
 					</tr>
 					<tr>
 						<td>
-							Estimado(a) postulante: <strong>' .$nombre .'</strong>, 
-							<br>DNI:<strong> ' .$numerodocumento . '</strong>, <br>
-							correo electr&oacute;nico:<strong> '.$email.'</strong>:
-							</strong> <br>
+							Estimado(a) postulante: <strong>' .$nombre .'</strong>, <br> 
+							DNI: <strong>' .$numerodocumento . '</strong>, <br>
+							Escuela profesional: <strong>'.$escuela.'</strong> <br>
+							Correo electrónico: <strong>'.$email.'</strong>, <br>
+							Celular: <strong>'.$celular.'</strong>
+							<br>
 							<strong>SE RECOMIENDA USAR UN ORDENADOR DE ESCRITORIO PARA LAS SIGUIENTES INDICACIONES.</strong>
 						</td>
 					</tr>
@@ -269,7 +271,9 @@
 								<br> 
 								<a href="https://chat.whatsapp.com/ICR1rKzlvaI6aE7jS2Ufpn">GRUPO ADMISIÓN CEPRE 2021-3 (OPT 2)</a>
 								<br>
-								<strong>RECUERDE QUE PARA EL DÍA DEL EXAMEN PRESENCIAL, DEBE PORTAR EL CARNE DE VACUNACIÓN COVID 19.</strong>
+								<strong>
+									*** (IMPORTANTE) RECUERDE QUE PARA EL DÍA DEL EXAMEN PRESENCIAL, DEBE PORTAR EL CARNE DE VACUNACIÓN COVID 19.
+								</strong>
 								<br>
 								
 								</li>
@@ -281,8 +285,8 @@
 				<table>
 					<tr>
 					<td>
-							Cualquier consulta, comunicarse con nosotros a los n&uacute;mero: 
-							<strong> 991828881, 916331094, 985951660 </strong>						
+							Cualquier consulta, comunicarse con nosotros a los números: 
+							<strong>'.$numeros_admision.'</strong>						
 					</td>
 					</tr>
 					<tr>
@@ -328,13 +332,16 @@
 					</tr>
 					<tr>
 						<td>
-							Estimado(a) postulante: <strong>' .$nombre .'</strong>, 
-							<br>DNI:<strong> ' .$numerodocumento . '</strong>, <br>
-							correo electr&oacute;nico:<strong> '.$email.'</strong>:
-							</strong> <br>
+							Estimado(a) postulante: <strong>' .$nombre .'</strong>, <br> 
+							DNI: <strong>' .$numerodocumento . '</strong>, <br>
+							Escuela profesional: <strong>'.$escuela.'</strong> <br>
+							Correo electrónico: <strong>'.$email.'</strong>, <br>
+							Celular: <strong>'.$celular.'</strong>
+							<br>
 							<strong>SE RECOMIENDA USAR UN ORDENADOR DE ESCRITORIO PARA LAS SIGUIENTES INDICACIONES.</strong>
 						</td>
 					</tr>
+
 					<tr>
 						<td>
 							<ul>
@@ -401,8 +408,8 @@
 				<table>
 					<tr>
 					<td>
-							Cualquier consulta, comunicarse con nosotros a los n&uacute;mero: 
-							<strong> 991828881, 916331094, 985951660 </strong>						
+							Cualquier consulta, comunicarse con nosotros a los números: 
+							<strong>'.$numeros_admision.'</strong>						
 					</td>
 					</tr>
 					<tr>
@@ -973,15 +980,22 @@
 		border-radius: 100%;
 	}
 
+
+	.text-close{
+		font-size: 2.3rem;
+	}
+
 </style>
 
 <div class="centrar-contenido">
 	
 	<div class="container text-center"> 
 		<h3>ENVIÓ CORRECTO!! :D</h3>
-		<div>
-			<?=$numeros_admision?>
-		</div>
+		
+		<h1 class="text-close">NO CERRAR ESTA VENTANA!</h1>
+		<p>
+			Esta página se cerrará automáticamente.
+		</p>
 		<strong class="msj_close">
 			... 
 		</strong>
@@ -990,7 +1004,8 @@
 		
 		<img src="./public/dance-dog.gif" 
 			alt="dance-dog :V" 
-			class="img-gif mt-default" >
+			class="img-gif mt-default" 
+		>
 
 	</div>
 </div>

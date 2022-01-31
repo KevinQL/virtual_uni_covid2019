@@ -320,7 +320,7 @@
             $pdf = file_exists($file);
             $res_pdf = "No se encuentran archivos relacionados";
             if($pdf){
-                $res_pdf = '<a href="javascript:ventanaSecundaria(\'../zet/admi_mostrar_archivo.php?file='.$file.'\')"> Ver PDF </a>';	
+                $res_pdf = '<a href="javascript:ventanaSecundaria(\'../zet/admi_mostrar_archivo.php?file='.$file.'\')"> Dwnload PDF </a>';	
             }
             
             //VER FOTO FIRMA POSTULANTE

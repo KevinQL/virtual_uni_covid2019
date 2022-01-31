@@ -31,11 +31,11 @@
      * Number of the proccess current. ejem 2020-2
      * Resolución (previous) : N° 182-2020-CO-UNAJMA
      */ 
-    $DJproceso = "2021-II";
-    $DJresolucion = "N° 204-2021-CO-UNAJMA";
-    $DJreglamento = "2021-II";
-    $DJresolucion_remoto = "N° 204-2021-CO-UNAJMA"; // 
-    $DJreglamento_remoto = "2021-II";
+    $DJproceso = "2022-I";
+    $DJresolucion = "N° 0343-2021-CO-UNAJMA";
+    $DJreglamento = "2022-I";
+    $DJresolucion_remoto = "N° 0343-2021-CO-UNAJMA"; // 
+    $DJreglamento_remoto = "2022-I";
 	/**
 	 * FIN-----
 	 */

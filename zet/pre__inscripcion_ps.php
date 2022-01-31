@@ -4,7 +4,7 @@
      * then put true for all when the inscription is availabel (true:true)
      * else put true : false;
      */
-    $pase = (isset($_GET['externo20213']) || isset($_GET['other']) )? false : false;
+    $pase = (isset($_GET['externo20221']) || isset($_GET['others']) )? true : false;
 
     if($pase){
 ?>
@@ -457,7 +457,7 @@
                 Tener en cuanta el video tutorial de inscripción: <a href="https://www.youtube.com/watch?v=N7yxUvfPAL4&feature=youtu.be&ab_channel=Lenynflores" target="_blank">video</a>
             </li>
             <li>
-                Recuerde realizar el pago antes de su pre-inscripción. <a href="https://examen.admisionunajma.pe/pagina_ps.php" target="_blank">ver costos de inscripción x modalidad</a> 
+                Recuerde realizar el pago antes de su pre-inscripción. <a href="https://examen.admisionunajma.pe/pagina_pseleccion.php" target="_blank">ver costos de inscripción x modalidad</a> 
             </li>
             <li>
                 Revise bien <b>su correo electrónico</b>: Si el correo está mal o no existe, nunca le llegará las indicaciones para que pueda continuar con la segunda etapa de su inscripción.</li>
@@ -834,7 +834,7 @@ function readImage (input) {
                 <a href="https://examen.admisionunajma.pe/index.php" class="btn btn-warning">Ir a la página principal</a> -->
 
                 <h5 class="card-title text-danger">INSCRIPCIONES UNAJMA </br> 2021 </h5>
-                <p class="card-text">Las inscripciones para el examen de PRIMERA SELECCIÓN - 2022-1 </br> <b>ESTÁ EN MANTENIMIENTO!!</b> </p>
+                <p class="card-text">Las inscripciones para el examen de PRIMERA SELECCIÓN - 2022-1 </br> <b>FINALIZARON!!</b> </p>
                 <a href="https://examen.admisionunajma.pe/index.php" class="btn btn-warning">Ir a la página principal</a>
 
             </div>

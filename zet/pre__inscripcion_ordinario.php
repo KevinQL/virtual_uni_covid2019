@@ -67,7 +67,7 @@
 <br>
    
 <form action="pregrabar_ordinario.php" method="post" id="grado" name="frmFotoGrado" enctype="multipart/form-data" onsubmit="return true;" >
-   <center><h3>INSCRIPCIÓN EXAMEN <u><strong>ORDINARIO</strong></u> ADMISIÓN UNAJMA</h3><h4 style="font-size:22px;">2021 - II</h4> </center> 
+   <center><h3>INSCRIPCIÓN EXAMEN <u><strong>ORDINARIO</strong></u> ADMISIÓN UNAJMA</h3><h4 style="font-size:22px;">2022 - I</h4> </center> 
 <table width="760" border="0" align="center" cellpadding="3" cellspacing="0" class="table-borderless">
 
 	<tr>
@@ -134,8 +134,16 @@
             </strong> 
         </td>
         <td>
-        	<?php MostrarComboZet("cboEstructura",$vsqlescuela,$estructura,$pasa); ?>
-            <!-- <select name="cboEstructura" id="cboEstructura">
+        	<?php //MostrarComboZet("cboEstructura",$vsqlescuela,$estructura,$pasa); ?>
+            <select name="cboEstructura" id="cboEstructura" onchange="getOptions(this.value)">
+                <option value="01" selected="">ADMINISTRACION DE EMPRESAS</option>
+                <option value="02">CONTABILIDAD</option>
+                <option value="03">EDUCACION PRIMARIA INTERCULTURAL</option>
+                <option value="04">INGENIERIA AGROINDUSTRIAL</option>
+                <option value="05">INGENIERIA AMBIENTAL</option>
+                <option value="06">INGENIERIA DE SISTEMAS</option>
+            </select>
+            <!-- <select name="cboEstructura" id="cboEstructura" >
                 <option value="02">CONTABILIDAD</option>
                 <option value="03">EDUCACION PRIMARIA INTERCULTURAL</option>
                 <option value="06">INGENIERIA DE SISTEMAS</option>
@@ -144,7 +152,27 @@
                 <option value="05">INGENIERIA AMBIENTAL</option>
             </select> -->
         </td>    
-    </tr> 
+    </tr>
+
+    <tr>
+    	<td>
+        	<strong>
+            Segunda Opción:
+            </strong> 
+        </td>
+        <td>
+            <select name="txtAnioEgreso" id="txtAnioEgreso">
+                <!-- <option value="01" selected="">ADMINISTRACION DE EMPRESAS</option> -->
+                <option value="02">CONTABILIDAD</option>
+                <option value="03">EDUCACION PRIMARIA INTERCULTURAL</option>
+                <!-- <option value="04">INGENIERIA AGROINDUSTRIAL</option>
+                <option value="05">INGENIERIA AMBIENTAL</option>
+                <option value="06">INGENIERIA DE SISTEMAS</option> -->
+            </select>
+        </td>    
+    </tr>
+
+
     <tr>
     	<td>
         	<strong>
@@ -278,7 +306,8 @@
         	<input type="text" name="txtColegio" id="txtColegio" class="form-control validar" autocomplete="off" autocapitalize="words"  value="" maxlength="30"  placeholder="Ingresar nombre colegio" aria-describedby="txtnombre-message">
         </td>    
     </tr>  
-    <tr>
+
+    <!-- <tr>
     	<td>
         	<strong>
             A&ntilde;o que culmino colegio:
@@ -287,7 +316,8 @@
         <td>
         	<input type="text" name="txtAnioEgreso" id="txtAnioEgreso" data-type="number" class="form-control validar" autocomplete="off" autocapitalize="words"  value="" maxlength="4"  placeholder="2018" aria-describedby="txtnombre-message">
         </td>    
-    </tr>     
+    </tr>  -->
+
 	<tr>
 		<td align="left">
         	<strong>Departamento Procedencia:</strong>
@@ -431,6 +461,51 @@
 </html>
 <script>
 
+        //FUNCIONE FILTRO SEGUNDA CARRERA COMO OPCIONAL DE
+function getOptions(id){
+	
+    let listCarrer = {"01":'<option value="01" selected="">ADMINISTRACION DE EMPRESAS</option>',
+    		"02":'<option value="02" selected="">CONTABILIDAD</option>',
+            "03":'<option value="03" selected="">EDUCACION PRIMARIA INTERCULTURAL</option>',
+            "04":'<option value="04" selected="">INGENIERIA AGROINDUSTRIAL</option>',
+            "05":'<option value="05" selected="">INGENIERIA AMBIENTAL</option>',
+            "06":'<option value="06" selected="">INGENIERIA DE SISTEMAS</option>'
+            };
+            
+    let cie = ["01","02",,"03"];
+	let ing = ["04","05",,"06"];
+    let resultHtmlOption = "";
+    let result;
+    if(cie.includes(id)){
+    	//alert("es ciencias")
+        result = cie.filter(function(value){ return value != id;})
+        result.forEach(function(elem, index){
+        	resultHtmlOption += listCarrer[elem];
+        })
+    }else{
+    	//alert("es ingenierias");
+        result = ing.filter(function(value){ return value != id;})
+        result.forEach(function(elem, index){
+        	resultHtmlOption += listCarrer[elem];
+        })
+    }
+    
+    //alert(resultHtmlOption);
+    
+    let elemOption2 = document.querySelector("#txtAnioEgreso");
+    elemOption2.innerHTML = resultHtmlOption;
+
+}
+
+
+
+
+
+
+
+
+
+
     function mensaje_post_submit(txt_titulo, txt_text, txt_icon, txt_btn, txt_footer){
         Swal.fire({
                 title: txt_titulo,
@@ -448,7 +523,7 @@
         title: '<strong>RECOMENDACIONES POSTULANTE <u>ORDINARIO</u></strong>',
         icon: 'info',
         html: `
-        Estimado postulante al proceso de admisión <b>ORDINARIO 2021-2</b> <br>
+        Estimado postulante al proceso de admisión <b>ORDINARIO 2022-1</b> <br>
         <ul class="text-justify">
             <li>
                 Se recomienda usar una <b>pc de escritorio</b> para realizar su inscripción. 

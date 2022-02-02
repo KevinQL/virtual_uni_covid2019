@@ -98,9 +98,9 @@
 	// FIN PRUEBAS NUEVO PROCESOS
 
 	if( $estructura === "01" || $estructura === "04" || $estructura === "05" ){
-		$proc="0026"; //PROCESO EXTRAORDINARIO (to change)
+		$proc="0030"; //PROCESO ORDINARIO (to change)
 	}else{
-		$proc="0025"; //PROCESO EXTRAORDINARIO (to change)
+		$proc="0030"; //PROCESO ORDINARIO (to change)
 	}
 
 	$status_voucher = "";

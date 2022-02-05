@@ -135,7 +135,7 @@
         </td>
         <td>
         	<?php //MostrarComboZet("cboEstructura",$vsqlescuela,$estructura,$pasa); ?>
-            <select name="cboEstructura" id="cboEstructura">
+            <select name="cboEstructura" id="cboEstructura" onchange="getOptions(this.value)">
                 <option value="01" selected="">ADMINISTRACION DE EMPRESAS</option>
                 <option value="02">CONTABILIDAD</option>
                 <option value="03">EDUCACION PRIMARIA INTERCULTURAL</option>
@@ -145,6 +145,26 @@
             </select>
         </td>    
     </tr> 
+
+    <tr>
+    	<td>
+        	<strong>
+            Segunda Opción:
+            </strong> 
+        </td>
+        <td>
+            <select name="txtAnioEgreso" id="txtAnioEgreso">
+                <!-- <option value="01" selected="">ADMINISTRACION DE EMPRESAS</option> -->
+                <option value="02">CONTABILIDAD</option>
+                <option value="03" selected="">EDUCACION PRIMARIA INTERCULTURAL</option>
+                <!-- <option value="04">INGENIERIA AGROINDUSTRIAL</option>
+                <option value="05">INGENIERIA AMBIENTAL</option>
+                <option value="06">INGENIERIA DE SISTEMAS</option> -->
+            </select>
+        </td>    
+    </tr>
+
+
     <tr>
     	<td>
         	<strong>
@@ -278,7 +298,9 @@
         	<input type="text" name="txtColegio" id="txtColegio" class="form-control validar" autocomplete="off" autocapitalize="words"  value="" maxlength="30"  placeholder="Ingresar nombre colegio" aria-describedby="txtnombre-message">
         </td>    
     </tr>  
-    <tr>
+
+
+    <!-- <tr>
     	<td>
         	<strong>
             A&ntilde;o que culmino colegio:
@@ -287,7 +309,9 @@
         <td>
         	<input type="text" name="txtAnioEgreso" id="txtAnioEgreso" data-type="number" class="form-control validar" autocomplete="off" autocapitalize="words"  value="" maxlength="4"  placeholder="2018" aria-describedby="txtnombre-message">
         </td>    
-    </tr>     
+    </tr>      -->
+
+
 	<tr>
 		<td align="left">
         	<strong>Departamento Procedencia:</strong>
@@ -432,6 +456,51 @@
 </html>
 <script>
 
+//FUNCION FILTRO SEGUNDA CARRERA COMO OPCIONAL
+function getOptions(id){
+	
+    let listCarrer = {"01":'<option value="01" selected="">ADMINISTRACION DE EMPRESAS</option>',
+    		"02":'<option value="02" selected="">CONTABILIDAD</option>',
+            "03":'<option value="03" selected="">EDUCACION PRIMARIA INTERCULTURAL</option>',
+            "04":'<option value="04" selected="">INGENIERIA AGROINDUSTRIAL</option>',
+            "05":'<option value="05" selected="">INGENIERIA AMBIENTAL</option>',
+            "06":'<option value="06" selected="">INGENIERIA DE SISTEMAS</option>'
+            };
+            
+    let cie = ["01","02",,"03"];
+	let ing = ["04","05",,"06"];
+    let resultHtmlOption = "";
+    let result;
+    if(cie.includes(id)){
+    	//alert("es ciencias")
+        result = cie.filter(function(value){ return value != id;})
+        result.forEach(function(elem, index){
+        	resultHtmlOption += listCarrer[elem];
+        })
+    }else{
+    	//alert("es ingenierias");
+        result = ing.filter(function(value){ return value != id;})
+        result.forEach(function(elem, index){
+        	resultHtmlOption += listCarrer[elem];
+        })
+    }
+    
+    //alert(resultHtmlOption);
+    
+    let elemOption2 = document.querySelector("#txtAnioEgreso");
+    elemOption2.innerHTML = resultHtmlOption;
+
+}
+
+
+
+
+
+
+
+
+
+
     function mensaje_post_submit(txt_titulo, txt_text, txt_icon, txt_btn, txt_footer){
         Swal.fire({
                 title: txt_titulo,
@@ -472,12 +541,12 @@
                 Recorte las fotografias (voucher, rostro, dni) a un tamano visible y que enfoque solo el contenido. Puede utilizar diferentes herramientas para editar la foto, o usar el mismo WhatsApp para recortar la imagen. Comprima sus fotos para que pesen <b>menos de 2MB</b> cada uno; WhatsApp también comprime la foto cuando lo envia (es una funcion que actua por defecto).
             </li>
             <li>
-                Recuerde que usted es el único responsable para la culminación satisfactoria de su inscripción. Atengase a las consecuencias en el caso de que no llegue a cumplir las indicaciones correspondientes. Puede revizar aquí el reglamento admisión: <a href="https://examen.admisionunajma.pe/pagina_reglamento.php" target="_blank">REGLAMENTO ADMISION 2021-2</a>
+                Recuerde que usted es el único responsable para la culminación satisfactoria de su inscripción. Atengase a las consecuencias en el caso de que no llegue a cumplir las indicaciones correspondientes. Puede revizar aquí el reglamento admisión: <a href="https://examen.admisionunajma.pe/pagina_reglamento.php" target="_blank">REGLAMENTO ADMISION 2022-1</a>
             </li>
         </ul>
         <br>
         <br>
-        Admision 2021-2
+        Admision 2022-1
         `,
         showCloseButton: true,
         showCancelButton: true,

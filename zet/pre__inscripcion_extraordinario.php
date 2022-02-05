@@ -11,7 +11,7 @@
      * else put true : false;
      */
     
-    $pase = (isset($_GET['externo20212']) || isset($_GET['other']) )? true : false;
+    $pase = (isset($_GET['externo20221']) || isset($_GET['other']) )? true : false;
 
     if($pase){
 ?>
@@ -80,7 +80,7 @@
 <br>
    
 <form action="pregrabar_extraordinario.php" method="post" id="grado" name="frmFotoGrado" enctype="multipart/form-data" onsubmit="return true;" >
-   <center><h3>INSCRIPCIÓN EXAMEN <u><strong>EXTRAORDINARIO</strong></u> ADMISIÓN UNAJMA</h3><h4 style="font-size:22px;">2021 - II</h4> </center> 
+   <center><h3>INSCRIPCIÓN EXAMEN <u><strong>EXTRAORDINARIO</strong></u> ADMISIÓN UNAJMA</h3><h4 style="font-size:22px;">2022 - I</h4> </center> 
 <table width="760" border="0" align="center" cellpadding="3" cellspacing="0" class="table-borderless">
 
 	<tr>
@@ -154,9 +154,38 @@
             </strong>        
         </td>
         <td>
-        	<?php MostrarComboZet("cboEstructura",$vsqlescuela,$estructura,$pasa); ?>
+        	<?php //MostrarComboZet("cboEstructura",$vsqlescuela,$estructura,$pasa); ?>
+            <select name="cboEstructura" id="cboEstructura" onchange="getOptions(this.value)">
+                <option value="01" selected="">ADMINISTRACION DE EMPRESAS</option>
+                <option value="02">CONTABILIDAD</option>
+                <option value="03">EDUCACION PRIMARIA INTERCULTURAL</option>
+                <option value="04">INGENIERIA AGROINDUSTRIAL</option>
+                <option value="05">INGENIERIA AMBIENTAL</option>
+                <option value="06">INGENIERIA DE SISTEMAS</option>
+            </select>
         </td>    
     </tr> 
+
+
+    <tr>
+    	<td>
+        	<strong>
+            Segunda Opción:
+            </strong> 
+        </td>
+        <td>
+            <select name="txtAnioEgreso" id="txtAnioEgreso">
+                <!-- <option value="01" selected="">ADMINISTRACION DE EMPRESAS</option> -->
+                <option value="02">CONTABILIDAD</option>
+                <option value="03" selected="">EDUCACION PRIMARIA INTERCULTURAL</option>
+                <!-- <option value="04">INGENIERIA AGROINDUSTRIAL</option>
+                <option value="05">INGENIERIA AMBIENTAL</option>
+                <option value="06">INGENIERIA DE SISTEMAS</option> -->
+            </select>
+        </td>    
+    </tr>
+
+
     <tr>
     	<td>
         	<strong>
@@ -290,7 +319,9 @@
         	<input type="text" name="txtColegio" id="txtColegio" class="form-control validar" autocomplete="off" autocapitalize="words"  value="" maxlength="30"  placeholder="Ingresar nombre colegio" aria-describedby="txtnombre-message">
         </td>    
     </tr>  
-    <tr>
+
+
+    <!-- <tr>
     	<td>
         	<strong>
             A&ntilde;o que culmino colegio:
@@ -299,7 +330,9 @@
         <td>
         	<input type="text" name="txtAnioEgreso" id="txtAnioEgreso" data-type="number" class="form-control validar" autocomplete="off" autocapitalize="words"  value="" maxlength="4"  placeholder="2018" aria-describedby="txtnombre-message">
         </td>    
-    </tr>     
+    </tr>      -->
+
+
 	<tr>
 		<td align="left">
         	<strong>Departamento Procedencia:</strong>
@@ -454,6 +487,46 @@
 </html>
 <script>
 
+//FUNCION FILTRO SEGUNDA CARRERA COMO OPCIONAL
+function getOptions(id){
+	
+    let listCarrer = {"01":'<option value="01" selected="">ADMINISTRACION DE EMPRESAS</option>',
+    		"02":'<option value="02" selected="">CONTABILIDAD</option>',
+            "03":'<option value="03" selected="">EDUCACION PRIMARIA INTERCULTURAL</option>',
+            "04":'<option value="04" selected="">INGENIERIA AGROINDUSTRIAL</option>',
+            "05":'<option value="05" selected="">INGENIERIA AMBIENTAL</option>',
+            "06":'<option value="06" selected="">INGENIERIA DE SISTEMAS</option>'
+            };
+            
+    let cie = ["01","02",,"03"];
+	let ing = ["04","05",,"06"];
+    let resultHtmlOption = "";
+    let result;
+    if(cie.includes(id)){
+    	//alert("es ciencias")
+        result = cie.filter(function(value){ return value != id;})
+        result.forEach(function(elem, index){
+        	resultHtmlOption += listCarrer[elem];
+        })
+    }else{
+    	//alert("es ingenierias");
+        result = ing.filter(function(value){ return value != id;})
+        result.forEach(function(elem, index){
+        	resultHtmlOption += listCarrer[elem];
+        })
+    }
+    
+    //alert(resultHtmlOption);
+    
+    let elemOption2 = document.querySelector("#txtAnioEgreso");
+    elemOption2.innerHTML = resultHtmlOption;
+
+}
+
+
+
+
+
     function mensaje_post_submit(txt_titulo, txt_text, txt_icon, txt_btn, txt_footer){
         Swal.fire({
                 title: txt_titulo,
@@ -470,7 +543,7 @@
         title: '<strong>RECOMENDACIONES POSTULANTE <u>EXTRAORDINARIO</u></strong>',
         icon: 'info',
         html: `
-        Estimado postulante al proceso de admisión <b>EXTRAORDINARIO 2021-2</b> <br>
+        Estimado postulante al proceso de admisión <b>EXTRAORDINARIO 2022-1</b> <br>
         <ul class="text-justify">
             <li>
                 Se recomienda usar una <b>pc de escritorio</b> para realizar su inscripción. 
@@ -498,7 +571,7 @@
         </ul>
         <br>
         <br>
-        Admision 2021-2
+        Admision 2022-1
         `,
         showCloseButton: true,
         showCancelButton: true,
@@ -852,8 +925,8 @@ function readImage (input) {
         <div class="card text-center" style="width: 18rem;">
             <div class="card-body">
                 <!-- <h5 class="card-title text-danger">EN ESTOS MOMENTOS NO PODEMOS ATENDERLE</h5> -->
-                <h5 class="card-title text-danger">INSCRIPCIONES UNAJMA </br> 2021 </h5>
-                <p class="card-text">Las inscripciones para el examen EXTRAORDINARIO - 2021-2 </br> <b>FINALIZARÓN</b> A LAS 05:00 PM</p>
+                <h5 class="card-title text-danger">INSCRIPCIONES UNAJMA </br> 2022 </h5>
+                <p class="card-text">Las inscripciones para el examen EXTRAORDINARIO - 2022-1 </br> <b>FINALIZARÓN</b> A LAS 05:00 PM</p>
                 <a href="https://examen.admisionunajma.pe/index.php" class="btn btn-warning">Ir a la página principal</a>
             </div>
         </div>

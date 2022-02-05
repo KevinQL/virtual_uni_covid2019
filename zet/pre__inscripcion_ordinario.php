@@ -4,7 +4,7 @@
      * then put true for all when the inscription is availabel (true:true)
      * else put true : false;
      */
-    $pase = (isset($_GET['externo20212']) || isset($_GET['other']) )? true : false;
+    $pase = (isset($_GET['externo20221']) || isset($_GET['other']) )? true : false;
 
     if($pase){
 ?>
@@ -164,7 +164,7 @@
             <select name="txtAnioEgreso" id="txtAnioEgreso">
                 <!-- <option value="01" selected="">ADMINISTRACION DE EMPRESAS</option> -->
                 <option value="02">CONTABILIDAD</option>
-                <option value="03">EDUCACION PRIMARIA INTERCULTURAL</option>
+                <option value="03" selected="">EDUCACION PRIMARIA INTERCULTURAL</option>
                 <!-- <option value="04">INGENIERIA AGROINDUSTRIAL</option>
                 <option value="05">INGENIERIA AMBIENTAL</option>
                 <option value="06">INGENIERIA DE SISTEMAS</option> -->
@@ -461,7 +461,7 @@
 </html>
 <script>
 
-        //FUNCIONE FILTRO SEGUNDA CARRERA COMO OPCIONAL DE
+//FUNCION FILTRO SEGUNDA CARRERA COMO OPCIONAL
 function getOptions(id){
 	
     let listCarrer = {"01":'<option value="01" selected="">ADMINISTRACION DE EMPRESAS</option>',

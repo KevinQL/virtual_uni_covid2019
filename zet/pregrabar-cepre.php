@@ -6,7 +6,31 @@
 
 	$zet = '../';
 
-	// var_dump($_POST);
+	/**
+	 * Code for the career filter
+	*/
+	function get_filterCareerAdmision($car_main, $car_opt){
+		$cie = ["01","02","03"];
+		$ing = ["04","05","06"];
+		
+		if($car_main != $car_opt){
+			if( in_array($car_main, $cie, true) && in_array($car_opt, $cie, true) || 
+				in_array($car_main, $ing, true) && in_array($car_opt, $ing, true) ){
+				//echo "todo correcto!";
+				return true;
+			}else{
+				//echo "error. Las carreras no deben ser de facultades diferentes!!";
+				return false;
+			}
+		}else{
+			//echo "error. las carreras no pueden coincidir";
+			return false;
+		}
+	}
+
+	/**
+	 * FIN code career filter
+	*/
 	
 	/**
 	 * code of the captcha by KLEBXY
@@ -26,10 +50,35 @@
 	$responseData = json_decode($response);
 	
 	// var_dump($responseData);
-	/** fin code captcha */
+	/**
+	 * END code captcha 
+	*/
 
-
-	// die();
+	/**
+	 * Ejecutando la función de filtro.
+	*/
+	$res_filter = get_filterCareerAdmision($_POST["cboEstructura"], $_POST["txtAnioEgreso"]);
+	if(!$res_filter){
+		//redireccionar a la página con el error, indicando que los datos están siendo vulneradas.
+		
+		echo '<table width="100%">';
+		echo '<tr>';
+			echo '<td align="center" align="center">';
+				echo '<strong>REGISTRO INCORRECTO</strong>';
+			echo '</td>';
+		echo '</tr>';
+			echo '<tr>';
+			echo '<td align="center" align="center">';
+				echo "Error en la selección de las carreras.";
+				echo '<p><a href="https://examen.admisionunajma.pe/zetadmision/zet/pre__inscripcion_ordinario.php">Regresar Inscripción<i class="fa fa-forward"></i></a> </p>';
+			echo '</td>';
+		echo '</tr>';
+		echo '</table>';
+		echo "<script> alert('Datos incorrectos!!!'); </script>";
+		//header ("location: pre__inscripcion_ordinario.php");
+		die();
+		//exit;
+	}
 
 
 	
@@ -97,9 +146,9 @@
 	// FIN PRUEBAS NUEVO PROCESOS
 
 	if( $estructura === "01" || $estructura === "04" || $estructura === "05" ){
-		$proc="0029"; //PROCESO EXTRAORDINARIO (to change)
+		$proc="0032"; //PROCESO EXTRAORDINARIO (to change)
 	}else{
-		$proc="0029"; //PROCESO EXTRAORDINARIO (to change)
+		$proc="0032"; //PROCESO EXTRAORDINARIO (to change)
 	}
 
 	// $status_voucher = "";

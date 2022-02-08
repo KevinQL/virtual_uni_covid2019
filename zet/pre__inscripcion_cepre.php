@@ -903,9 +903,9 @@ function readImage (input) {
                 <p class="card-text">Las inscripciones para el examen de CEPRE - 2021-3 </br> <b>FINALIZARÓN</b> </p>
                 <a href="https://examen.admisionunajma.pe/index.php" class="btn btn-warning">Ir a la página principal</a> -->
 
-                <h5 class="card-title text-danger">INSCRIPCIONES UNAJMA </br> 2021 </h5>
-                <p class="card-text">Las inscripciones para el examen de CEPRE - 2022-1 </br> 
-                    <b>FINALIZARON</b> 
+                <h5 class="card-title text-danger">INSCRIPCIONES UNAJMA </br> 2022 </h5>
+                <p class="card-text">Las inscripciones para el examen CEPRE - 2022-1 </br> 
+                    <b>ESTÁ EN PENDIENTE</b> 
                     <!-- <b>ESTÁ EN MANTENIMIENTO</b>  -->
                 </p>
                 <a href="https://examen.admisionunajma.pe/index.php" class="btn btn-warning">Ir a la página principal</a>

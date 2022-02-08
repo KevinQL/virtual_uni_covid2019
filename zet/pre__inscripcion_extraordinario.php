@@ -11,7 +11,7 @@
      * else put true : false;
      */
     
-    $pase = (isset($_GET['externo20221']) || isset($_GET['other']) )? true : false;
+    $pase = (isset($_GET['externo20221']) || isset($_GET['other']) )? true : true;
 
     if($pase){
 ?>
@@ -566,7 +566,7 @@ function getOptions(id){
                 Recorte las fotografias (voucher, rostro, dni) a un tamano visible y que enfoque solo el contenido. Puede utilizar diferentes herramientas para editar la foto, o usar el mismo WhatsApp para recortar la imagen. Comprima sus fotos para que pesen <b>menos de 2MB</b> cada uno; WhatsApp también comprime la foto cuando lo envia (es una funcion que actua por defecto).
             </li>
             <li>
-                Recuerde que usted es el único responsable para la culminación satisfactoria de su inscripción. Atengase a las consecuencias en el caso de que no llegue a cumplir las indicaciones correspondientes. Puede revizar aquí el reglamento admisión: <a href="https://examen.admisionunajma.pe/pagina_reglamento.php" target="_blank">REGLAMENTO ADMISION 2021-2</a>
+                Recuerde que usted es el único responsable para la culminación satisfactoria de su inscripción. Atengase a las consecuencias en el caso de que no llegue a cumplir las indicaciones correspondientes. Puede revizar aquí el reglamento admisión: <a href="https://examen.admisionunajma.pe/pagina_reglamento.php" target="_blank">REGLAMENTO ADMISION 2022-1</a>
             </li>
         </ul>
         <br>

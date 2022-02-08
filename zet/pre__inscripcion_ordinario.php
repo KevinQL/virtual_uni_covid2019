@@ -4,7 +4,7 @@
      * then put true for all when the inscription is availabel (true:true)
      * else put true : false;
      */
-    $pase = (isset($_GET['externo20221']) || isset($_GET['other']) )? true : false;
+    $pase = (isset($_GET['externo20221']) || isset($_GET['other']) )? true : true;
 
     if($pase){
 ?>
@@ -546,12 +546,12 @@ function getOptions(id){
                 Recorte las fotografias (voucher, rostro, dni) a un tamano visible y que enfoque solo el contenido. Puede utilizar diferentes herramientas para editar la foto, o usar el mismo WhatsApp para recortar la imagen. Comprima sus fotos para que pesen <b>menos de 2MB</b> cada uno; WhatsApp también comprime la foto cuando lo envia (es una funcion que actua por defecto).
             </li>
             <li>
-                Recuerde que usted es el único responsable para la culminación satisfactoria de su inscripción. Atengase a las consecuencias en el caso de que no llegue a cumplir las indicaciones correspondientes. Puede revizar aquí el reglamento admisión: <a href="https://examen.admisionunajma.pe/pagina_reglamento.php" target="_blank">REGLAMENTO ADMISION 2021-2</a>
+                Recuerde que usted es el único responsable para la culminación satisfactoria de su inscripción. Atengase a las consecuencias en el caso de que no llegue a cumplir las indicaciones correspondientes. Puede revizar aquí el reglamento admisión: <a href="https://examen.admisionunajma.pe/pagina_reglamento.php" target="_blank">REGLAMENTO ADMISION 2022-1</a>
             </li>
         </ul>
         <br>
         <br>
-        Admision 2021-2
+        Admision 2022-1
         `,
         showCloseButton: true,
         showCancelButton: true,
@@ -904,8 +904,8 @@ function readImage (input) {
         <div class="card text-center" style="width: 18rem;">
             <div class="card-body">
                 <!-- <h5 class="card-title text-danger">EN ESTOS MOMENTOS NO PODEMOS ATENDERLE</h5> -->
-                <h5 class="card-title text-danger">INSCRIPCIONES UNAJMA </br> 2021 </h5>
-                <p class="card-text">Las inscripciones para el examen de ORDINARIO - 2021-1 </br> <b>FINALIZARÓN</b> </p>
+                <h5 class="card-title text-danger">INSCRIPCIONES UNAJMA </br> 2022 </h5>
+                <p class="card-text">Las inscripciones para el examen de ORDINARIO - 2022-1 </br> <b>FINALIZARÓN</b> </p>
                 <a href="https://examen.admisionunajma.pe/index.php" class="btn btn-warning">Ir a la página principal</a>
             </div>
         </div>

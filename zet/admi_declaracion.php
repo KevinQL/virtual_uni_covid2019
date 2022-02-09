@@ -1,3 +1,18 @@
+    <style>
+        .manito-admi{
+            color:orangered;
+            /* margin-left:0px; */
+            animation-name: example;
+            animation-duration: 1.3s;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes example {
+            0%   {color: #428bca; margin-left:0px;}
+            100% {color: orange; margin-left:13px;}
+        }
+    </style>
+    
     <!-- hcatpcha API -->
     <script src="https://hcaptcha.com/1/api.js" async defer></script>
 
@@ -197,14 +212,17 @@
 			echo '<div class="alert alert-danger">';
 			echo '<span class="semi-bold" style="font-size:16px;">Usted acept&oacute; las declaraciones juradas y la ficha de inscripci&oacute;n.</span>';
 			echo '</div>';
-			echo '<a href="javascript:ventanaSecundaria(\''.GL_DIR_WS_HTTP_APP.'zet/admi_declaracion_pdf.php?codigo='.$codigozet.'\')">';
-            echo '<i class="fa fa-print"> Descargar Declaraciones Juradas PDF </i>';
+            
+            echo '<a href="javascript:ventanaSecundaria(\''.GL_DIR_WS_HTTP_APP.'zet/admi_constancia_pdf.php?codigo='.$codigozet.'\')" class="btn btn-primary btn-lg" > ';
+            echo '<i class="fa fa-print"></i> CONSTANCIA DE INSCRIPCIÓN PDF <i class="fa fa-cloud-download" aria-hidden="true"></i>';
+
+			echo '</a> <i class="fa fa-hand-o-left fa-3x manito-admi" aria-hidden="true"></i>';	
+            echo '<br>';	
+            echo '<br>';	
+
+            echo '<a href="javascript:ventanaSecundaria(\''.GL_DIR_WS_HTTP_APP.'zet/admi_declaracion_pdf.php?codigo='.$codigozet.'\')" class="btn btn-warning btn-sm py-3">';
+            echo '<i class="fa fa-print"></i> DECLARACIONES JURADAS PDF <i class="fa fa-cloud-download" aria-hidden="true"></i>';
             echo '</a>';	
-            echo '<br>';	
-            echo '<br>';	
-            echo '<a href="javascript:ventanaSecundaria(\''.GL_DIR_WS_HTTP_APP.'zet/admi_constancia_pdf.php?codigo='.$codigozet.'\')">';
-            echo '<i class="fa fa-print"> Descargar Constancia de Inscripcion PDF </i>';
-			echo '</a>';	
 			
 		}
 	?>
@@ -354,14 +372,16 @@
         	<?php echo $colegio;?>
         </td>
     </tr>
-    <tr>
+    
+    <!-- <tr>
     	<td align="left">
-        	<strong>A&Ntilde;O DE EGRESO:</strong>
+        	<strong>AñO DE EGRESO:</strong>
         </td>
         <td>
         	<?php echo $anioegreso;?>
         </td>
-    </tr>
+    </tr> -->
+
     <tr>
     	<td align="left">
         	<strong>APODERADO:</strong>
@@ -415,10 +435,6 @@
     </tr>
 </table>
 <!-- FIN FICAH DE INSCRIPCION --->
-
-<!-- <br>
-<br>
-<br> -->
 
 <!-- INICIO - DJ CONDICIONES EXAMEN ADMISION VIRTUAL --->
 <!-- <table width="100%">
@@ -504,7 +520,7 @@
     	<td align="center">
         	<span style="font-size:22px">            
             DECLARACION JURADA ACEPTACION DE 
-RIESGOS EN EL EXAMEN DE ADMISI&Oacute;N VIRTUAL       
+        RIESGOS EN EL EXAMEN DE ADMISI&Oacute;N VIRTUAL       
             </span>
             <br>
         </td>
@@ -521,11 +537,11 @@ RIESGOS EN EL EXAMEN DE ADMISI&Oacute;N VIRTUAL
                 <li>
                 Limitado o nulo acceso al servicio de internet por tiempo de dos (03) horas como m&iacute;nimo con la fluidez de datos y sin interferencia.
                 </li>
-<li>Ausencia de energ&iacute;a el&eacute;ctrica para la computadora port&aacute;til (laptop).</li>
-<li>Baja o limitada carga de bater&iacute;a del celular.</li>
-<li>Ambiente no apropiado para rendir el examen virtual, que tenga interrupci&oacute;n por ruidos, terceras personas o interrupci&oacute;n por necesidades biol&oacute;gicas.</li>
-<li>Interrupci&oacute;n de la conectividad de internet, audio o video, por tener encendido alg&uacute;n aparato electr&oacute;nico adicional a la laptop y celular con el que rendir&aacute; el examen.</li>
-<li>Interrupci&oacute;n, fraude, robo de informaci&oacute;n o acceso no autorizado en el examen de admisi&oacute;n virtual, por hacking, phishing u otros aplicativos maliciosos; cuando ejecute una p&aacute;gina web, aplicativos on-line, conexi&oacute;n remota u otro software que no est&eacute; autorizado; con excepci&oacute;n del sistema de la Universidad, el aplicativo de verificaci&oacute;n y monitoreo proporcionado por la Oficina de Admisi&oacute;n.</li>
+    <li>Ausencia de energ&iacute;a el&eacute;ctrica para la computadora port&aacute;til (laptop).</li>
+    <li>Baja o limitada carga de bater&iacute;a del celular.</li>
+    <li>Ambiente no apropiado para rendir el examen virtual, que tenga interrupci&oacute;n por ruidos, terceras personas o interrupci&oacute;n por necesidades biol&oacute;gicas.</li>
+    <li>Interrupci&oacute;n de la conectividad de internet, audio o video, por tener encendido alg&uacute;n aparato electr&oacute;nico adicional a la laptop y celular con el que rendir&aacute; el examen.</li>
+    <li>Interrupci&oacute;n, fraude, robo de informaci&oacute;n o acceso no autorizado en el examen de admisi&oacute;n virtual, por hacking, phishing u otros aplicativos maliciosos; cuando ejecute una p&aacute;gina web, aplicativos on-line, conexi&oacute;n remota u otro software que no est&eacute; autorizado; con excepci&oacute;n del sistema de la Universidad, el aplicativo de verificaci&oacute;n y monitoreo proporcionado por la Oficina de Admisi&oacute;n.</li>
 				</ol>
 
 		</td>
@@ -588,7 +604,7 @@ RIESGOS EN EL EXAMEN DE ADMISI&Oacute;N VIRTUAL
     	<td align="center">
         	<span style="font-size:22px">            
             DECLARACION JURADA
-REQUISITOS M&Iacute;NIMOS       
+    REQUISITOS M&Iacute;NIMOS       
             </span>
             <br>
         </td>
@@ -669,36 +685,69 @@ REQUISITOS M&Iacute;NIMOS
 <br>
 <br>
 
-<!-- INICIO - DJ ANTECEDENTES PENALES --->
+<!-- INICIO - DJ --->
 <table width="100%">
 	<tr>
     	<td align="center">
         	<span style="font-size:22px"> 
             DECLARACION JURADA
-DE NO POSEER ANTECEDENTES PENALES POR LA COMISI&Oacute;N DE LOS DELITOS DE TERRORISMO O APOLOG&Iacute;A AL TERRORISMO, DE VIOLACI&Oacute;N A LA LIBERTAD SEXUAL O DE TR&Aacute;FICO IL&Iacute;CITO DE DROGAS   
             </span>
             <br>
         </td>
     </tr>
-    <tr>
-    	<td align="left">
-        	Se&ntilde;or:<br>
-			Presidente de la Comisi&oacute;n Organizadora de la Universidad Nacional Jos&eacute; Mar&iacute;a Arguedas 
 
-        </td>
-    </tr>
     <tr>
     	<td style="font-size:14px;">
         <br>
-                Yo, <strong><?php echo $nombrecompleto; ?></strong>, de nacionalidad peruana, identificado con documento de identidad Nro <strong><?php echo $dni;?></strong> con domicilio en <?php echo $domicilio;?> del distrito <?php echo $nombredistrito;?>, provincia <?php echo $nombreprovincia;?> de la regi&oacute;n <?php echo $nombredepartamento?>; postulante a la carrera profesional de <strong><?php echo $nombreescuela; ?></strong>, en la modalidad <strong><?php echo $nombremodalidad?></strong> en el Proceso de admisi&oacute;n <strong><?=$DJproceso?></strong> de la Universidad Nacional Jos&eacute; Mar&iacute;a Arguedas de Andahuaylas; en pleno uso de mis facultades f&iacute;sico mentales.
+                Yo,
+                <strong><?php echo $nombrecompleto; ?></strong>, 
+                de nacionalidad peruana, identificado con documento de identidad Nro 
+                <strong><?php echo $dni;?></strong> 
+                con domicilio en 
+                <?php echo $domicilio;?> 
+                del distrito 
+                <?php echo $nombredistrito;?>, 
+                provincia 
+                <?php echo $nombreprovincia;?>
+                de la región <?php echo $nombredepartamento?>; 
+                postulante a la carrera profesional de 
+                <strong><?php echo $nombreescuela; ?></strong>, 
+                en la modalidad 
+                <strong><?php echo $nombremodalidad?></strong> 
+                en el Proceso de admisión 
+                <strong><?=$DJproceso?></strong> 
+                de la Universidad Nacional José María Arguedas de Andahuaylas; en pleno uso de mis facultades físico mentales.
                 <br>
                 <br>                
-                DECLARO BAJO JURAMENTO, no haber sido condenado por el delito de terrorismo o apolog&iacute;a al terrorismo en cualquiera de sus modalidades, que impida mi postulaci&oacute;n a la Universidad Nacional Jos&eacute; Mar&iacute;a Arguedas, seg&uacute;n el Art. 98° de la Ley Universitaria N° 30220, ni tampoco por los delitos de violaci&oacute;n a la libertad sexual o de tr&aacute;fico il&iacute;cito de drogas, seg&uacute;n Ley N° 29988.
-                <br>
-Doy fe que esta declaraci&oacute;n corresponde a la verdad, por lo que me someto a las responsabilidades a que hubiere lugar en caso de consignar informaci&oacute;n falsa.
-
 		</td>
     </tr>
+
+    <tr>
+    	<td align="center">
+        	<span style="font-size:22px"> 
+            DECLARO BAJO JURAMENTO
+            </span>
+            <br>
+        </td>
+    </tr>
+
+    <tr>
+    	<td style="font-size:14px;">
+            <br>
+            <strong>1.</strong>	Que, no haber sido dado de baja por la Universidad Nacional José María Arguedas según Art. 102 de la Ley Universitaria. 
+            <br>
+            <strong>2.</strong>	Que, no haber sido sancionado por la Universidad Nacional José María Arguedas por ningún motivo. 
+            <br>
+            <strong>3.</strong>	No haber sido condenado por el delito de terrorismo o apología al terrorismo en cualquiera de sus modalidades, que impida mi postulación a la Universidad Nacional José María Arguedas, según el Art. 98° y 102 de la Ley Universitaria N° 30220; ni tampoco por los delitos de violación a la libertad sexual o de tráfico ilícito de drogas, según Ley N° 29988.  
+            <br>
+            <strong>4.</strong>	Que, cumplo con los requisitos establecidos en el reglamento de admisión para el proceso 2022-I, aprobado con resolución N° 0363-2021-CO-UNAJMA, por lo que me comprometo a presentar todos los documentos requeridos.
+            <br>
+            <strong>5.</strong>	Que, conozco y acepto el contenido del Reglamento del Proceso de Admisión 2022-I, Prospecto de Admisión y los lineamientos para el desarrollo del proceso de admisión, en el marco de emergencia sanitaria y medidas de prevención de contagio y propagación del COVID-19, según lo determine el MINSA; así como las faltas, sanciones, riesgos y requisitos mínimos para participar en el examen presencial. Asimismo, durante el desarrollo del Examen de Admisión, me comprometo a cumplir con las instrucciones del supervisor o fiscalizador
+            <br>
+            Doy fe que esta declaración corresponde a la verdad, por lo que me someto a las responsabilidades a que hubiere lugar en caso de consignar información falsa.
+        </td>
+    </tr>
+
     <tr>
      	<td style="font-size:14px;" align="center">
         	<br>
@@ -743,17 +792,34 @@ Doy fe que esta declaraci&oacute;n corresponde a la verdad, por lo que me someto
 		</td>
     </tr>
 </table>
-<!-- FIN - DJ ANTECEDENTES PENALES --->
+<!-- FIN - DJ --->
 
 <br>
 <br>
 <br>
+
+
+<!-- LAS DECLARACIONES DE ACA ABAJO YA NO SE UTILIZAN PARA ESTE PROCESO 2022-1 -->
+<!-- ************************************************ -->
+<!-- ************************************************ -->
+<!-- *******************   ************************** -->
+<!-- *******************   ************************** -->
+<!-- *******************   ************************** -->
+<!-- *******************   ************************** -->
+<!-- *******************   ************************** -->
+<!-- *******************   ************************** -->
+<!-- ***************   *****   ********************** -->
+<!-- *****************  ***  ************************ -->
+<!-- ******************* * ************************** -->
+<!-- ******************** *************************** -->
+<!-- ************************************************ -->
+<!-- ************************************************ -->
 
 <?php
 
 //0015: Proceso CEPRE
 //0014: Proceso Primera selección--------------------------------
-if($proceso == '0016' || $proceso != ""){
+if(false && ($proceso == '0016' || $proceso != "") ){
     
 ?>
 

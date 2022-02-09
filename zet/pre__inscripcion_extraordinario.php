@@ -170,25 +170,6 @@
     <tr>
     	<td>
         	<strong>
-            Segunda Opción:
-            </strong> 
-        </td>
-        <td>
-            <select name="txtAnioEgreso" id="txtAnioEgreso">
-                <!-- <option value="01" selected="">ADMINISTRACION DE EMPRESAS</option> -->
-                <option value="02">CONTABILIDAD</option>
-                <option value="03" selected="">EDUCACION PRIMARIA INTERCULTURAL</option>
-                <!-- <option value="04">INGENIERIA AGROINDUSTRIAL</option>
-                <option value="05">INGENIERIA AMBIENTAL</option>
-                <option value="06">INGENIERIA DE SISTEMAS</option> -->
-            </select>
-        </td>    
-    </tr>
-
-
-    <tr>
-    	<td>
-        	<strong>
             Sexo:
             </strong>        
         </td>
@@ -321,16 +302,16 @@
     </tr>  
 
 
-    <!-- <tr>
+    <tr>
     	<td>
         	<strong>
-            A&ntilde;o que culmino colegio:
+            Año que culmino colegio:
             </strong>        
         </td>
         <td>
-        	<input type="text" name="txtAnioEgreso" id="txtAnioEgreso" data-type="number" class="form-control validar" autocomplete="off" autocapitalize="words"  value="" maxlength="4"  placeholder="2018" aria-describedby="txtnombre-message">
+        	<input type="text" name="txtAnioEgreso" id="txtAnioEgreso" data-type="number" class="form-control validar" autocomplete="off" autocapitalize="words"  value="2021" maxlength="4"  placeholder="2018" aria-describedby="txtnombre-message">
         </td>    
-    </tr>      -->
+    </tr>     
 
 
 	<tr>
@@ -399,7 +380,7 @@
     background-color: #337ab7;
     border: 1px solid #ffffff;
 ">
-			<img id="blah1" src="https://i.ibb.co/Tm3hb97/image.png" alt="Tu imagen" width="150px" height="150px" style=""/>
+			<img id="blah1" src="https://i.ibb.co/Tm3hb97/image.png" alt="Tu imagen" width="150px" height="150px" />
         </td>    
     </tr>
     <tr>
@@ -418,7 +399,7 @@
                 background-color: #337ab7;
                 border: 1px solid #ffffff;
             ">
-			<img id="blah2" src="https://i.ibb.co/ZKVB8xZ/image.png" alt="Tu imagen" width="150px" height="150px" style=""/>
+			<img id="blah2" src="https://i.ibb.co/ZKVB8xZ/image.png" alt="Tu imagen" width="150px" height="150px" />
         </td>    
     </tr>
 
@@ -486,45 +467,6 @@
 </body>
 </html>
 <script>
-
-//FUNCION FILTRO SEGUNDA CARRERA COMO OPCIONAL
-function getOptions(id){
-	
-    let listCarrer = {"01":'<option value="01" selected="">ADMINISTRACION DE EMPRESAS</option>',
-    		"02":'<option value="02" selected="">CONTABILIDAD</option>',
-            "03":'<option value="03" selected="">EDUCACION PRIMARIA INTERCULTURAL</option>',
-            "04":'<option value="04" selected="">INGENIERIA AGROINDUSTRIAL</option>',
-            "05":'<option value="05" selected="">INGENIERIA AMBIENTAL</option>',
-            "06":'<option value="06" selected="">INGENIERIA DE SISTEMAS</option>'
-            };
-            
-    let cie = ["01","02",,"03"];
-	let ing = ["04","05",,"06"];
-    let resultHtmlOption = "";
-    let result;
-    if(cie.includes(id)){
-    	//alert("es ciencias")
-        result = cie.filter(function(value){ return value != id;})
-        result.forEach(function(elem, index){
-        	resultHtmlOption += listCarrer[elem];
-        })
-    }else{
-    	//alert("es ingenierias");
-        result = ing.filter(function(value){ return value != id;})
-        result.forEach(function(elem, index){
-        	resultHtmlOption += listCarrer[elem];
-        })
-    }
-    
-    //alert(resultHtmlOption);
-    
-    let elemOption2 = document.querySelector("#txtAnioEgreso");
-    elemOption2.innerHTML = resultHtmlOption;
-
-}
-
-
-
 
 
     function mensaje_post_submit(txt_titulo, txt_text, txt_icon, txt_btn, txt_footer){

@@ -40,7 +40,7 @@
 	 * FIN-----
 	 */
 
-	// FICHA DE INSCRIPCION Y TAMBIEN TIENE LA ESTRUCTURA PARA LAS DJ DE LA PRIMERA HOJA
+	// FICHA DE INSCRIPCION Y TAMBIEN TIENE LA ESTRUCTURA PARA LAS DJ DE LA **PRIMERA HOJA
 	require('admi_solicitud_pdf.php');
 
 	//----------------- NO SE USA INICIO
@@ -49,9 +49,9 @@
 	#require('admi_declaracion03_pdf.php'); // DECLARACION JURADA REQUISITOS MÍNIMOS
 	//----------------- NO SE USA FIN
 
-	require('admi_declaracion04_pdf.php'); // DECLARACION JURADA DE NO POSEER ANTECEDENTES PENALES POR LA COMISIÓN DE LOS DELITOS DE TERRORISMO O APOLOGÍA AL TERRORISMO, DE VIOLACIÓN A LA LIBERTAD SEXUAL O DE TRÁFICO ILÍCITO DE DROGAS
+	#require('admi_declaracion04_pdf.php'); // DECLARACION JURADA DE NO POSEER ANTECEDENTES PENALES POR LA COMISIÓN DE LOS DELITOS DE TERRORISMO O APOLOGÍA AL TERRORISMO, DE VIOLACIÓN A LA LIBERTAD SEXUAL O DE TRÁFICO ILÍCITO DE DROGAS
 
-	require('admi_declaracion05_pdf.php'); // ULTIMA DJ AGREGADO PARA 5TO DE SECUNDARÍA
+	#require('admi_declaracion05_pdf.php'); // ULTIMA DJ AGREGADO PARA 5TO DE SECUNDARÍA
 
 	require('admi_declaracion05_1_pdf.php'); // ULTIMA DJ AGREGADO PARA CEPRE
 	
@@ -133,76 +133,76 @@
 	);
 
 	// // pdf 3 declaracion
-	include_once('admi_declaracion02_pdf.php');
-	$mpdf->AddPage();
-	$mpdf->WriteHTML('
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>'.
-		$vd30.
-		'<br>'.
-		$vd31.
-		$v3.
-		''
-	);
+	// include_once('admi_declaracion02_pdf.php');
+	// $mpdf->AddPage();
+	// $mpdf->WriteHTML('
+	// 	<br>
+	// 	<br>
+	// 	<br>
+	// 	<br>
+	// 	<br>
+	// 	<br>'.
+	// 	$vd30.
+	// 	'<br>'.
+	// 	$vd31.
+	// 	$v3.
+	// 	''
+	// );
 
 	// // pdf 4 declaracion
-	include_once('admi_declaracion03_pdf.php');
-	$mpdf->AddPage();
-	$mpdf->WriteHTML('
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>'.
-		$vd40.
-		'<br>'.
-		$vd41.
-		$v3.
-		''
-	);
+	// include_once('admi_declaracion03_pdf.php');
+	// $mpdf->AddPage();
+	// $mpdf->WriteHTML('
+	// 	<br>
+	// 	<br>
+	// 	<br>
+	// 	<br>
+	// 	<br>
+	// 	<br>'.
+	// 	$vd40.
+	// 	'<br>'.
+	// 	$vd41.
+	// 	$v3.
+	// 	''
+	// );
 
 	// // pdf 5 declaracion
-	include_once('admi_declaracion04_pdf.php');
-	$mpdf->AddPage();
-	$mpdf->WriteHTML('
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>'.
-		$vd50.
-		'<br>'.
-		$vd51.
-		$v3.
-		''
-	);
+	// include_once('admi_declaracion04_pdf.php');
+	// $mpdf->AddPage();
+	// $mpdf->WriteHTML('
+	// 	<br>
+	// 	<br>
+	// 	<br>
+	// 	<br>
+	// 	<br>
+	// 	<br>'.
+	// 	$vd50.
+	// 	'<br>'.
+	// 	$vd51.
+	// 	$v3.
+	// 	''
+	// );
 
 	// // pdf 6 declaracion
-	include_once('admi_declaracion05_pdf.php');
-	$mpdf->AddPage();
-	$mpdf->WriteHTML('
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>'.
-		$vd60.
-		'<br>'.
-		$vd61.
-		''
-	);
+	// include_once('admi_declaracion05_pdf.php');
+	// $mpdf->AddPage();
+	// $mpdf->WriteHTML('
+	// 	<br>
+	// 	<br>
+	// 	<br>
+	// 	<br>
+	// 	<br>
+	// 	<br>'.
+	// 	$vd60.
+	// 	'<br>'.
+	// 	$vd61.
+	// 	''
+	// );
 
 
 	//0015: Proceso CEPRE
 	//0014: Proceso Primera selección
-	if($proceso == '0014'){
+	if(false && $proceso == '0014'){
 		// pdf 5 - DECLARACIÓN DE 5TO AÑO DE SECUNDARIA PARA REGULARIZAR DOCUMENTOS
 		$mpdf->AddPage();
 		$mpdf->WriteHTML('
@@ -219,7 +219,7 @@
 			);
 	}
 	
-	elseif($proceso == '0015'){
+	elseif(false && $proceso == '0015'){
 		// pdf 5 - DECLARACIÓN CEPRE PARA REGULARIZAR DOCUMENTOS
 		$mpdf->AddPage();
 		$mpdf->WriteHTML('

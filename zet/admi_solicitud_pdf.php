@@ -108,7 +108,7 @@
 		<table width="750" border="0" cellpadding="3" cellspacing="3">
 			<tr height="'.$altura.'">
 			    <td align="left" width="35%">
-        			<strong>CARRERA PROFESIONAL A LA QUE POSTULA:</strong>
+        			<strong>CARRERA PROFESIONAL:</strong>
         		</td>
         		<td>'.
         			$nombreescuela.
@@ -232,14 +232,6 @@
 				</td>
 				<td>'.
 					$colegio.
-				'</td>
-			</tr>
-			<tr height="'.$altura.'">
-				<td align="left">
-					<strong>A&Ntilde;O DE EGRESO:</strong>
-				</td>
-				<td>'.
-					$anioegreso.
 				'</td>
 			</tr>
 		</table>';

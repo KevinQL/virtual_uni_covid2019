@@ -91,7 +91,103 @@ $vsqldepartamento="SELECT departamento,descripcion FROM mae_ubigeo WHERE provinc
 	#echo $vsqlprovincia;
 	#echo '<br>';
 	#echo $vsqldistrito;
+
+
+     /**
+     * /**************************************\
+     * |*************** SEGUNDA CARRERA
+     * ****************************************
+     * modificado: 14-02-2022
+     */
+
+        class CarrerOption {
+            private $idcarrer;
+
+            function __construct($idcarrer) {
+                $this->idcarrer = $idcarrer;
+            }
+
+            function esDiferente($id) {
+                return ($id !== $this->idcarrer) && ($id !== "00");
+            }
+        }
+
+        
+        function getCarrerAdmision($idCarrer){
+            $idcarrer = $idCarrer;
+
+            $carrer = ["00"=>'<option value="00" >ERROR EN LA CARRERA!!</option>',
+                        "01"=>'<option value="01" >ADMINISTRACION DE EMPRESAS</option>',
+                        "02"=>'<option value="02" >CONTABILIDAD</option>',
+                        "03"=>'<option value="03" >EDUCACION PRIMARIA INTERCULTURAL</option>',
+                        "04"=>'<option value="04" >INGENIERIA AGROINDUSTRIAL</option>',
+                        "05"=>'<option value="05" >INGENIERIA AMBIENTAL</option>',
+                        "06"=>'<option value="06" >INGENIERIA DE SISTEMAS</option>'];
+
+            $result = "";
+            if(array_key_exists($idcarrer, $carrer)){
+                
+                $actual[$idcarrer] = $carrer[$idcarrer];
+                $matches = array_filter($carrer, array(new CarrerOption($idcarrer), 'esDiferente'), ARRAY_FILTER_USE_KEY);
+                $lista = array_merge($actual, $matches);
+
+                foreach ($lista as $opt){
+                    $result .= $opt;
+                }
+            }else{
+                foreach ($carrer as $opt){
+                    $result .= $opt;
+                }
+            }
+            
+            return $result;
+
+        }
+
+
+        //test function ssecond carrer part to admin
+        function test_SecondCarrer(){
+            
+            $restest = ["00"=>'<option value="00" >ERROR EN LA CARRERA!!</option><option value="01" >ADMINISTRACION DE EMPRESAS</option><option value="02" >CONTABILIDAD</option><option value="03" >EDUCACION PRIMARIA INTERCULTURAL</option><option value="04" >INGENIERIA AGROINDUSTRIAL</option><option value="05" >INGENIERIA AMBIENTAL</option><option value="06" >INGENIERIA DE SISTEMAS</option>',
+                        "01"=>'<option value="01" >ADMINISTRACION DE EMPRESAS</option><option value="02" >CONTABILIDAD</option><option value="03" >EDUCACION PRIMARIA INTERCULTURAL</option><option value="04" >INGENIERIA AGROINDUSTRIAL</option><option value="05" >INGENIERIA AMBIENTAL</option><option value="06" >INGENIERIA DE SISTEMAS</option>',
+                        "02"=>'<option value="02" >CONTABILIDAD</option><option value="01" >ADMINISTRACION DE EMPRESAS</option><option value="03" >EDUCACION PRIMARIA INTERCULTURAL</option><option value="04" >INGENIERIA AGROINDUSTRIAL</option><option value="05" >INGENIERIA AMBIENTAL</option><option value="06" >INGENIERIA DE SISTEMAS</option>',
+                        "03"=>'<option value="03" >EDUCACION PRIMARIA INTERCULTURAL</option><option value="01" >ADMINISTRACION DE EMPRESAS</option><option value="02" >CONTABILIDAD</option><option value="04" >INGENIERIA AGROINDUSTRIAL</option><option value="05" >INGENIERIA AMBIENTAL</option><option value="06" >INGENIERIA DE SISTEMAS</option>',
+                        "04"=>'<option value="04" >INGENIERIA AGROINDUSTRIAL</option><option value="01" >ADMINISTRACION DE EMPRESAS</option><option value="02" >CONTABILIDAD</option><option value="03" >EDUCACION PRIMARIA INTERCULTURAL</option><option value="05" >INGENIERIA AMBIENTAL</option><option value="06" >INGENIERIA DE SISTEMAS</option>',
+                        "05"=>'<option value="05" >INGENIERIA AMBIENTAL</option><option value="01" >ADMINISTRACION DE EMPRESAS</option><option value="02" >CONTABILIDAD</option><option value="03" >EDUCACION PRIMARIA INTERCULTURAL</option><option value="04" >INGENIERIA AGROINDUSTRIAL</option><option value="06" >INGENIERIA DE SISTEMAS</option>',
+                        "06"=>'<option value="06" >INGENIERIA DE SISTEMAS</option><option value="01" >ADMINISTRACION DE EMPRESAS</option><option value="02" >CONTABILIDAD</option><option value="03" >EDUCACION PRIMARIA INTERCULTURAL</option><option value="04" >INGENIERIA AGROINDUSTRIAL</option><option value="05" >INGENIERIA AMBIENTAL</option>'
+            ];
+            
+            echo PHP_EOL;
+            
+            foreach ($restest as $key => $value){
+                echo getCarrerAdmision($key);
+                echo PHP_EOL;
+                echo $value;
+                echo PHP_EOL;
+                if(trim(getCarrerAdmision($key)) == trim($value)){
+                    echo "test succefully!!";
+                }else{
+                    echo "test error!!";
+                }
+                echo PHP_EOL;
+            }
+        }
+
+        /**
+         * MAIN PHP 
+         */
+            #echo getCarrerAdmision("02");
+            
+            #echo PHP_EOL."RESULT TEST:".PHP_EOL;
+            #test_SecondCarrer();
+
+        /**
+         * FIN MAIN PHP
+         */
+
 ?>
+
+
 <form  name="form" method="post" id="frmcronmod" action="adm_inscripcion_grabar.php?d=<?php echo $_GET['d']?>&nav=<?php echo $_GET['nav']?>" onsubmit="grabar(this.id);return false;">
 <table width="100%">
     <tr>
@@ -150,6 +246,32 @@ $vsqldepartamento="SELECT departamento,descripcion FROM mae_ubigeo WHERE provinc
 			?>
         </td>
     </tr>
+
+
+    <?php
+        
+        $paseVarAnio = true;
+
+        if($proceso == "0030"){
+            $paseVarAnio = false;
+    ?>
+	<tr>
+        <td>
+            <strong>Segunda carrera</strong>								
+        </td>
+        <td>
+            <select name="txtAnioEgreso" id="txtAnioEgreso" style="width: 100%;">
+            <?php
+            echo getCarrerAdmision($anioegreso);
+            ?>
+            </select>
+        </td>
+    </tr>	
+    <?php
+        }
+    ?>
+
+
     <tr>
         <td>
             <strong>Apellido paterno:</strong>								
@@ -325,14 +447,28 @@ $vsqldepartamento="SELECT departamento,descripcion FROM mae_ubigeo WHERE provinc
             <input name="txtColegio" id="txtColegio" type="text" value="<?php echo $colegio;?>" style="width: 85%" data-requerido="true" data-requerido-texto="Colegio">
         </td>
     </tr>
-	<tr>
+
+
+    <?php
+        if($paseVarAnio){
+    ?>
+    <tr>
         <td>
-            <strong>A&ntildeo egreso:</strong>								
+            <strong>Año egreso:</strong>								
         </td>
         <td>
             <input name="txtAnioEgreso" id="txtAnioEgreso" type="text" value="<?php echo $anioegreso ?>" style="width: 10%" data-requerido="true" data-requerido-texto="Año egreso" maxlength="4">
         </td>
-    </tr>	
+    </tr>
+    <?php
+
+        }
+        /****
+         * END IF select carrear
+         */
+    ?>
+
+
 	<tr>
 		<td align="left">
         	<strong>Departamento Procedencia:</strong>

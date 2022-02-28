@@ -201,6 +201,16 @@
 	echo '<br>';
 	if ($pasa==1)
 		{
+			/**
+			 * ENVIAR CORREO DE CONFIRMACIÓN DE REGISTRO CON ALGUNAS INDICACIONES INCIALES.
+			 */
+			$nameProccess = "CEPRE"; 
+			include_once('./admi_enviar_email_preinscripcion.php');
+			/**
+			 * FIN bloque de código correo 
+			 */
+
+
 			 echo '<table width="100%">';
                     echo '<tr>';
                     	echo '<td align="center">';

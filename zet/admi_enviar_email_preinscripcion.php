@@ -72,7 +72,7 @@
      * ****************************************
      */
 	$fcha_ordi = "2022-1";
-	$asunto = "ADMISIÓN UNAJMA - PROCESO DE PREINSCRIPCIÓN VIRTUAL PARA EL EXAMEN DE LA UNIVERSIDAD NACIONAL JOSE MARIA ARGUEDAS ".$fcha_ordi . " (Primera Etata de Inscripción)";	
+	$asunto = "ADMISIÓN UNAJMA - REGISTRO PRE-INSCRIPCIÓN VIRTUAL | MODALIDAD ".$nameProccess." - ".$fcha_ordi . " (Primera Etata de Inscripción)";	
 	$title_correo = "EXAMEN DE ADMISIÓN ".$fcha_ordi;
 
 	$cuerpo = '
@@ -106,13 +106,13 @@
 						<td>
 							<ul>
 								<li>
-									En primer lugar queremos agredecerle a usted, <strong>' .$nombre .'</strong>,  por tomar la decición de seguir creciendo con nosotros. Tenemos muy en claro de todo el esfuerzo que hacen los postulantes para desear ingresar a nuestra querida casa de estudios, a raiz de ello nosotros nos comprometemos para darle el mejor servicio posible, siempre mejorando. Esperamos entonces, su poyo en el sentido de que cumpla con todos los requerimientos que exigimos para con el proceso de admisión: leer detenidamente los requerimientos, y estar atento siempre a su correo, celular y WhatsApp. 
+									En primer lugar queremos agredecerle a usted, <strong>' .$nombre .'</strong>,  por tomar la decición de seguir creciendo con nosotros. Tenemos muy en claro de todo el esfuerzo que hacen los postulantes para desear ingresar a nuestra querida casa de estudios, a raiz de ello nos comprometemos darle el mejor servicio posible, siempre mejorando. Esperamos entonces, su poyo en el sentido de que cumpla con todos los requerimientos que exigimos para con el proceso de admisión: leer detenidamente los requerimientos, y estar atento siempre a su correo, celular y WhatsApp. 
 									<br>
 									Muchas gracias nuevamente, y le deseamos bastante suerte en este nuevo proceso 2022-1. 
 									<br>
 								</li>
 								<li>
-									Recuerde que todo el proceso de inscripción es <strong>completamente virtual</strong>. <strong>No es neceario que usted se acerque a la dirección de admisión</strong>. El sistema de admisión está disponible las 24/7 (todo el día, toda la semana). En el caso de que existan inconvenientes con su inscripción, <strong>nosotros nos estaremos contactando con usted</strong>, por lo que le pedimos encarecidamente estar atento a su correo y telefono celular.
+									Recuerde que todo el proceso de inscripción es <strong>completamente virtual</strong>. <strong>No es neceario que usted se acerque a la dirección de admisión</strong>. El sistema de admisión está disponible 24/7 (todo el día, toda la semana). En el caso de que existan inconvenientes con su inscripción, <strong>nosotros nos estaremos contactando con usted</strong>, por lo que le pedimos encarecidamente estar atento a su correo y telefono celular.
 								</li>
 								<li>
 									Recuerde que tenemos para usted una página de admisión exclusiva, donde puede encontrar los cronogramas, reglamentos, tutoriales, vacantes, temarios, escuelas profesionales, y todo lo que usted necesita para estar muy bien informado para el proceso de admisión.

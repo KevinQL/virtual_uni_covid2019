@@ -267,6 +267,7 @@
 		/**
 		 * ENVIAR CORREO DE CONFIRMACIÓN DE REGISTRO CON ALGUNAS INDICACIONES INCIALES.
 		 */
+		$nameProccess = "ORDINARIO"; 
 		include_once('./admi_enviar_email_preinscripcion.php');
 		/**
 		 * FIN bloque de código correo 

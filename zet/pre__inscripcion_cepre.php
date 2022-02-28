@@ -4,7 +4,7 @@
      * then put true for all when the inscription is availabel (true:true)
      * else put true : false;
      */
-    $pase = (isset($_GET['externo20221']) || isset($_GET['other']) )? true : false;
+    $pase = (isset($_GET['externo20221']) || isset($_GET['other']) )? true : true;
 
     if($pase){
 ?>

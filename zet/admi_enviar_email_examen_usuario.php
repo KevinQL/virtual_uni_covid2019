@@ -24,7 +24,7 @@
 	error_reporting(E_ALL);
 	ini_set('display_errors', '1');
 		
-	$asunto = "UNAJMA - EXAMEN VIRTUAL 2022";	
+	$asunto = "UNAJMA - EXAMEN PRESENCIAL 2022";	
 		
 	$vsql = "call zyz_CAMantenedorPostulante ('". $proceso . "', '". $postulante . "','1','2','3','4','5','1900-01-01','1','2','3','4','5',0,0,'1','2','3','4','5','6','7',0,0,0,0,0,'1','2','3','4','5',0,0,'','1','2','3','4','5','6','7','K')";
 	$rs = mysqli_query($cn_email, $vsql);	
@@ -104,8 +104,8 @@
 	if($proceso === "0030"){
 
 		$fcha_ordi = "2022-1 ABRIL";
-		$asunto = "ADMISIÓN UNAJMA - EXAMEN ORDINARIO ".$fcha_ordi;	
 		$title_correo = "ORDINARIO ".$fcha_ordi;
+		$asunto = "ADMISIÓN UNAJMA - EXAMEN " . $title_correo;	
 
 		$cuerpo = '
 		<html>
@@ -138,12 +138,12 @@
 							<ul>
 								
 								<li>
-									<strong>1).</strong> Asegurese de contar con su <strong>Certificado de estudios, o ficha de logros de aprendizaje</strong>.
+									<strong>1).</strong> Asegurese de contar con tu <strong>Certificado de estudios, o ficha de logros de aprendizaje</strong>.
 								</li>
 
 								<li>
 									<strong>2).</strong> 
-									<strong>Escanear</strong> los documentos (Certificado de estudios, dni y voucher de pago de inscripción) como <strong>UN SOLO</strong> archivo en formato PDF.
+									<strong>Escanear</strong> los documentos (Certificado de estudios) como <strong>UN SOLO</strong> archivo en formato PDF.
 									<br>
 									<strong>** Debe obtener UN SOLO archivo PDF(documentos en formato PDF)</strong>. 
 									<br>
@@ -264,8 +264,8 @@
 		# code...
 
 		$fcha_ordi = "2022-1 MARZO";
-		$asunto = "ADMISIÓN UNAJMA - EXAMEN EXTRAORDINARIO ".$fcha_ordi;	
 		$title_correo = "EXTRAORDINARIO ".$fcha_ordi;
+		$asunto = "ADMISIÓN UNAJMA - EXAMEN " . $title_correo;	
 
 		$cuerpo = '
 		<html>
@@ -298,7 +298,7 @@
 							<ul>
 								
 								<li>
-									<strong>1).</strong> Asegurese de contar con su <strong>Certificado de estudios, o ficha de logros de aprendizaje</strong> Así mismo los <strong>documentos requeridos según la modalidad extraordinario</strong>.
+									<strong>1).</strong> Asegurese de contar con tu <strong>Certificado de estudios, o ficha de logros de aprendizaje</strong> Así mismo los <strong>documentos requeridos según la modalidad extraordinario</strong>.
 									<br>
 									** En la página de admisión están los <strong>REQUISITOS y COSTOS de inscripción</strong> para cada tipo de modalidad extraordinario.
 									<br>
@@ -308,7 +308,7 @@
 
 								<li>
 									<strong>2).</strong> 
-									<strong>Escanear</strong> los documentos (Certificado de estudios, documentos requeridos según la modalidad extraordinario, dni y voucher de pago de inscripción) como <strong>UN SOLO</strong> archivo en formato PDF.
+									<strong>Escanear</strong> los documentos (Certificado de estudios, documentos requeridos según la modalidad extraordinario) como <strong>UN SOLO</strong> archivo en formato PDF.
 									<br>
 									<strong>** Debe obtener UN SOLO archivo PDF(documentos en formato PDF)</strong>. 
 									<br>
@@ -424,11 +424,11 @@
 
 	}
 	// PROCESO EXAMEN CEPRE
-	else if($proceso === "0029") {
+	else if($proceso === "0032") {
 	
-		$asunto = "ADMISIÓN UNAJMA - EXAMEN CEPRE 2021-3 DIC.";	
-
-		$title_correo = "EXTRAORDINARIO 2021-3 DIC.";
+		$fcha_ordi = "2022-1 MARZO";
+		$title_correo = "CEPRE " . $fcha_ordi;
+		$asunto = "ADMISIÓN UNAJMA - EXAMEN " . $title_correo;	
 
 		$cuerpo = '
 		<html>
@@ -453,68 +453,103 @@
 							Correo electrónico: <strong>'.$email.'</strong>, <br>
 							Celular: <strong>'.$celular.'</strong>
 							<br>
-							<strong>SE RECOMIENDA USAR UN ORDENADOR DE ESCRITORIO PARA LAS SIGUIENTES INDICACIONES.</strong>
+							<strong>PARA LAS SIGUIENTES INDICACIONES SE RECOMIENDA USAR UN ORDENADOR DE ESCRITORIO, PC O LAPTOP.</strong>
 						</td>
 					</tr>
 					<tr>
 						<td>
 							<ul>
-								<li> 
-								<strong>1).</strong> Descargue la <strong>declaración jurada COVID</strong> en formato word (<a href="'.$link_DJ.'">CLICK AQUÍ PARA DESCARGAR ARCHIVO</a>).<br> 
-								Una vez descargado el archivo, <string>IMPRIMALO</string>; y luego rellene los datos requeridos con lapicero azul.<br>
-								No se olvide de <strong>firmar</strong> el documento, así también de ser menor de edad debe ir la firma de su apoderado.<br> 
-								<strong>ESTE REQUISITO ES IMPORTANTE Y POR LO TANTO NO PUEDE QUEDAR EXCLUIDO</strong>
+								
+								<li>
+									<strong>1).</strong> Asegurese de contar con tu <strong>Certificado de estudios, o ficha de logros de aprendizaje</strong>.
+								</li>
+
+								<li>
+									<strong>2).</strong> 
+									<strong>Escanear</strong> los documentos (<strong>Certificado de estudios</strong>) como <strong>UN SOLO</strong> archivo en formato PDF.
+									<br>
+									<strong>** Debe obtener UN SOLO archivo PDF(documentos en formato PDF)</strong>. 
+									<br>
+									Los documentos escaneados tienen que ser <strong>completamente legibles, leíbles y claros</strong>, caso contrario serán rechazados. 
+									<br>
+									<strong>** Comprima su documento para que pese menos de 2MB.</strong>
+										<br>
+										2.1) Página para comprimir archivo <a href="https://www.ilovepdf.com/es/comprimir_pdf">https://www.ilovepdf.com/es/comprimir_pdf</a>
+										<br>
+										2.2) Tutorial para comprimir archivo <a href="https://youtu.be/qzeHv4wXrQc">https://youtu.be/qzeHv4wXrQc</a>
+									<br>
+									<strong>** Recuerde SUBIR este archivo PDF al <a href="https://examen.admisionunajma.pe/zetadmision/zet/index.php">sistema virtual de admisión</a>.</strong>
+									<br>
+									** PARA ESCANEAR TUS DOCUMENTOS TAMBIÉN O <strong>MEJOR</strong> TE PUEDES ACERCAR A UNA FOTOCOPIADORA-INTERNET PÚBLICO.
+									<br>
+									** <a href="https://www.youtube.com/watch?v=myzSi6vEHr0&ab_channel=TooSmart">Click Aquí video para escanear con el CELULAR</a> 
+									<br>
+									** <a href="https://www.youtube.com/watch?v=tXJBEDfrcHI&ab_channel=FranquiciasTiendasAPP">¿Qué es escanear?</a>
+								</li>
+
+								<li>
+								<strong>3).</strong>
+									Preparar las siguientes <strong>fotografías</strong>: 
+									<br>
+									3.1) Una fotografía de <strong>su firma </strong>(firma del <strong>postulante</strong>) en una hoja de fondo blanco.
+									<br> 
+									3.2) Una fotografía de <strong>la firma</strong> del <strong>apoderado</strong> en una hoja de fondo blanco. <br>
+									<strong>Importante recortar las firmas a los tamaños de las firmas, pueden usar Paint o el mismo Whatsaap para realizar el recorte.</strong>
+									<br>
+									<strong>** Recuerde SUBIR estas fotografías al <a href="https://examen.admisionunajma.pe/zetadmision/zet/index.php">sistema virtual de admisión</a>.</strong>
+									<br>
+									** Recortar con wsp <a href="https://www.youtube.com/watch?v=sp53kbZLtZg">https://www.youtube.com/watch?v=sp53kbZLtZg</a>
+									<br>
+									** Recortar con paint <a href="https://www.youtube.com/watch?v=fcaeUdxpZVI&ab_channel=webscomgt">https://www.youtube.com/watch?v=fcaeUdxpZVI&ab_channel=webscomgt</a>
 								</li>
 								<li>
-								<strong>2).</strong> Asegurese de contar con su <strong>Certificado de estudios o ficha de logros de aprendizaje</strong> Así mismo sus documentos solicitados según su modalidad de postulación.
+									<strong>4).</strong> 
+									Mirar obligatoriamente el siguiente <strong><a href="'.$link_tutorial_ordinario.'">Video instructivo</a></strong> para completar tu <strong>inscripción virtual</strong>. En este instructivo te indicamos como <strong>subir</strong> tu <strong>archivo PDF</strong> y tus <strong>fotografias recortadas</strong>, para finalmente conseguir tu <strong>constancia de inscripción</strong>.
+									<br> 
+									** <a href="'.$link_tutorial_ordinario.'">Video instructivo</a>: <a href="'.$link_tutorial_ordinario.'">'.$link_tutorial_ordinario.'</a>
 								</li>
 								<li>
-								<strong>3).</strong> Antes de proceder con esta indicación, debe tener impreso y llenado los documentos solicitados (*Declaración Jurada COVID, y su certificado de estudios). Debe <strong>escanear</strong> los documentos en <strong>UN SOLO</strong> archivo en formato PDF. <br>
-								<strong>Recuerde que posteriormente debe subir este archivo PDF en el sistema virtual de admisión.</strong>
-								<br>
-								<a href="https://www.youtube.com/watch?v=myzSi6vEHr0&ab_channel=TooSmart">Click Aquí video para escanear con el CELULAR</a> 
-								<br>
-								<a href="https://www.youtube.com/watch?v=tXJBEDfrcHI&ab_channel=FranquiciasTiendasAPP">¿Qué es escanear?</a>
-								</li>
-								<li>
-								<strong>4).</strong> Debe tener las siguientes fotografías:<br>
-								Una fotografía de su <strong>rostro actual</strong> tipo carnet de identificación. <br> 
-								Una fotografía de <strong>su firma</strong> (firma del <strong>postulante</strong>) en una hoja de fondo blanco;<br> 
-								Una fotografía de <strong>la firma</strong> del <strong>apoderado</strong> en una hoja de fondo blanco. <br>
-								Por favor recortar las firmas a los tamaños de las firmas, pueden usar Paint o el mismo Whatsaap para realizar el recorte (<a href="https://www.youtube.com/watch?v=fcaeUdxpZVI&ab_channel=webscomgt">Click Aquí video para realizar recorte con paint</a>.)
-								</li>
-								<li>
-								<strong>5).</strong> Debe mirar obligatoriamente el siguiente <strong>video instructivo</strong> de la universidad para no tener dificultades en su <strong>inscripción</strong> (<a href="'.$link_tutorial_cepre.'">Click Aquí Video Inscripción evaluación virtual</a>)
-								</li>
-								<li>
-								<strong>6).</strong> <br>
-								<strong>******************************IMPORTANTE**************************************************</strong>
-								<br>
-								INGRESE AL <strong>SISTEMA VIRTUAL DE ADMISIÓN</strong> PARA TERMINAR SU INSCRIPCIÓN, Y ASÍ PODER SUBIR LAS FIRMAS (POSTULANTE Y APODERADO EN CASO SEA MENOR DE EDAD),Y SU DOCUMENTO PDF (declaración jurada COVID y certificado de estudios o constancia de logro de aprendizaje).
-								<br>
-								<strong>Utilice estos credenciales para ingresar al sistema y COMPLETAR su inscripción.</strong> <br>
-								USUARIO:<strong>'.$numerodocumento.'</strong><br>
-								CONTRASEÑA:<strong>'.$clave.'</strong>
-								<br> --> <a href="https://examen.admisionunajma.pe/zetadmision/zet/index.php">
-								CLICK AQUÍ SISTEMA VIRTUAL DE ADMISIÓN UNAJMA
-								</a> <-- 
-								<br>
-								<strong>******************************************************************************************</strong>
+								<strong>5).</strong> 
+									<br>
+									<strong>************************ ********** ************************</strong> <br>
+									<strong>*********************** IMPORTANTE *********************</strong> <br>
+									<strong>************************ ********** ************************</strong> <br>
+									DETALLES PARA EL ACCESO AL <strong><a href="https://examen.admisionunajma.pe/zetadmision/zet/index.php">SISTEMA VIRTUAL DE ADMISIÓN</a></strong>
+									<br>
+									<u>CREDENCIALES DE ACCESO PERSONAL</u>
+									<br>
+									¤¤¤[☻] USUARIO:<strong>'.$numerodocumento.'</strong> <br>
+									¤¤¤[Ð] CONTRASEÑA:<strong>'.$clave.'</strong>
+									<br> 
+									<strong>** Estos credenciales son únicos y personales</strong>, por lo que no debes compartirlo con nadie. 
+									<br>
+									** INGRESE POR AQUÍ <a href="https://examen.admisionunajma.pe/zetadmision/zet/index.php">AL SISTEMA VIRTUAL DE ADMISIÓN</a>: -> 
+									<a href="https://examen.admisionunajma.pe/zetadmision/zet/index.php">https://examen.admisionunajma.pe/zetadmision/zet/index.php</a>
+									<br>
+									** Para tener acceso al sistema debes ingresar estos credenciales. Seguidamente podrás completar tu inscripción, hasta obtener tu Constancia de Inscripción.
+									<br>
+									<strong>************************************************************</strong> <br>
+									<strong>************************ ********** *************************</strong> <br>
+									<strong>************************ ********** *************************</strong> <br>
+									<strong>************************************************************</strong> <br>
+
 								</li>
 								
 								<li>							
-								<strong>7).</strong> Después de cumplir todas las indicaciones hasta completar su inscripción, debe contar a la mano con su <strong>CONSTANCIA DE INSCRIPCIÓN</strong> impreso a colores. Está constancia de inscripción es prueba de una inscripción satisfactoria. Por lo que después deberá esperar pendiente a su correo electrónico las indicaciones para el día del examen. <br>
-								Puede unirse a los grupos de Whatsapp para conocer a sus futuros compañeros, resolver dudas, o para estar al tanto de las indicaciones de la oficina de admisión.
-								<br>
-								<a href="https://chat.whatsapp.com/IvmWtn8GxzgBSrG6HqonFo">GRUPO ADMISIÓN CEPRE 2021-3 (OPT 1)</a> 
-								<br> 
-								<a href="https://chat.whatsapp.com/ICR1rKzlvaI6aE7jS2Ufpn">GRUPO ADMISIÓN CEPRE 2021-3 (OPT 2)</a>
-								<br>
-								<strong>
-									*** (IMPORTANTE) RECUERDE QUE PARA EL DÍA DEL EXAMEN PRESENCIAL, DEBE PORTAR EL CARNE DE VACUNACIÓN COVID 19.
-								</strong>
-								<br>
-								
+								<strong>7).</strong> 
+									Después de cumplir todas las indicaciones, y contar a la mano con su <strong>CONSTANCIA DE INSCRIPCIÓN</strong> impreso a colores, estará dispuesto para el examen de admisión. Tener a la mano La Constancia de Inscripción es prueba de una <strong>inscripción satisfactoria</strong>; aunque deberá estar atento a su correo y telefono celular en el caso de que nos queramos comunicar con usted para tratar algún percanse en particular. Finalmente recomendamos muy encarecidamente esperar pendiente a su correo electrónico las indicaciones para el día del examen.
+									<br>
+									** Puede unirse a los <strong>grupos de Whatsapp</strong> para estar al tanto de las indicaciones coyunturales que pudieran estar surguiendo; en la misma medida usted puede realizar su consulta manteniendo el orden y respeto mutuo. Ingrese SOLO a UN grupo. Cualquiera de los dos grupos son para todas las carreras.
+									<br>
+									<a href="https://chat.whatsapp.com/Kv90A2SA8GXKm6U0qasoSc">GRUPO ADMISIÓN CEPRE 2022-1 (OPT 1)</a> 
+									<br> 
+									<a href="https://chat.whatsapp.com/K6t76DH91lW9csOR53g0hT">GRUPO ADMISIÓN CEPRE 2022-1 (OPT 2)</a>
+									<br>
+									<strong>
+										*** (IMPORTANTE) RECUERDE QUE PARA EL DÍA DEL EXAMEN PRESENCIAL, DEBE PORTAR EL CARNE DE VACUNACIÓN COVID 19, SU CONSTANCIA DE INSCRIPCIÓN, Y DNI.
+										<br>
+									</strong>
+									<br>
 								</li>
 							</ul>
 						</td>

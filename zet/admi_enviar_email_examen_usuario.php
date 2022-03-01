@@ -74,18 +74,18 @@
 	$link_tutorial = "https://youtu.be/EczYN5WxVTU";
 	$link_tutorial_ordinario = "https://youtu.be/EczYN5WxVTU";
 	$link_tutorial_extraordinario = "https://youtu.be/EczYN5WxVTU";
-	$link_tutorial_cepre = "https://youtu.be/EczYN5WxVTU"; // update 2021-3
+	$link_tutorial_cepre = "https://youtu.be/kJoIikwTO8I"; // update 2022-1
 	$link_tutorial_ps = "https://youtu.be/7xfoN10bywg"; // update 2021-3
 	$link_tutorial_quinto = "https://youtu.be/6gkC9VvA1yY"; // modificar este link
 	$link_DJ = "https://drive.google.com/file/d/1M27E0UAXf44-6ZSERaIGd2YUGeiQ-LD6/view?usp=sharing";
 	$link_wsp = [];
-	$link_wsp["ordi1"] = "https://chat.whatsapp.com/JV9vpX2W0hoFvmWNpRjjUe";
-	$link_wsp["ordi2"] = "https://chat.whatsapp.com/FKSXQQS4driIex3mOTVUVDS";
-	$link_wsp["extra1"] = "https://chat.whatsapp.com/G9GEZn6xJao0rmAnUH9Vcj";
-	$link_wsp["extra2"] = "https://chat.whatsapp.com/G9GEZn6xJao0rmAnUH9Vcj";
-	$link_wsp["cepre1"] = "https://chat.whatsapp.com/G9GEZn6xJao0rmAnUH9Vcj";
-	$link_wsp["cepre2"] = "https://chat.whatsapp.com/G9GEZn6xJao0rmAnUH9Vcj";
-	$link_wsp["mate1"] = "https://chat.whatsapp.com/FfckVttmoZeKeWGZDHhNsR";
+	$link_wsp["ordi1"]  = "https://chat.whatsapp.com/GfaulPIhKngFMX3c5KzLaS"; // upd 2022-1
+	$link_wsp["ordi2"]  = "https://chat.whatsapp.com/BLzAvC3mPSFEL69aA757es"; // upd 2022-1
+	$link_wsp["extra1"] = "https://chat.whatsapp.com/JynxJefXU9ILZdF2Db0Pa2"; // upd 2022-1
+	$link_wsp["extra2"] = "https://chat.whatsapp.com/Ju0p8urOCbt6JtTFWbRxSB"; // upd 2022-1
+	$link_wsp["cepre1"] = "https://chat.whatsapp.com/Kv90A2SA8GXKm6U0qasoSc"; // upd 2022-1
+	$link_wsp["cepre2"] = "https://chat.whatsapp.com/K6t76DH91lW9csOR53g0hT"; // upd 2022-1
+	$link_wsp["mate1"]  = "https://chat.whatsapp.com/FfckVttmoZeKeWGZDHhNsR"; // upd --
 
 	/**
 	 * ****************************************************************
@@ -218,9 +218,9 @@
 									<br>
 									** Puede unirse a los <strong>grupos de Whatsapp</strong> para estar al tanto de las indicaciones coyunturales que pudieran estar surguiendo; en la misma medida usted puede realizar su consulta manteniendo el orden y respeto mutuo. Ingrese SOLO a UN grupo. Cualquiera de los dos grupos son para todas las carreras.
 									<br>
-									<a href="https://chat.whatsapp.com/GfaulPIhKngFMX3c5KzLaS">GRUPO ADMISIÓN ORDINARIO 2022-1 (OPT 1)</a> 
+									<a href="'.$link_wsp["ordi1"].'">GRUPO ADMISIÓN ORDINARIO 2022-1 (OPT 1)</a> 
 									<br> 
-									<a href="https://chat.whatsapp.com/BLzAvC3mPSFEL69aA757es">GRUPO ADMISIÓN ORDINARIO 2022-1 (OPT 2)</a>
+									<a href="'.$link_wsp["ordi2"].'">GRUPO ADMISIÓN ORDINARIO 2022-1 (OPT 2)</a>
 									<br>
 									<strong>
 										*** (IMPORTANTE) RECUERDE QUE PARA EL DÍA DEL EXAMEN PRESENCIAL, DEBE PORTAR EL CARNE DE VACUNACIÓN COVID 19, SU CONSTANCIA DE INSCRIPCIÓN, Y DNI.
@@ -383,9 +383,9 @@
 									<br>
 									** Puede unirse a los <strong>grupos de Whatsapp</strong> para estar al tanto de las indicaciones coyunturales que pudieran estar surguiendo; en la misma medida usted puede realizar su consulta manteniendo el orden y respeto mutuo. Ingrese SOLO a UN grupo. Cualquiera de los dos grupos son para todas las carreras.
 									<br>
-									<a href="https://chat.whatsapp.com/JynxJefXU9ILZdF2Db0Pa2">GRUPO ADMISIÓN EXTRAORDINARIO 2022-1 (OPT 1)</a> 
+									<a href="'.$link_wsp["extra1"].'">GRUPO ADMISIÓN EXTRAORDINARIO 2022-1 (OPT 1)</a> 
 									<br> 
-									<a href="https://chat.whatsapp.com/Ju0p8urOCbt6JtTFWbRxSB">GRUPO ADMISIÓN EXTRAORDINARIO 2022-1 (OPT 2)</a>
+									<a href="'.$link_wsp["extra2"].'">GRUPO ADMISIÓN EXTRAORDINARIO 2022-1 (OPT 2)</a>
 									<br>
 									<strong>
 										*** (IMPORTANTE) RECUERDE QUE PARA EL DÍA DEL EXAMEN PRESENCIAL, DEBE PORTAR EL CARNE DE VACUNACIÓN COVID 19, SU CONSTANCIA DE INSCRIPCIÓN, Y DNI.
@@ -504,9 +504,9 @@
 								</li>
 								<li>
 									<strong>4).</strong> 
-									Mirar obligatoriamente el siguiente <strong><a href="'.$link_tutorial_ordinario.'">Video instructivo</a></strong> para completar tu <strong>inscripción virtual</strong>. En este instructivo te indicamos como <strong>subir</strong> tu <strong>archivo PDF</strong> y tus <strong>fotografias recortadas</strong>, para finalmente conseguir tu <strong>constancia de inscripción</strong>.
+									Mirar obligatoriamente el siguiente <strong><a href="'.$link_tutorial_cepre.'">Video instructivo</a></strong> para completar tu <strong>inscripción virtual</strong>. En este instructivo te indicamos como <strong>subir</strong> tu <strong>archivo PDF</strong> y tus <strong>fotografias recortadas</strong>, para finalmente conseguir tu <strong>constancia de inscripción</strong>.
 									<br> 
-									** <a href="'.$link_tutorial_ordinario.'">Video instructivo</a>: <a href="'.$link_tutorial_ordinario.'">'.$link_tutorial_ordinario.'</a>
+									** <a href="'.$link_tutorial_cepre.'">Video instructivo</a>: <a href="'.$link_tutorial_cepre.'">'.$link_tutorial_cepre.'</a>
 								</li>
 								<li>
 								<strong>5).</strong> 
@@ -541,9 +541,9 @@
 									<br>
 									** Puede unirse a los <strong>grupos de Whatsapp</strong> para estar al tanto de las indicaciones coyunturales que pudieran estar surguiendo; en la misma medida usted puede realizar su consulta manteniendo el orden y respeto mutuo. Ingrese SOLO a UN grupo. Cualquiera de los dos grupos son para todas las carreras.
 									<br>
-									<a href="https://chat.whatsapp.com/Kv90A2SA8GXKm6U0qasoSc">GRUPO ADMISIÓN CEPRE 2022-1 (OPT 1)</a> 
+									<a href="'.$link_wsp["cepre1"].'">GRUPO ADMISIÓN CEPRE 2022-1 (OPT 1)</a> 
 									<br> 
-									<a href="https://chat.whatsapp.com/K6t76DH91lW9csOR53g0hT">GRUPO ADMISIÓN CEPRE 2022-1 (OPT 2)</a>
+									<a href="'.$link_wsp["cepre2"].'">GRUPO ADMISIÓN CEPRE 2022-1 (OPT 2)</a>
 									<br>
 									<strong>
 										*** (IMPORTANTE) RECUERDE QUE PARA EL DÍA DEL EXAMEN PRESENCIAL, DEBE PORTAR EL CARNE DE VACUNACIÓN COVID 19, SU CONSTANCIA DE INSCRIPCIÓN, Y DNI.

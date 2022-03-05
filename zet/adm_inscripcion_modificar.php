@@ -100,6 +100,9 @@ $vsqldepartamento="SELECT departamento,descripcion FROM mae_ubigeo WHERE provinc
      * modificado: 14-02-2022
      */
 
+        /**
+         * 
+         */
         class CarrerOption {
             private $idcarrer;
 
@@ -112,9 +115,12 @@ $vsqldepartamento="SELECT departamento,descripcion FROM mae_ubigeo WHERE provinc
             }
         }
 
-        
+        /**
+         * - Devuelve toda la lista de carreras.
+         * - Devuelve como seleccionado, la carrera opt2 del postulante preinscrito.
+         */
         function getCarrerAdmision($idCarrer){
-            $idcarrer = $idCarrer;
+            $idcarrer = $idCarrer; // :V
 
             $carrer = ["00"=>'<option value="00" >ERROR EN LA CARRERA!!</option>',
                         "01"=>'<option value="01" >ADMINISTRACION DE EMPRESAS</option>',
@@ -145,7 +151,9 @@ $vsqldepartamento="SELECT departamento,descripcion FROM mae_ubigeo WHERE provinc
         }
 
 
-        //test function ssecond carrer part to admin
+        /**
+         * test function ssecond carrer part to admin
+         */
         function test_SecondCarrer(){
             
             $restest = ["00"=>'<option value="00" >ERROR EN LA CARRERA!!</option><option value="01" >ADMINISTRACION DE EMPRESAS</option><option value="02" >CONTABILIDAD</option><option value="03" >EDUCACION PRIMARIA INTERCULTURAL</option><option value="04" >INGENIERIA AGROINDUSTRIAL</option><option value="05" >INGENIERIA AMBIENTAL</option><option value="06" >INGENIERIA DE SISTEMAS</option>',
@@ -173,13 +181,57 @@ $vsqldepartamento="SELECT departamento,descripcion FROM mae_ubigeo WHERE provinc
             }
         }
 
+
+
+
         /**
          * MAIN PHP 
          */
+        
             #echo getCarrerAdmision("02");
             
             #echo PHP_EOL."RESULT TEST:".PHP_EOL;
             #test_SecondCarrer();
+
+            /**
+             * Identifica el control para el proceso con carrera de segunda opcion
+             * date last change: 02/03/2022
+             */
+            $paseVarAnio = true; // controla que el anio se imprima en la vista
+            $pase_carrer2 = true; // controla que la carrera de segunda opt se imprima en la vista
+
+            /**
+             * - Evaluamos que el dato contenga los dos valores necesarios, para comvertirlos en 
+             * un array de dos dimensiones
+             */
+            if(count(explode("||", $anioegreso)) == 2){
+
+                /**
+                 * - Asignamos los valores del anio egreso y codigo carrera opt 2, para su 
+                 * asignación en la vista
+                 */
+                list($anio_egreso, $code_carrer2) = explode("||", $anioegreso);
+
+            }else{
+
+                if($proceso == "0030"){
+
+                    /**
+                     * - Asignamos codigo de carrera opt2. 
+                     * - Esto debido a la programación anterior.
+                     */
+                    $code_carrer2 = $anioegreso; 
+                    
+                    $paseVarAnio = false; // no imprimimos el anio en la vista
+
+                }else{
+
+                    $anio_egreso = $anioegreso;
+
+                    $pase_carrer2 = false;
+                    
+                }
+            }
 
         /**
          * FIN MAIN PHP
@@ -249,11 +301,12 @@ $vsqldepartamento="SELECT departamento,descripcion FROM mae_ubigeo WHERE provinc
 
 
     <?php
-        
-        $paseVarAnio = true;
 
-        if($proceso == "0030"){
-            $paseVarAnio = false;
+        /**
+         * Si el proceso es ORDINARIO 2022, que admite carrera de segunda opción
+         */
+        if($proceso == "0030" && $pase_carrer2){
+            
     ?>
 	<tr>
         <td>
@@ -262,7 +315,7 @@ $vsqldepartamento="SELECT departamento,descripcion FROM mae_ubigeo WHERE provinc
         <td>
             <select name="txtAnioEgreso" id="txtAnioEgreso" style="width: 100%;">
             <?php
-            echo getCarrerAdmision($anioegreso);
+            echo getCarrerAdmision($code_carrer2);
             ?>
             </select>
         </td>
@@ -450,6 +503,9 @@ $vsqldepartamento="SELECT departamento,descripcion FROM mae_ubigeo WHERE provinc
 
 
     <?php
+        /**
+         * Si se debe imprimir anio para el proceso
+         */
         if($paseVarAnio){
     ?>
     <tr>
@@ -457,7 +513,7 @@ $vsqldepartamento="SELECT departamento,descripcion FROM mae_ubigeo WHERE provinc
             <strong>Año egreso:</strong>								
         </td>
         <td>
-            <input name="txtAnioEgreso" id="txtAnioEgreso" type="text" value="<?php echo $anioegreso ?>" style="width: 10%" data-requerido="true" data-requerido-texto="Año egreso" maxlength="4">
+            <input name="txtAnioEgreso" id="txtAnioEgreso" type="text" value="<?php echo $anio_egreso; ?>" style="width: 10%" data-requerido="true" data-requerido-texto="Año egreso" maxlength="4">
         </td>
     </tr>
     <?php

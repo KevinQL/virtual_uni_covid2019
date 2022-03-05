@@ -1,11 +1,26 @@
 <?php
+
+	/**
+	 * Historial 03/03/2022
+	 * - Se modifico el procedemmiento zyz_Admi_GrabarPre. El Parametro anioegreso. longitud de 4 a 10
+	 * - Anteriormente se modifico en la tabla, el campo anioegreso longitud 10
+	 * - falta modificar en reporte excell  - anioegreso y segunda carrera
+	 */
+
+
+	/**
+	 * Control de impresión de errores PHP
+	 */
 	error_reporting(0);
 
+	/**
+	 * 
+	 */
 	include_once('../funciones/admi_con.php');
 	include_once('../funciones/admi_fun.php');
 
 	$zet = '../';
-	
+
 	/**
 	 * Code for the career filter
 	*/
@@ -58,7 +73,7 @@
 	/**
 	 * Ejecutando la función de filtro.
 	*/
-	$res_filter = get_filterCareerAdmision($_POST["cboEstructura"], $_POST["txtAnioEgreso"]);
+	$res_filter = get_filterCareerAdmision($_POST["cboEstructura"], $_POST["txtSecondOption"]);
 	if(!$res_filter){
 		//redireccionar a la página con el error, indicando que los datos están siendo vulneradas.
 		
@@ -75,7 +90,7 @@
 			echo '</td>';
 		echo '</tr>';
 		echo '</table>';
-		echo "<script> alert('Datos incorrectos!!!'); </script>";
+		echo "<script> alert('Datos incorrectos!!!".$_POST["cboEstructura"]." - ".$_POST["txtSecondOption"]."'); </script>";
 		//header ("location: pre__inscripcion_ordinario.php");
 		die();
 		//exit;
@@ -86,7 +101,7 @@
 	{
 		header ("location: pre__inscripcion_ordinario.php");
 	}
-		
+
 	#$define('GL_DIR_FS_APPS', 'd:/xampp/htdocs');
 	$dni = $_POST["txtDni"];
 	$apellidopaterno = $_POST["txtApellidoPaterno"];
@@ -110,7 +125,13 @@
 	$provinciacolegio = $_POST["cboProvinciaColegio"];
 	$distritocolegio = $_POST["cboDistritoColegio"];
 	$colegio = $_POST["txtColegio"];
-	$anioegreso = $_POST["txtAnioEgreso"];
+
+	/**
+	 * Asignamos a anioingreso los valores de año de egreso, y segunda carrera (codigo),
+	 * utilizamos el separador || para guardar y recuperar el dato más adelante
+	 */
+	$anioegreso = $_POST["txtAnioEgreso"] . "||" . $_POST["txtSecondOption"];
+
 	$departamentoprocedencia = $_POST["cboDepartamentoProcedencia"];
 	$provinciaprocedencia = $_POST["cboProvinciaProcedencia"];
 	$distritoprocedencia = $_POST["cboDistritoProcedencia"];

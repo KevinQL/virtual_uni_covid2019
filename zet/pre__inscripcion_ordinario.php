@@ -161,7 +161,7 @@
             </strong> 
         </td>
         <td>
-            <select name="txtAnioEgreso" id="txtAnioEgreso">
+            <select name="txtSecondOption" id="txtSecondOption">
                 <!-- <option value="01" selected="">ADMINISTRACION DE EMPRESAS</option> -->
                 <option value="02">CONTABILIDAD</option>
                 <option value="03" selected="">EDUCACION PRIMARIA INTERCULTURAL</option>
@@ -307,16 +307,16 @@
         </td>    
     </tr>  
 
-    <!-- <tr>
+    <tr>
     	<td>
         	<strong>
-            A&ntilde;o que culmino colegio:
+            Año que culmino colegio:
             </strong>        
         </td>
         <td>
         	<input type="text" name="txtAnioEgreso" id="txtAnioEgreso" data-type="number" class="form-control validar" autocomplete="off" autocapitalize="words"  value="" maxlength="4"  placeholder="2018" aria-describedby="txtnombre-message">
         </td>    
-    </tr>  -->
+    </tr> 
 
 	<tr>
 		<td align="left">
@@ -492,7 +492,7 @@ function getOptions(id){
     
     //alert(resultHtmlOption);
     
-    let elemOption2 = document.querySelector("#txtAnioEgreso");
+    let elemOption2 = document.querySelector("#txtSecondOption");
     elemOption2.innerHTML = resultHtmlOption;
 
 }

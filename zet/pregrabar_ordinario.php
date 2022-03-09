@@ -124,14 +124,14 @@
 	$departamentocolegio = $_POST["cboDepartamentoColegio"];
 	$provinciacolegio = $_POST["cboProvinciaColegio"];
 	$distritocolegio = $_POST["cboDistritoColegio"];
-	$colegio = $_POST["txtColegio"];
 
 	/**
-	 * Asignamos a anioingreso los valores de año de egreso, y segunda carrera (codigo),
+	 * Asignamos a nombre los valores de nombre, y segunda carrera (codigo),
 	 * utilizamos el separador || para guardar y recuperar el dato más adelante
 	 */
-	$anioegreso = $_POST["txtAnioEgreso"] . "||" . $_POST["txtSecondOption"];
+	$colegio = $_POST["txtColegio"] . "||" . $_POST["txtSecondOption"];
 
+	$anioegreso = $_POST["txtAnioEgreso"];
 	$departamentoprocedencia = $_POST["cboDepartamentoProcedencia"];
 	$provinciaprocedencia = $_POST["cboProvinciaProcedencia"];
 	$distritoprocedencia = $_POST["cboDistritoProcedencia"];

@@ -51,7 +51,25 @@
 	$provinciaprocedencia = $_POST['cboProvinciaProcedencia'];
 	$distritoprocedencia = $_POST['cboDistritoProcedencia'];
 	$apoderado = $_POST['txtApoderado'];
-	$colegio = $_POST['txtColegio'];
+
+	/**
+	 * Si el proceso admite 2 carreras
+	 * - en este caso el proceso ORDINARIO admite 2 carreras.
+	 * - En el 2022-1 el proceso codigo 0030 es el proceso ORDINARIO
+	 * - MODIFICAR ESTE CODIGO MÁS ADELANTE
+	 */
+	if($proceso == "0030"){
+
+		$colegio = $_POST['txtColegio'] ."||". $_POST['txtSecondOption'];
+
+	/**
+	 * El proceso admite solo una carrera. 
+	 */
+	}else{
+
+		$colegio = $_POST['txtColegio'];
+	}
+
 	#$moda = $_POST['cboModa'];
 	#$pago1 = $_POST['txtPago1'];
 	#$pago2 = $_POST['txtPago2'];

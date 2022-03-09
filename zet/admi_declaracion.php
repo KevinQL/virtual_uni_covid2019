@@ -96,6 +96,12 @@
 	if ($numeroregistros > 0)
 		{
 			$row = mysqli_fetch_array($rs, MYSQLI_ASSOC);
+            
+            /**
+             * test result data consult
+             */
+            var_dump($row);
+
 			$dj = $row["dj"];
 			$dni = $row["numerodocumento"];
 			$domicilio = $row["direccion"];

@@ -197,36 +197,43 @@ $vsqldepartamento="SELECT departamento,descripcion FROM mae_ubigeo WHERE provinc
              * Identifica el control para el proceso con carrera de segunda opcion
              * date last change: 02/03/2022
              */
-            $paseVarAnio = true; // controla que el anio se imprima en la vista
+            //$paseVarAnio = true; // controla que el anio se imprima en la vista
             $pase_carrer2 = true; // controla que la carrera de segunda opt se imprima en la vista
 
             /**
              * - Evaluamos que el dato contenga los dos valores necesarios, para comvertirlos en 
              * un array de dos dimensiones
              */
-            if(count(explode("||", $anioegreso)) == 2){
+            if(count(explode("||", $colegio)) == 2){
 
                 /**
                  * - Asignamos los valores del anio egreso y codigo carrera opt 2, para su 
                  * asignación en la vista
                  */
-                list($anio_egreso, $code_carrer2) = explode("||", $anioegreso);
+                list($name_colegio, $code_carrer2) = explode("||", $colegio);
 
+            /**
+             * Si el campo escuela no mantiene el formato requerido: colegio + code_carrera
+             */
             }else{
 
+                /**
+                 * Si es el proceso ORDINARIO donde que se admiten 2 carreras
+                 */
                 if($proceso == "0030"){
 
                     /**
                      * - Asignamos codigo de carrera opt2. 
                      * - Esto debido a la programación anterior.
                      */
-                    $code_carrer2 = $anioegreso; 
-                    
-                    $paseVarAnio = false; // no imprimimos el anio en la vista
-
+                    list($anio_egreso, $code_carrer2) = explode("||", $anioegreso);
+                    $anioegreso = $anio_egreso;
+                /**
+                 * Si es un proceso que no admite 2 carreras, sino 1 solo: EXTRA, CEPRE.
+                 */
                 }else{
 
-                    $anio_egreso = $anioegreso;
+                    $name_colegio = $colegio;
 
                     $pase_carrer2 = false;
                     
@@ -313,7 +320,7 @@ $vsqldepartamento="SELECT departamento,descripcion FROM mae_ubigeo WHERE provinc
             <strong>Segunda carrera</strong>								
         </td>
         <td>
-            <select name="txtAnioEgreso" id="txtAnioEgreso" style="width: 100%;">
+            <select name="txtSecondOption" id="txtSecondOption" style="width: 100%;">
             <?php
             echo getCarrerAdmision($code_carrer2);
             ?>
@@ -497,33 +504,18 @@ $vsqldepartamento="SELECT departamento,descripcion FROM mae_ubigeo WHERE provinc
             <strong>Colegio procedencia:</strong>								
         </td>
         <td>
-            <input name="txtColegio" id="txtColegio" type="text" value="<?php echo $colegio;?>" style="width: 85%" data-requerido="true" data-requerido-texto="Colegio">
+            <input name="txtColegio" id="txtColegio" type="text" value="<?php echo $name_colegio;?>" style="width: 85%" data-requerido="true" data-requerido-texto="Colegio">
         </td>
     </tr>
 
-
-    <?php
-        /**
-         * Si se debe imprimir anio para el proceso
-         */
-        if($paseVarAnio){
-    ?>
     <tr>
         <td>
             <strong>Año egreso:</strong>								
         </td>
         <td>
-            <input name="txtAnioEgreso" id="txtAnioEgreso" type="text" value="<?php echo $anio_egreso; ?>" style="width: 10%" data-requerido="true" data-requerido-texto="Año egreso" maxlength="4">
+            <input name="txtAnioEgreso" id="txtAnioEgreso" type="text" value="<?php echo $anioegreso; ?>" style="width: 10%" data-requerido="true" data-requerido-texto="Año egreso" maxlength="4">
         </td>
     </tr>
-    <?php
-
-        }
-        /****
-         * END IF select carrear
-         */
-    ?>
-
 
 	<tr>
 		<td align="left">

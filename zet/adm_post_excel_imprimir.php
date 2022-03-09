@@ -145,19 +145,19 @@
 		 * Obtenemos el dato que corresponde a anioegreso de la base de datos. 
 		 * Esta colomna podría contener el anioegreso más el código de la segunda carrea opcional
 		 */
-		$anioegreso = $rsjk[19];
+		$colegio = $rsjk[24];
 
 		/**
 		 * - Evaluamos que el dato contenga los dos valores necesarios, para comvertirlos en 
 		 * un array de dos dimensiones
 		 */
-		if(count(explode("||", $anioegreso)) == 2){
+		if(count(explode("||", $colegio)) == 2){
 
 			/**
 			 * - Asignamos los valores del anio egreso y codigo carrera opt 2, para su 
 			 * asignación en la vista
 			 */
-			list($anio_egreso, $code_carrer2) = explode("||", $anioegreso);
+			list($name_colegio, $code_carrer2) = explode("||", $colegio);
 
 			/**
 			 * Establecemos que la segunda carrera existe, por ende se imprimen los datos
@@ -171,7 +171,7 @@
 			 * Como no existe segunda carrera, entonces tomamos el dato como el anio egreso
 			 * del postulante. Tal como se hacía normalmente.
 			 */
-			$anio_egreso = $anioegreso;
+			$name_colegio = $colegio;
 		}
 		
 		$contador = $contador + 1;
@@ -248,10 +248,10 @@
 				echo $rsjk[18];
 			echo '</td>';
 			echo '<td align="left">';
-				echo $anio_egreso;
+				echo $rsjk[19];
 			echo '</td>';
 			echo '<td align="left">';
-				echo $rsjk[24];
+				echo $name_colegio;
 			echo '</td>';
 			echo '<td align="left">';
 				echo $rsjk[25];

@@ -11,7 +11,7 @@
      * else put true : false;
      */
     
-    $pase = (isset($_GET['externo20221']) || isset($_GET['other']) )? true : true;
+    $pase = (isset($_GET['externo20221']) || isset($_GET['other']) )? true : false;
 
     if($pase){
 ?>

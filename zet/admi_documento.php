@@ -29,7 +29,11 @@
 			echo '</div>';	
 		}
 	echo '<div class="alert alert-info">';
-			echo '<span class="semi-bold" style="font-size:16px;">Suba los documentos requeridos para su inscripci&oacute;n en formato PDF.</span>';
+			echo '<span class="semi-bold" style="font-size:16px;">Suba los documentos requeridos para su inscripción en formato PDF: </br>
+                > Certificado de estudios y</br>
+                > carnet de vacunación </br>
+                Subir un solo documento PDF. 
+            </span>';
 	echo '</div>';
 ?>
 <table>

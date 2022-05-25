@@ -81,6 +81,7 @@
 	$link_wsp = [];
 	$link_wsp["ordi1"]  = "https://chat.whatsapp.com/GfaulPIhKngFMX3c5KzLaS"; // upd 2022-1
 	$link_wsp["ordi2"]  = "https://chat.whatsapp.com/BLzAvC3mPSFEL69aA757es"; // upd 2022-1
+	$link_wsp["ordi3"]  = "https://chat.whatsapp.com/BTF5edGcsRDL6PckvLw6qx"; // upd 2022-1
 	$link_wsp["extra1"] = "https://chat.whatsapp.com/JynxJefXU9ILZdF2Db0Pa2"; // upd 2022-1
 	$link_wsp["extra2"] = "https://chat.whatsapp.com/Ju0p8urOCbt6JtTFWbRxSB"; // upd 2022-1
 	$link_wsp["cepre1"] = "https://chat.whatsapp.com/Kv90A2SA8GXKm6U0qasoSc"; // upd 2022-1
@@ -218,9 +219,9 @@
 									<br>
 									** Puede unirse a los <strong>grupos de Whatsapp</strong> para estar al tanto de las indicaciones coyunturales que pudieran estar surguiendo; en la misma medida usted puede realizar su consulta manteniendo el orden y respeto mutuo. Ingrese SOLO a UN grupo. Cualquiera de los dos grupos son para todas las carreras.
 									<br>
-									<a href="'.$link_wsp["ordi1"].'">GRUPO ADMISIÓN ORDINARIO 2022-1 (OPT 1)</a> 
+									<a href="'.$link_wsp["ordi3"].'">GRUPO ADMISIÓN ORDINARIO 2022-1 (OPT 1)</a> 
 									<br> 
-									<a href="'.$link_wsp["ordi2"].'">GRUPO ADMISIÓN ORDINARIO 2022-1 (OPT 2)</a>
+									<a href="'.$link_wsp["ordi3"].'">GRUPO ADMISIÓN ORDINARIO 2022-1 (OPT 2)</a>
 									<br>
 									<strong>
 										*** (IMPORTANTE) RECUERDE QUE PARA EL DÍA DEL EXAMEN PRESENCIAL, DEBE PORTAR EL CARNE DE VACUNACIÓN COVID 19, SU CONSTANCIA DE INSCRIPCIÓN, Y DNI.

@@ -57,8 +57,8 @@
 		$consultSQL = '';    
 		$vsql = "SELECT DISTINCT email, numerodocumento, nombre, proceso
         FROM adm_proceso_postulante 
-        WHERE email like '%.%' and email like '%@%' and numerodocumento <> '' AND proceso LIKE '0031'
-        ORDER BY email ASC";
+        WHERE email like '%.%' and email like '%@%' and numerodocumento <> '' AND proceso LIKE '0030'
+        ORDER BY email ASC LIMIT 1";
 
 		$rs = mysqli_query($cn_email, $vsql);	
 		
@@ -78,8 +78,8 @@
 			 * |*************** BODY OF THE MESSAGE
 			 * ****************************************
 			 */
-			// $email = "unajmakev@gmail.com";
-			// $nombre = "kevin";
+			$email = "unajmakev@gmail.com";
+			$nombre = "kevin";
 
 			$fcha_ordi = "2022-1";
 			$asunto = "ADMISIÓN UNAJMA - INDICACIONES EXTRAORDINARIO PROCESO ".$fcha_ordi." UNIVERSIDAD NACIONAL JOSE MARIA ARGUEDAS ";	
@@ -167,20 +167,16 @@
 				</head>
 				<body>
 					<div class="contenedor">
-						<img class="imgBanner" src="https://scontent.faqp2-2.fna.fbcdn.net/v/t39.30808-6/274468145_1309180436231412_3164496279077827344_n.jpg?_nc_cat=104&ccb=1-5&_nc_sid=e3f864&_nc_eui2=AeEpeP4T57BfrhRexl68ONOlNhgJ4y6dFmY2GAnjLp0WZkknbNfC36jqd7FTh1KowF0qKhllwzHGZOmnU-vpwIrh&_nc_ohc=DfZI7i6cypIAX_f8psf&_nc_ht=scontent.faqp2-2.fna&oh=00_AT_XuzXDUw9J5Ee10idU_p8AH9Dmezsh-2mUCVNkE-4oEw&oe=6243D795">
+						<img class="imgBanner" src="https://i.ibb.co/LYQ2XzL/logo-unajma-portada.png" width="100%" style="padding: 5px 15px">
 							
 						<p>&nbsp;</p>
 						<p>&nbsp;</p>
 
 						<table style="max-width: 600px; padding: 10px; margin:0 auto; border-collapse: collapse;">
-						<tr>
-							<td style="padding: 0">
-								<img style="padding: 0; display: block" src="https://scontent.faqp2-3.fna.fbcdn.net/v/t39.30808-6/276306387_1330347877448001_1036829007006559167_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=730e14&_nc_eui2=AeHs37JzNOvC78Jg2PGujq0BDDS9qs1sxGkMNL2qzWzEaTYDgQZQOrtN6QL2V8t-kPEVkHIUBQzLtAtlrDbimeEU&_nc_ohc=RgK6lwmyAgkAX_TYaMs&_nc_ht=scontent.faqp2-3.fna&oh=00_AT8LHuif5_-og1zPC27W6EzGSFOP8DWPdL7VlP5JVDj7PQ&oe=6243769B" width="100%">
-							</td>
-						</tr>
+	
 						
 						<tr>
-							<td style="background-color: #ffffff;">
+							<td style="background-color: #ffffff; font-style:Andale Mono, monospace">
 								<div class="misection">
 									<h2 style="color: red; margin: 0 0 7px">Hola, '.$nombre.'</h2>
 
@@ -265,6 +261,15 @@
 								</div>
 							</td>
 						</tr>
+
+						<tr>
+							<td style="padding: 0; text-align: center">
+								<img style="padding: 0; display: inline-block" src="https://i.ibb.co/1Jz4xMN/Whats-App-Image-2022-04-08-at-8-47-38-AM.jpg" width="40%" >
+								<img style="padding: 0; display: inline-block" src="https://i.ibb.co/1Jz4xMN/Whats-App-Image-2022-04-08-at-8-47-38-AM.jpg" width="40%" >
+							</td>
+						</tr>
+
+
 						<tr>
 							<td style="background-color: #ffffff;">
 							<div class="misection">

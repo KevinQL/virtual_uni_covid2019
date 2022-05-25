@@ -82,12 +82,27 @@
 
 			$link_DJ = "https://drive.google.com/file/d/1M27E0UAXf44-6ZSERaIGd2YUGeiQ-LD6/view?usp=sharing";
 			$link_tutorial_dconstancia = "https://youtu.be/6gkC9VvA1yY?t=852"; // update 2021-3
+			$prospecto_pdf = "https://drive.google.com/file/d/1nG5WVCrBiQNAoacEs6MR7ZMx3odGc4pb/view?usp=sharing"; // 2022-1
 	
 			$asunto = "ADMISIÓN UNAJMA - INSCRIPCIÓN EXAMEN 2022-1";	
 			$cuerpo = '
 			<html>
 				<head>
 					<title>EXAMEN DE ADMISION</title>
+
+					<style>
+						.button {
+							text-decoration: none;
+							background-color: #C73E1D; /* #4CAF50 - Green */
+							border: none;
+							color: white !important;
+							padding: 15px 32px;
+							text-align: center;
+							display: inline-block;
+							font-size: 16px;
+						}
+					</style>
+
 				</head>
 				<body>
 					<table>
@@ -108,7 +123,10 @@
 								<br>
 								<strong>¡EN BUENA HORA, SE VALIDÓ SU INSCRIPCIÓN COMO SATISFACTORIO :D!!</strong> <br>
 								<strong>¡EN BUENA HORA, SE VALIDÓ SU INSCRIPCIÓN COMO SATISFACTORIO :D!!</strong> <br>
-								<strong>¡EN BUENA HORA, SE VALIDÓ SU INSCRIPCIÓN COMO SATISFACTORIO :D!!</strong>
+								<strong>¡EN BUENA HORA, SE VALIDÓ SU INSCRIPCIÓN COMO SATISFACTORIO :D!!</strong> <br> <br>
+								
+								<strong><a href="'.$prospecto_pdf.'" class="button">PROSPECTO DE ADMISIÓN 2022-1 (ver/descargar)</a></strong>
+
 							</td>
 						</tr>
 						<tr>
@@ -118,13 +136,11 @@
 										<strong>1).</strong> 
 										Recuerde llevar para el día del examen los siguientes documentos: 
 										<br>
-										1.1) su CONSTANCIA DE INSCRIPCIÓN (Solo es una hoja, a colores y presentar dentro de una Mica). <br>
-										1.2) Su DECLARACIÓN JURADA DE NO TENER COVID (solo es una hoja, tiene su huella dactilar y también dentro de la Mica). <br> 
-										1.3) Su DNI. <br>  
-										1.4) Su CARNET DE VACUNACIÓN COVID. <br>  
+										1.1) su <strong>CONSTANCIA DE INSCRIPCIÓN</strong> (Solo es una hoja, a colores y presentar dentro de una Mica). <br>
+										1.2) Su <strong>DNI</strong>. <br>  
+										1.3) Su <strong>CARNET DE VACUNACIÓN COVID</strong>. <br>  
 										<br>
 										**** LA CONSTANCIA DE INSCCRIPCIÓN LO PUEDES DESCARGAR CON TUS CREDENCIALES EN EL SISTEMA VIRTUAL DE ADMISIÓN. <br>
-										**** LA DECLARACIÓN JURADA ESTÁ EN TU CORREO ELECTRÓNICO JUNTO CON TUS CREDENCIALES.
 	
 										<br> 
 									</li>
@@ -139,9 +155,6 @@
 										<strong>3).</strong> 
 										VIDEO DESCARGAR CONSTANCIA DE INSCRIPCIÓN: 
 										(<a href="'.$link_tutorial_dconstancia.'">video instructivo</a>) 
-										<br> 
-										LINK DE LA DECLARACIÓN JURADA DE NO TENER COVID (*dj covid):
-										(<a href="'.$link_DJ.'">descargar formato DJ</a>) 
 						
 									</li>
 								</ul>
